@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Python User Input | StudyMate</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        #codeEditor {
+            width: 100%;
+            min-height: 220px;
+            box-sizing: border-box;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #cbd5e1;
+            font-family: monospace;
+            font-size: 15px;
+            resize: vertical;
+        }
+
+    #outputBox {
+    margin-top: 20px;
+    padding: 20px;
+    background: #111827 !important;
+    color: #ffffff !important;
+    border: 2px solid #6366f1;
+    border-radius: 12px;
+    min-height: 80px;
+    font-family: Consolas, monospace;
+    font-size: 16px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    overflow-x: auto;
+}
+    </style>
+</head>
+
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            📚 StudyMate
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/">Home</a>
+
+            <a href="/learn">Learn</a>
+
+            <a href="/planner">Planner</a>
+
+            <a href="/quiz">Quiz</a>
+
+            <a href="/progress">Progress</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- MAIN -->
+
+    <main class="container">
+
+
+        <!-- HEADER -->
+
+        <section class="welcome">
+
+            <div>
+
+                <p class="small-text">
+                    PYTHON PROGRAMMING
+                </p>
+
+                <h1>
+                    Python User Input ⌨️
+                </h1>
+
+                <p class="description">
+                    Learn how to take information from the user
+                    using Python's input() function.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- WHAT IS USER INPUT -->
+
+        <section class="quick-section">
+
+            <h2>📌 What is User Input?</h2>
+
+            <div class="card">
+
+                <p>
+                    User input means taking information from the
+                    user while the Python program is running.
+                </p>
+
+                <p>
+                    Python uses the
+                    <strong>input()</strong>
+                    function to take information from the user.
+                </p>
+
+                <pre><code>name = input("Enter your name: ")
+
+print("Hello", name)</code></pre>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- INPUT FUNCTION -->
+
+        <section class="quick-section">
+
+            <h2>📝 1. input() Function</h2>
+
+            <div class="card">
+
+                <p>
+                    The <strong>input()</strong> function displays
+                    a message and waits for the user to enter something.
+                </p>
+
+                <pre><code>name = input("Enter your name: ")
+
+print(name)</code></pre>
+
+                <p>
+                    If the user enters:
+                    <strong>Harshika</strong>
+                </p>
+
+                <pre><code>Harshika</code></pre>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- STRING INPUT -->
+
+        <section class="quick-section">
+
+            <h2>🔤 2. Taking String Input</h2>
+
+            <div class="card">
+
+                <p>
+                    By default, input() takes the entered value
+                    as a string.
+                </p>
+
+                <pre><code>name = input("Enter your name: ")
+
+college = input("Enter your college: ")
+
+print("Name:", name)
+print("College:", college)</code></pre>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- INTEGER INPUT -->
+
+        <section class="quick-section">
+
+            <h2>🔢 3. Taking Integer Input</h2>
+
+            <div class="card">
+
+                <p>
+                    To take a whole number, use
+                    <strong>int()</strong>.
+                </p>
+
+                <pre><code>age = int(input("Enter your age: "))
+
+print("Your age is", age)</code></pre>
+
+                <p>
+                    Example:
+                </p>
+
+                <pre><code>Enter your age: 18
+
+Your age is 18</code></pre>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- FLOAT INPUT -->
+
+        <section class="quick-section">
+
+            <h2>🔢 4. Taking Decimal Input</h2>
+
+            <div class="card">
+
+                <p>
+                    To take decimal numbers, use
+                    <strong>float()</strong>.
+                </p>
+
+                <pre><code>height = float(input("Enter your height: "))
+
+print("Height:", height)</code></pre>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ADDITION -->
+
+        <section class="quick-section">
+
+            <h2>➕ 5. Adding Two Numbers</h2>
+
+            <div class="card">
+
+                <p>
+                    We can take two numbers from the user
+                    and add them.
+                </p>
+
+                <pre><code>num1 = int(input("Enter first number: "))
+
+num2 = int(input("Enter second number: "))
+
+sum = num1 + num2
+
+print("Sum:", sum)</code></pre>
+
+                <p>
+                    <strong>Output:</strong>
+                </p>
+
+                <pre><code>Enter first number: 10
+Enter second number: 20
+
+Sum: 30</code></pre>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- REAL LIFE -->
+
+        <section class="quick-section">
+
+            <h2>🌍 6. Real-Life Uses</h2>
+
+            <div class="card">
+
+                <p>
+                    User input is used in many applications.
+                </p>
+
+                <ul>
+
+                    <li>Login forms</li>
+
+                    <li>Registration forms</li>
+
+                    <li>ATM applications</li>
+
+                    <li>Banking systems</li>
+
+                    <li>Student applications</li>
+
+                    <li>Cybersecurity tools</li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- IMPORTANT POINTS -->
+
+        <section class="quick-section">
+
+            <h2>⭐ Important Points</h2>
+
+            <div class="card">
+
+                <ul>
+
+                    <li>
+                        <strong>input()</strong>
+                        is used to take user input.
+                    </li>
+
+                    <li>
+                        Input is treated as a string by default.
+                    </li>
+
+                    <li>
+                        Use <strong>int()</strong>
+                        for integer values.
+                    </li>
+
+                    <li>
+                        Use <strong>float()</strong>
+                        for decimal values.
+                    </li>
+
+                    <li>
+                        User input makes programs interactive.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- PYTHON PRACTICE -->
+
+        <section class="quick-section">
+
+            <h2>💻 Try It Yourself</h2>
+
+            <div class="card">
+
+                <p>
+                    Write Python code below and run it.
+                </p>
+
+                <p id="pythonStatus">
+                    🟡 Loading Python...
+                </p>
+
+                <textarea id="codeEditor">name = "Harshika"
+
+print("Hello", name)
+
+age = 18
+
+print("Age:", age)</textarea>
+
+                <br>
+                <br>
+
+                <button
+                    id="runCodeButton"
+                    class="card-button"
+                    disabled>
+                    ▶ Run Code
+                </button>
+
+                <br>
+                <br>
+
+                <h3>Output:</h3>
+
+                <pre id="outputBox">
+Python is loading...
+                </pre>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            Student Learning Assistant © 2026
+        </p>
+
+    </footer>
+
+
+
+    <!-- PYTHON -->
+
+    <script type="module">
+
+        import {
+            loadPyodide
+        } from
+        "https://cdn.jsdelivr.net/pyodide/v0.28.2/full/pyodide.mjs";
+
+
+        let pyodide;
+
+
+        const runButton =
+            document.getElementById("runCodeButton");
+
+        const codeEditor =
+            document.getElementById("codeEditor");
+
+        const outputBox =
+            document.getElementById("outputBox");
+
+        const status =
+            document.getElementById("pythonStatus");
+
+
+        async function startPython() {
+
+            try {
+
+                status.textContent =
+                    "🟡 Loading Python...";
+
+                pyodide =
+                    await loadPyodide();
+
+                status.textContent =
+                    "🟢 Python is ready!";
+
+                outputBox.textContent =
+                    "Ready! Write Python code and click Run Code.";
+
+                runButton.disabled =
+                    false;
+
+            }
+
+            catch (error) {
+
+                status.textContent =
+                    "🔴 Python failed to load.";
+
+                outputBox.textContent =
+                    "Error loading Python:\n\n" + error;
+
+                console.error(error);
+
+            }
+
+        }
+
+
+        runButton.addEventListener(
+            "click",
+            async function () {
+
+                const code =
+                    codeEditor.value;
+
+                if (code.trim() === "") {
+
+                    outputBox.textContent =
+                        "Please write some Python code.";
+
+                    return;
+
+                }
+
+                runButton.disabled =
+                    true;
+
+                runButton.textContent =
+                    "⏳ Running...";
+
+
+                try {
+
+                    await pyodide.runPythonAsync(`
+import sys
+from io import StringIO
+
+_output = StringIO()
+
+sys.stdout = _output
+sys.stderr = _output
+                    `);
+
+
+                    await pyodide.runPythonAsync(
+                        code
+                    );
+
+
+                    const result =
+                        await pyodide.runPythonAsync(
+                            "_output.getvalue()"
+                        );
+
+
+                    if (result.trim() === "") {
+
+                        outputBox.textContent =
+                            "Code executed successfully.";
+
+                    }
+
+                    else {
+
+                        outputBox.textContent =
+                            result;
+
+                    }
+
+                }
+
+                catch (error) {
+
+                    outputBox.textContent =
+                        "❌ Error:\n\n" + error;
+
+                }
+
+
+                runButton.disabled =
+                    false;
+
+                runButton.textContent =
+                    "▶ Run Code";
+
+            }
+        );
+
+
+        startPython();
+
+    </script>
+
+</body>
+
+</html>

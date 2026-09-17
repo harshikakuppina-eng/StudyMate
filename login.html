@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | StudyMate</title>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <!-- Premium Login Page -->
+
+    <div class="auth-page">
+
+        <div class="auth-card premium-auth-card">
+
+            <!-- Logo -->
+            <div class="auth-logo">
+                📚 <span>StudyMate</span>
+            </div>
+
+            <div class="auth-welcome">
+                <p class="auth-label">
+                    STUDENT LEARNING ASSISTANT
+                </p>
+
+                <h1>
+                    Welcome Back 👋
+                </h1>
+
+                <p class="auth-subtitle">
+                    Login to continue your learning journey.
+                </p>
+            </div>
+
+
+            <!-- Login Form -->
+            <form id="loginForm">
+
+                <div class="input-group">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="auth-button">
+                    Login →
+                </button>
+
+            </form>
+
+
+            <!-- Register -->
+            <p class="auth-footer">
+                Don't have an account?
+                <a href="/register">
+                    Sign Up
+                </a>
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Login JavaScript -->
+    <script>
+
+        const loginForm =
+            document.getElementById("loginForm");
+
+        loginForm.addEventListener(
+            "submit",
+            async function(event) {
+
+                event.preventDefault();
+
+                const email =
+                    document.getElementById("email").value;
+
+                const password =
+                    document.getElementById("password").value;
+
+                try {
+
+                    const response =
+                        await fetch("/api/login", {
+
+                            method: "POST",
+
+                            headers: {
+                                "Content-Type":
+                                    "application/json"
+                            },
+
+                            body: JSON.stringify({
+                                email: email,
+                                password: password
+                            })
+
+                        });
+
+
+                    const result =
+                        await response.json();
+
+
+                    if (result.success) {
+
+                        alert(
+                            "Login successful! Welcome "
+                            + result.name
+                            + " ❤️"
+                        );
+
+                        window.location.href = "/";
+
+                    } else {
+
+                        alert(result.message);
+
+                    }
+
+                } catch (error) {
+
+                    alert(
+                        "Server connection error. Please try again."
+                    );
+
+                    console.error(error);
+
+                }
+
+            });
+
+    </script>
+
+</body>
+
+</html>

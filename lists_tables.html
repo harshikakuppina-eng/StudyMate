@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lists & Tables | StudyMate</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">StudyMate</div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/learn">Learn</a>
+            <a href="/html">Web Development</a>
+        </div>
+
+    </nav>
+
+
+    <main class="container">
+
+        <section class="quick-section">
+
+            <h1>📋 Lists & Tables</h1>
+
+            <p class="description">
+                Learn how to create lists and tables in HTML.
+            </p>
+
+
+            <!-- Unordered List -->
+
+            <div class="card">
+
+                <h2>1. Unordered List</h2>
+
+                <p>
+                    An unordered list displays items using bullet points.
+                </p>
+
+                <pre><code>&lt;ul&gt;
+    &lt;li&gt;Python&lt;/li&gt;
+    &lt;li&gt;HTML&lt;/li&gt;
+    &lt;li&gt;CSS&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+                <h3>Output:</h3>
+
+                <ul>
+                    <li>Python</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                </ul>
+
+            </div>
+
+
+            <!-- Ordered List -->
+
+            <div class="card">
+
+                <h2>2. Ordered List</h2>
+
+                <p>
+                    An ordered list displays items with numbers.
+                </p>
+
+                <pre><code>&lt;ol&gt;
+    &lt;li&gt;Login&lt;/li&gt;
+    &lt;li&gt;Scan&lt;/li&gt;
+    &lt;li&gt;Analyze&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+
+                <h3>Output:</h3>
+
+                <ol>
+                    <li>Login</li>
+                    <li>Scan</li>
+                    <li>Analyze</li>
+                </ol>
+
+            </div>
+
+
+            <!-- Description List -->
+
+            <div class="card">
+
+                <h2>3. Description List</h2>
+
+                <p>
+                    A description list is used for terms and their descriptions.
+                </p>
+
+                <pre><code>&lt;dl&gt;
+
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;HyperText Markup Language&lt;/dd&gt;
+
+    &lt;dt&gt;CSS&lt;/dt&gt;
+    &lt;dd&gt;Cascading Style Sheets&lt;/dd&gt;
+
+&lt;/dl&gt;</code></pre>
+
+                <h3>Output:</h3>
+
+                <dl>
+
+                    <dt><strong>HTML</strong></dt>
+                    <dd>HyperText Markup Language</dd>
+
+                    <dt><strong>CSS</strong></dt>
+                    <dd>Cascading Style Sheets</dd>
+
+                </dl>
+
+            </div>
+
+
+            <!-- Tables -->
+
+            <div class="card">
+
+                <h2>4. HTML Tables</h2>
+
+                <p>
+                    Tables are used to display information in rows and columns.
+                </p>
+
+                <pre><code>&lt;table&gt;
+
+    &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Course&lt;/th&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+        &lt;td&gt;Harshika&lt;/td&gt;
+        &lt;td&gt;Cybersecurity&lt;/td&gt;
+    &lt;/tr&gt;
+
+&lt;/table&gt;</code></pre>
+
+            </div>
+
+
+            <!-- Table Example -->
+
+            <div class="card">
+
+                <h2>5. Table Example</h2>
+
+                <table border="1" cellpadding="10">
+
+                    <tr>
+                        <th>Name</th>
+                        <th>Course</th>
+                        <th>Semester</th>
+                    </tr>
+
+                    <tr>
+                        <td>Harshika</td>
+                        <td>Cybersecurity</td>
+                        <td>3rd</td>
+                    </tr>
+
+                    <tr>
+                        <td>Rahul</td>
+                        <td>Computer Science</td>
+                        <td>3rd</td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+
+            <!-- Important Points -->
+
+            <div class="card">
+
+                <h2>⭐ Important Points</h2>
+
+                <ul>
+
+                    <li>
+                        <strong>&lt;ul&gt;</strong> → Unordered list
+                    </li>
+
+                    <li>
+                        <strong>&lt;ol&gt;</strong> → Ordered list
+                    </li>
+
+                    <li>
+                        <strong>&lt;li&gt;</strong> → List item
+                    </li>
+
+                    <li>
+                        <strong>&lt;table&gt;</strong> → Creates a table
+                    </li>
+
+                    <li>
+                        <strong>&lt;tr&gt;</strong> → Table row
+                    </li>
+
+                    <li>
+                        <strong>&lt;th&gt;</strong> → Table heading
+                    </li>
+
+                    <li>
+                        <strong>&lt;td&gt;</strong> → Table data
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Try Yourself -->
+
+            <div class="card">
+
+                <h2>🧪 Try it Yourself</h2>
+
+                <p>
+                    Write HTML code below and click Preview.
+                </p>
+
+                <textarea
+                    id="htmlEditor"
+                    rows="15"
+                    style="width:100%;"
+                ><h1>My Skills</h1>
+
+<ul>
+    <li>Python</li>
+    <li>HTML</li>
+    <li>CSS</li>
+</ul>
+
+<h2>Student Details</h2>
+
+<table border="1" cellpadding="10">
+
+<tr>
+    <th>Name</th>
+    <th>Course</th>
+</tr>
+
+<tr>
+    <td>Harshika</td>
+    <td>Cybersecurity</td>
+</tr>
+
+</table></textarea>
+
+                <br><br>
+
+                <button
+                    class="card-button"
+                    onclick="previewHTML()"
+                >
+                    ▶ Preview
+                </button>
+
+                <h3>Preview:</h3>
+
+                <iframe
+                    id="previewFrame"
+                    style="width:100%; height:350px; border:1px solid #ccc;"
+                ></iframe>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>Student Learning Assistant © 2026</p>
+    </footer>
+
+
+    <script>
+
+        function previewHTML() {
+
+            const code =
+                document.getElementById("htmlEditor").value;
+
+            const preview =
+                document.getElementById("previewFrame");
+
+            preview.srcdoc = code;
+
+        }
+
+    </script>
+
+</body>
+
+</html>

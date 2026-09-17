@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>JavaScript Basics | StudyMate</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">StudyMate</div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/learn">Learn</a>
+        </div>
+
+    </nav>
+
+
+    <main class="container">
+
+        <section class="quick-section">
+
+            <h1>1️⃣1️⃣ JavaScript Basics ⚡</h1>
+
+            <p class="description">
+                Learn the basics of JavaScript and make webpages interactive.
+            </p>
+
+
+            <div class="card">
+
+                <h2>What is JavaScript?</h2>
+
+                <p>
+                    JavaScript is a programming language used to make
+                    webpages interactive and dynamic.
+                </p>
+
+                <p>For example:</p>
+
+                <ul>
+                    <li>Button clicks</li>
+                    <li>Pop-up messages</li>
+                    <li>Changing text</li>
+                    <li>Calculations</li>
+                    <li>Interactive forms</li>
+                </ul>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>1. JavaScript in HTML</h2>
+
+                <p>
+                    JavaScript can be written inside the
+                    <code>&lt;script&gt;</code> tag.
+                </p>
+
+                <pre><code>
+&lt;script&gt;
+
+alert("Hello StudyMate!");
+
+&lt;/script&gt;
+                </code></pre>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>2. Variables</h2>
+
+                <p>
+                    Variables are used to store values.
+                </p>
+
+                <pre><code>
+let name = "Harshika";
+
+let age = 18;
+
+console.log(name);
+console.log(age);
+                </code></pre>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>3. console.log()</h2>
+
+                <p>
+                    <code>console.log()</code> is used to display
+                    information in the browser console.
+                </p>
+
+                <pre><code>
+console.log("Hello World!");
+                </code></pre>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>4. JavaScript Function</h2>
+
+                <p>
+                    A function is a block of code that performs
+                    a particular task.
+                </p>
+
+                <pre><code>
+function greet() {
+
+    console.log("Welcome to StudyMate!");
+
+}
+
+greet();
+                </code></pre>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>5. Button Click</h2>
+
+                <p>
+                    JavaScript can perform an action when a button
+                    is clicked.
+                </p>
+
+                <pre><code>
+function showMessage() {
+
+    alert("Welcome to StudyMate!");
+
+}
+                </code></pre>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>Simple JavaScript Example 💻</h2>
+
+                <button
+                    class="card-button"
+                    onclick="showWelcome()">
+
+                    Click Me 🚀
+
+                </button>
+
+                <p id="message"></p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>Important Points ⭐</h2>
+
+                <ul>
+                    <li>JavaScript makes webpages interactive.</li>
+                    <li>JavaScript code can be written using script tags.</li>
+                    <li>Variables store data.</li>
+                    <li>console.log() displays information in the console.</li>
+                    <li>Functions contain reusable code.</li>
+                    <li>JavaScript can respond to button clicks.</li>
+                </ul>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>Try It Yourself 🚀</h2>
+
+                <textarea
+                    id="codeEditor"
+                    rows="20"
+                    style="width:100%;">
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>JavaScript Practice</title>
+
+</head>
+
+<body>
+
+<h2 id="heading">Hello Student!</h2>
+
+<button onclick="changeText()">
+    Click Me
+</button>
+
+<script>
+
+function changeText() {
+
+    document.getElementById("heading").innerHTML =
+        "Welcome to StudyMate! 🚀";
+
+}
+
+</script>
+
+</body>
+
+</html>
+                </textarea>
+
+                <br><br>
+
+                <button
+                    class="card-button"
+                    onclick="runCode()">
+
+                    ▶ Run Code
+
+                </button>
+
+                <br><br>
+
+                <iframe
+                    id="previewFrame"
+                    style="width:100%;
+                           height:300px;
+                           border:1px solid #ccc;">
+                </iframe>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>Student Learning Assistant © 2026</p>
+    </footer>
+
+
+    <script>
+
+        function showWelcome() {
+
+            document.getElementById("message").innerHTML =
+                "🎉 Welcome to JavaScript!";
+
+        }
+
+
+        function runCode() {
+
+            const code =
+                document.getElementById("codeEditor").value;
+
+            document.getElementById("previewFrame").srcdoc = code;
+
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,2076 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quiz | StudyMate</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #F3F4F6;
+            color: #1F2937;
+            font-family: Arial, sans-serif;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        .quiz-navbar {
+            background: #14B8A6;
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .quiz-logo {
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .quiz-nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .quiz-nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .quiz-nav-links a:hover {
+            color: #CCFBF1;
+        }
+
+        /* ================= MAIN ================= */
+
+        .quiz-container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        /* ================= HERO ================= */
+
+        .quiz-hero {
+            text-align: center;
+            background: linear-gradient(
+                135deg,
+                #CCFBF1,
+                #F0FDFA
+            );
+            padding: 45px 20px;
+            border-radius: 0 0 30px 30px;
+            margin-bottom: 30px;
+        }
+
+        .quiz-hero h1 {
+            font-size: 42px;
+            color: #115E59;
+            margin: 0 0 12px;
+        }
+
+        .quiz-hero p {
+            color: #475569;
+            font-size: 17px;
+            margin: 0;
+        }
+
+        /* ================= PANELS ================= */
+
+        .panel {
+            background: white;
+            padding: 32px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .panel h2 {
+            color: #115E59;
+            margin-top: 0;
+        }
+
+        /* ================= SUBJECTS ================= */
+
+        .subject-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-top: 25px;
+        }
+
+        .subject-btn {
+            width: 100%;
+            min-height: 115px;
+            border: 2px solid transparent;
+            border-radius: 16px;
+            padding: 20px 12px;
+            cursor: pointer;
+            font-size: 17px;
+            font-weight: bold;
+            background: white;
+            color: #1F2937;
+            box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+            transition: all 0.2s ease;
+        }
+
+        .subject-btn:hover {
+            transform: translateY(-5px);
+            border-color: #14B8A6;
+            background: #F0FDFA;
+            box-shadow: 0 14px 28px rgba(20,184,166,0.18);
+        }
+
+        .subject-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* ================= TOPICS ================= */
+
+        .topic-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .topic-btn {
+            width: 100%;
+            border: 2px solid #E5E7EB;
+            border-radius: 14px;
+            padding: 18px;
+            cursor: pointer;
+            background: white;
+            color: #1F2937;
+            font-size: 15px;
+            font-weight: bold;
+            text-align: left;
+            transition: all 0.2s ease;
+        }
+
+        .topic-btn:hover {
+            border-color: #14B8A6;
+            background: #F0FDFA;
+            transform: translateY(-3px);
+        }
+
+        /* ================= HIDDEN ================= */
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* ================= BACK BUTTON ================= */
+
+        .back-btn {
+            border: none;
+            padding: 11px 18px;
+            border-radius: 10px;
+            background: #0F766E;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .back-btn:hover {
+            background: #115E59;
+        }
+
+        /* ================= QUESTIONS ================= */
+
+        .question-card {
+            background: white;
+            margin: 22px 0;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .question-card h3 {
+            color: #115E59;
+            margin-top: 0;
+            line-height: 1.5;
+        }
+
+        .option {
+            display: block;
+            padding: 14px;
+            margin: 10px 0;
+            border-radius: 10px;
+            background: #F0FDFA;
+            border: 1px solid #CCFBF1;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .option:hover {
+            background: #CCFBF1;
+        }
+
+        .option input {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        /* ================= SUBMIT ================= */
+
+        .submit-quiz {
+            display: block;
+            margin: 30px auto;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 12px;
+            background: #14B8A6;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .submit-quiz:hover {
+            background: #0F766E;
+        }
+
+        /* ================= RESULT ================= */
+
+        .result-box {
+            text-align: center;
+            padding: 25px;
+            margin-top: 25px;
+            border-radius: 16px;
+            background: #ECFDF5;
+            color: #115E59;
+            font-size: 20px;
+            font-weight: bold;
+            border: 1px solid #A7F3D0;
+        }
+
+        .small-note {
+            text-align: center;
+            color: #64748B;
+        }
+
+        /* ================= FOOTER ================= */
+
+        .quiz-footer {
+            background: #134E4A;
+            color: #CCFBF1;
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 850px) {
+
+            .subject-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .topic-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .quiz-navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+        }
+
+        @media (max-width: 550px) {
+
+            .subject-grid,
+            .topic-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .quiz-hero h1 {
+                font-size: 32px;
+            }
+
+            .quiz-navbar {
+                padding: 15px;
+            }
+
+            .quiz-nav-links {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="quiz-navbar">
+
+    <div class="quiz-logo">
+        📚 StudyMate
+    </div>
+
+    <div class="quiz-nav-links">
+
+        <a href="/">Home</a>
+        <a href="/learn">Learn</a>
+        <a href="/planner">Planner</a>
+        <a href="/quiz">Quiz</a>
+        <a href="/progress">Progress</a>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="quiz-container">
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="quiz-hero">
+
+        <h1>📝 StudyMate Quiz</h1>
+
+        <p>
+            Test your knowledge topic by topic.
+        </p>
+
+    </section>
+
+
+    <!-- ================= SUBJECT PANEL ================= -->
+
+    <section id="subjectPanel" class="panel">
+
+        <h2>
+            1️⃣ Choose a Subject
+        </h2>
+
+        <div class="subject-grid">
+
+            <button
+                type="button"
+                class="subject-btn"
+                onclick="selectSubject('Python')">
+
+                🐍 Python
+
+            </button>
+
+
+            <button
+                type="button"
+                class="subject-btn"
+                onclick="selectSubject('Web Development')">
+
+                🌐 Web Development
+
+            </button>
+
+
+            <button
+                type="button"
+                class="subject-btn"
+                onclick="selectSubject('Cybersecurity')">
+
+                🛡️ Cybersecurity
+
+            </button>
+
+
+            <button
+                type="button"
+                class="subject-btn"
+                onclick="selectSubject('Computer Networks')">
+
+                🔗 Computer Networks
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= TOPIC PANEL ================= -->
+
+    <section id="topicPanel" class="panel hidden">
+
+        <button
+            type="button"
+            class="back-btn"
+            onclick="backToSubjects()">
+
+            ← Change Subject
+
+        </button>
+
+
+        <h2 id="topicTitle">
+            2️⃣ Choose a Topic
+        </h2>
+
+
+        <div
+            id="topicGrid"
+            class="topic-grid">
+        </div>
+
+
+        <p class="small-note">
+            Choose the topic you want to practice.
+        </p>
+
+    </section>
+
+
+    <!-- ================= QUIZ PANEL ================= -->
+
+    <section id="quizPanel" class="hidden">
+
+        <div class="panel">
+
+            <button
+                type="button"
+                class="back-btn"
+                onclick="backToTopics()">
+
+                ← Change Topic
+
+            </button>
+
+
+            <h2 id="quizTitle"></h2>
+
+
+            <p class="small-note">
+                Answer all questions and submit the quiz.
+            </p>
+
+        </div>
+
+
+        <form id="quizForm"></form>
+
+
+        <button
+            type="button"
+            class="submit-quiz"
+            onclick="checkQuiz()">
+
+            Submit Quiz
+
+        </button>
+
+
+        <div
+            id="result"
+            class="result-box">
+
+            Choose a topic to start the quiz.
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="quiz-footer">
+
+    <p>
+        Student Learning Assistant © 2026
+    </p>
+
+</footer>
+
+
+
+<script>
+
+/* =========================================================
+   STUDYMATE QUIZ
+   ========================================================= */
+
+
+/* =========================
+   VARIABLES
+   ========================= */
+
+let selectedSubject = "";
+let selectedTopic = "";
+let currentQuestions = [];
+
+
+/* =========================================================
+   QUESTION BANK
+   ========================================================= */
+
+const questionBank = {
+
+    /* =====================================================
+       PYTHON
+       ===================================================== */
+
+    "Python": {
+
+        "Python Basics": [
+            {
+                q: "Which symbol is used for a Python comment?",
+                options: ["//", "#", "/* */", "<!-- -->"],
+                answer: 1
+            },
+            {
+                q: "Which function is commonly used to display output in Python?",
+                options: ["show()", "print()", "display()", "output()"],
+                answer: 1
+            }
+        ],
+
+        "Conditions": [
+            {
+                q: "Which keyword is used to test a condition in Python?",
+                options: ["if", "when", "check", "condition"],
+                answer: 0
+            },
+            {
+                q: "Which keyword runs when the if condition is false?",
+                options: ["otherwise", "else", "default", "except"],
+                answer: 1
+            }
+        ],
+
+        "Loops": [
+            {
+                q: "Which loop is commonly used to iterate through a sequence?",
+                options: ["for", "switch", "case", "try"],
+                answer: 0
+            },
+            {
+                q: "Which keyword stops a loop immediately?",
+                options: ["stop", "exit", "break", "end"],
+                answer: 2
+            }
+        ],
+
+        "Functions": [
+            {
+                q: "What is a main purpose of a Python function?",
+                options: [
+                    "Reuse a block of code",
+                    "Delete variables",
+                    "Install Python",
+                    "Create hardware"
+                ],
+                answer: 0
+            },
+            {
+                q: "Which keyword sends a value back from a function?",
+                options: ["send", "give", "return", "back"],
+                answer: 2
+            }
+        ],
+
+        "Lists": [
+            {
+                q: "Which brackets are commonly used to create a Python list?",
+                options: ["()", "{}", "[]", "<>"],
+                answer: 2
+            },
+            {
+                q: "Can a Python list contain duplicate values?",
+                options: ["Yes", "No", "Only strings", "Only numbers"],
+                answer: 0
+            }
+        ],
+
+        "User Input": [
+            {
+                q: "Which function reads input from the user?",
+                options: ["read()", "input()", "get()", "scan()"],
+                answer: 1
+            },
+            {
+                q: "What type does input() normally return?",
+                options: ["int", "float", "str", "bool"],
+                answer: 2
+            }
+        ],
+
+        "Dictionaries": [
+            {
+                q: "A Python dictionary mainly stores data as:",
+                options: [
+                    "Rows",
+                    "Key-value pairs",
+                    "Only numbers",
+                    "Characters"
+                ],
+                answer: 1
+            },
+            {
+                q: "Which brackets are commonly used for a dictionary?",
+                options: ["[]", "()", "{}", "<>"],
+                answer: 2
+            }
+        ],
+
+        "Tuples": [
+            {
+                q: "Are Python tuples mutable?",
+                options: ["Yes", "No", "Only sometimes", "Only numbers"],
+                answer: 1
+            },
+            {
+                q: "Which brackets are commonly used to create a tuple?",
+                options: ["()", "[]", "{}", "<>"],
+                answer: 0
+            }
+        ],
+
+        "Sets": [
+            {
+                q: "What is a key feature of a Python set?",
+                options: [
+                    "Duplicate values",
+                    "Unique values",
+                    "Only strings",
+                    "Always sorted"
+                ],
+                answer: 1
+            },
+            {
+                q: "Which brackets are commonly used to create a set?",
+                options: ["{}", "[]", "()", "<>"],
+                answer: 0
+            }
+        ],
+
+        "Strings": [
+            {
+                q: "What does a Python string normally store?",
+                options: [
+                    "Text",
+                    "Only integers",
+                    "Only files",
+                    "Network packets"
+                ],
+                answer: 0
+            },
+            {
+                q: "Which method converts a string to uppercase?",
+                options: [
+                    "upper()",
+                    "uppercase()",
+                    "toUpper()",
+                    "capital()"
+                ],
+                answer: 0
+            }
+        ],
+
+        "OOP": [
+            {
+                q: "What does OOP stand for?",
+                options: [
+                    "Object-Oriented Programming",
+                    "Open Output Program",
+                    "Object Operating Process",
+                    "Online Object Protocol"
+                ],
+                answer: 0
+            },
+            {
+                q: "Which keyword is used to create a class in Python?",
+                options: ["object", "class", "new", "struct"],
+                answer: 1
+            }
+        ],
+
+        "Exception Handling": [
+            {
+                q: "Which block handles an exception in Python?",
+                options: ["catch", "except", "error", "handle"],
+                answer: 1
+            },
+            {
+                q: "Which block contains code that may cause an exception?",
+                options: ["try", "test", "check", "error"],
+                answer: 0
+            }
+        ],
+
+        "File Handling": [
+            {
+                q: "Which function is used to open a file?",
+                options: ["file()", "open()", "readfile()", "load()"],
+                answer: 1
+            },
+            {
+                q: "Which mode is commonly used to read a file?",
+                options: ["r", "w", "a", "x"],
+                answer: 0
+            }
+        ],
+
+        "Modules": [
+            {
+                q: "What is a Python module?",
+                options: [
+                    "A Python file containing reusable code",
+                    "A hardware device",
+                    "A database",
+                    "A browser"
+                ],
+                answer: 0
+            },
+            {
+                q: "Which keyword imports a module?",
+                options: ["include", "using", "import", "require"],
+                answer: 2
+            }
+        ],
+
+        "Mini Project": [
+            {
+                q: "Why are Python mini projects useful?",
+                options: [
+                    "To apply learned concepts",
+                    "To avoid coding",
+                    "To delete Python",
+                    "To remove variables"
+                ],
+                answer: 0
+            },
+            {
+                q: "Why should a project be tested?",
+                options: [
+                    "To find and fix errors",
+                    "To make it larger",
+                    "To remove comments",
+                    "To change the operating system"
+                ],
+                answer: 0
+            }
+        ]
+
+    },
+
+
+    /* =====================================================
+       WEB DEVELOPMENT
+       ===================================================== */
+
+    "Web Development": {
+
+        "HTML Basics": [
+            {
+                q: "What does HTML stand for?",
+                options: [
+                    "HyperText Markup Language",
+                    "HighText Machine Language",
+                    "Hyperlink Text Management Language",
+                    "Home Tool Markup Language"
+                ],
+                answer: 0
+            },
+            {
+                q: "Which tag creates the main heading?",
+                options: ["<h1>", "<p>", "<title>", "<head>"],
+                answer: 0
+            }
+        ],
+
+        "Headings, Paragraphs & Text": [
+            {
+                q: "Which HTML tag creates a paragraph?",
+                options: ["<para>", "<p>", "<text>", "<pg>"],
+                answer: 1
+            },
+            {
+                q: "Which HTML tag gives text strong importance?",
+                options: ["<b>", "<strong>", "<bold>", "<important>"],
+                answer: 1
+            }
+        ],
+
+        "Links & Images": [
+            {
+                q: "Which HTML element creates a hyperlink?",
+                options: ["<a>", "<link>", "<href>", "<url>"],
+                answer: 0
+            },
+            {
+                q: "Which attribute specifies an image source?",
+                options: ["href", "src", "alt", "link"],
+                answer: 1
+            }
+        ],
+
+        "Lists & Tables": [
+            {
+                q: "Which tag creates an unordered list?",
+                options: ["<ol>", "<ul>", "<li>", "<list>"],
+                answer: 1
+            },
+            {
+                q: "Which tag represents a table row?",
+                options: ["<td>", "<tr>", "<th>", "<row>"],
+                answer: 1
+            }
+        ],
+
+        "Forms": [
+            {
+                q: "Which HTML element creates a form?",
+                options: ["<input>", "<form>", "<field>", "<submit>"],
+                answer: 1
+            },
+            {
+                q: "Which input type is used for passwords?",
+                options: [
+                    'type="text"',
+                    'type="password"',
+                    'type="secret"',
+                    'type="hidden"'
+                ],
+                answer: 1
+            }
+        ],
+
+        "CSS Basics": [
+            {
+                q: "What does CSS stand for?",
+                options: [
+                    "Cascading Style Sheets",
+                    "Computer Style System",
+                    "Creative Style Syntax",
+                    "Colorful Sheet System"
+                ],
+                answer: 0
+            },
+            {
+                q: "Which CSS property changes text color?",
+                options: ["font", "text-color", "color", "foreground"],
+                answer: 2
+            }
+        ],
+
+        "Colors, Fonts & Text": [
+            {
+                q: "Which CSS property changes font size?",
+                options: [
+                    "font-size",
+                    "text-size",
+                    "size",
+                    "font-height"
+                ],
+                answer: 0
+            },
+            {
+                q: "Which CSS property changes font family?",
+                options: [
+                    "font-style",
+                    "font-family",
+                    "text-family",
+                    "typeface"
+                ],
+                answer: 1
+            }
+        ],
+
+        "Box Model": [
+            {
+                q: "Which are the main parts of the CSS box model?",
+                options: [
+                    "Content, padding, border, margin",
+                    "Header, body, footer, nav",
+                    "Font, color, text, image",
+                    "Width, height, color, font"
+                ],
+                answer: 0
+            },
+            {
+                q: "What is padding?",
+                options: [
+                    "Space inside the border",
+                    "Space outside the border",
+                    "The border itself",
+                    "Text color"
+                ],
+                answer: 0
+            }
+        ],
+
+        "Flexbox": [
+            {
+                q: "Which CSS declaration enables Flexbox?",
+                options: [
+                    "display: flex",
+                    "position: flex",
+                    "layout: flex",
+                    "flex: true"
+                ],
+                answer: 0
+            },
+            {
+                q: "Which property controls alignment along the main axis?",
+                options: [
+                    "justify-content",
+                    "align-text",
+                    "main-align",
+                    "flex-position"
+                ],
+                answer: 0
+            }
+        ],
+
+        "Responsive Design": [
+            {
+                q: "What is responsive web design?",
+                options: [
+                    "Design that adapts to different screen sizes",
+                    "Desktop-only design",
+                    "Design without CSS",
+                    "Phone-only design"
+                ],
+                answer: 0
+            },
+            {
+                q: "Which CSS feature is commonly used for responsive design?",
+                options: [
+                    "Media queries",
+                    "Python loops",
+                    "SQL queries",
+                    "HTML comments"
+                ],
+                answer: 0
+            }
+        ],
+
+        "JavaScript Basics": [
+            {
+                q: "JavaScript is commonly used to:",
+                options: [
+                    "Add interactivity to websites",
+                    "Only create databases",
+                    "Only write CSS",
+                    "Only edit images"
+                ],
+                answer: 0
+            },
+            {
+                q: "Which HTML tag is used to include JavaScript?",
+                options: [
+                    "<script>",
+                    "<js>",
+                    "<javascript>",
+                    "<code>"
+                ],
+                answer: 0
+            }
+        ],
+
+        "Variables & Data Types": [
+            {
+                q: "Which keyword declares a reassignable variable in JavaScript?",
+                options: ["let", "const", "define", "variable"],
+                answer: 0
+            },
+            {
+                q: "Which data type is used to represent text in JavaScript?",
+                options: ["String", "Boolean", "Number", "Undefined"],
+                answer: 0
+            }
+        ],
+
+        "Conditions & Loops": [
+            {
+                q: "Which keyword checks a condition in JavaScript?",
+                options: ["if", "when", "check", "test"],
+                answer: 0
+            },
+            {
+                q: "Which loop repeats while a condition is true?",
+                options: ["while", "during", "repeat", "loopif"],
+                answer: 0
+            }
+        ],
+
+        "Functions & Events": [
+            {
+                q: "What is a JavaScript function?",
+                options: [
+                    "A reusable block of code",
+                    "A database",
+                    "A CSS property",
+                    "An HTML image"
+                ],
+                answer: 0
+            },
+            {
+                q: "Which event occurs when an element is clicked?",
+                options: ["click", "press", "select", "hover"],
+                answer: 0
+            }
+        ],
+
+        "DOM & Mini Project": [
+            {
+                q: "What does DOM stand for?",
+                options: [
+                    "Document Object Model",
+                    "Data Object Method",
+                    "Digital Object Manager",
+                    "Document Output Mode"
+                ],
+                answer: 0
+            },
+            {
+                q: "Why is the DOM useful?",
+                options: [
+                    "JavaScript can interact with webpage elements",
+                    "It replaces HTML",
+                    "It replaces CSS",
+                    "It installs JavaScript"
+                ],
+                answer: 0
+            }
+        ]
+
+    },
+
+
+    /* =====================================================
+       CYBERSECURITY
+       ===================================================== */
+
+    "Cybersecurity": {
+
+        "Cybersecurity Basics": [
+            {
+                q: "What is cybersecurity mainly concerned with?",
+                options: [
+                    "Protecting systems, networks and data",
+                    "Editing videos",
+                    "Designing clothes",
+                    "Creating music"
+                ],
+                answer: 0
+            },
+            {
+                q: "What does CIA stand for in cybersecurity?",
+                options: [
+                    "Confidentiality, Integrity, Availability",
+                    "Control, Internet, Access",
+                    "Code, Identity, Authentication",
+                    "Computer, Internet, Application"
+                ],
+                answer: 0
+            }
+        ],
+
+        "Networking Fundamentals": [
+            {
+                q: "What is an IP address mainly used for?",
+                options: [
+                    "Logical network addressing",
+                    "Changing fonts",
+                    "Creating passwords",
+                    "Editing images"
+                ],
+                answer: 0
+            },
+            {
+                q: "What does a MAC address identify?",
+                options: [
+                    "A network interface",
+                    "A webpage",
+                    "A Python function",
+                    "A password"
+                ],
+                answer: 0
+            }
+        ],
+
+        "OSINT": [
+            {
+                q: "What does OSINT stand for?",
+                options: [
+                    "Open Source Intelligence",
+                    "Online Security Internet Network",
+                    "Operating System Internal Network",
+                    "Open System Internet Tool"
+                ],
+                answer: 0
+            },
+            {
+                q: "OSINT mainly uses information that is:",
+                options: [
+                    "Publicly available",
+                    "Always secret",
+                    "Only stored offline",
+                    "Only inside RAM"
+                ],
+                answer: 0
+            }
+        ],
+
+        "Reconnaissance": [
+            {
+                q: "What is reconnaissance in cybersecurity?",
+                options: [
+                    "Collecting information about a target",
+                    "Deleting evidence",
+                    "Installing games",
+                    "Changing screen settings"
+                ],
+                answer: 0
+            },
+            {
+                q: "Reconnaissance is commonly performed before:",
+                options: [
+                    "A security assessment",
+                    "Watching a movie",
+                    "Writing a document",
+                    "Formatting a keyboard"
+                ],
+                answer: 0
+            }
+        ],
+
+        "Vulnerabilities": [
+            {
+                q: "What is a vulnerability?",
+                options: [
+                    "A weakness that could create a security risk",
+                    "A strong password",
+                    "A network cable",
+                    "A backup file"
+                ],
+                answer: 0
+            },
+            {
+                q: "Why are vulnerabilities important?",
+                options: [
+                    "They can create security risks",
+                    "They increase screen size",
+                    "They improve fonts",
+                    "They create music"
+                ],
+                answer: 0
+            }
+        ],
+
+        "Linux Basics": [
+            {
+                q: "Which command lists files in Linux?",
+                options: ["ls", "show", "files", "list"],
+                answer: 0
+            },
+            {
+                q: "Which command shows the current directory?",
+                options: ["pwd", "where", "location", "current"],
+                answer: 0
+            }
+        ],
+
+        "Kali Linux & Security Tools": [
+            {
+                q: "Kali Linux is commonly used for:",
+                options: [
+                    "Security testing",
+                    "Only gaming",
+                    "Only video editing",
+                    "Only music"
+                ],
+                answer: 0
+            },
+            {
+                q: "Security tools should be used on:",
+                options: [
+                    "Authorized systems",
+                    "Random systems",
+                    "Unknown devices",
+                    "Any public server"
+                ],
+                answer: 0
+            }
+        ],
+
+        "Wireshark": [
+            {
+                q: "What does Wireshark analyze?",
+                options: [
+                    "Network packets",
+                    "Python variables",
+                    "Images only",
+                    "Word documents"
+                ],
+                answer: 0
+            },
+            {
+                q: "Which display filter shows TCP traffic?",
+                options: ["tcp", "showtcp", "tcp-only", "network"],
+                answer: 0
+            }
+        ],
+
+        "Burp Suite": [
+            {
+                q: "Burp Suite is commonly used for:",
+                options: [
+                    "Web application security testing",
+                    "Video editing",
+                    "Image compression",
+                    "Music production"
+                ],
+                answer: 0
+            },
+            {
+                q: "Which Burp Suite component can intercept web requests?",
+                options: [
+                    "Proxy",
+                    "Compiler",
+                    "Terminal",
+                    "Editor"
+                ],
+                answer: 0
+            }
+        ],
+
+        "Authentication & Password Security": [
+            {
+                q: "What is authentication?",
+                options: [
+                    "Verifying a user's identity",
+                    "Deleting a user",
+                    "Changing screen size",
+                    "Installing software"
+                ],
+                answer: 0
+            },
+            {
+                q: "Which is a good password practice?",
+                options: [
+                    "Use a strong unique password",
+                    "Use the same password everywhere",
+                    "Share passwords",
+                    "Use your name"
+                ],
+                answer: 0
+            }
+        ],
+
+        "Malware Basics": [
+            {
+                q: "What is malware?",
+                options: [
+                    "Malicious software",
+                    "Network hardware",
+                    "A programming language",
+                    "A browser"
+                ],
+                answer: 0
+            },
+            {
+                q: "Which is an example of malware?",
+                options: [
+                    "Trojan",
+                    "Router",
+                    "Keyboard",
+                    "Monitor"
+                ],
+                answer: 0
+            }
+        ],
+
+        "Phishing & Social Engineering": [
+            {
+                q: "What is phishing?",
+                options: [
+                    "A deceptive attempt to obtain information",
+                    "A network protocol",
+                    "A backup method",
+                    "A programming language"
+                ],
+                answer: 0
+            },
+            {
+                q: "Social engineering mainly targets:",
+                options: [
+                    "Human behavior and trust",
+                    "Only CPUs",
+                    "Only network cables",
+                    "Only file extensions"
+                ],
+                answer: 0
+            }
+        ],
+
+        "Firewalls & IDS/IPS": [
+            {
+                q: "What does a firewall help control?",
+                options: [
+                    "Network traffic",
+                    "Screen brightness",
+                    "Keyboard input",
+                    "File names"
+                ],
+                answer: 0
+            },
+            {
+                q: "What does IDS stand for?",
+                options: [
+                    "Intrusion Detection System",
+                    "Internet Data Service",
+                    "Internal Device Security",
+                    "Identity Detection Software"
+                ],
+                answer: 0
+            }
+        ],
+
+        "Digital Forensics Basics": [
+            {
+                q: "What is digital forensics concerned with?",
+                options: [
+                    "Examining digital evidence",
+                    "Designing websites",
+                    "Increasing network speed",
+                    "Creating games"
+                ],
+                answer: 0
+            },
+            {
+                q: "Why is chain of custody important?",
+                options: [
+                    "To document evidence handling",
+                    "To increase RAM",
+                    "To install software",
+                    "To compress images"
+                ],
+                answer: 0
+            }
+        ],
+
+        "Cybersecurity Mini Project": [
+            {
+                q: "What is a good purpose of a cybersecurity mini project?",
+                options: [
+                    "Apply cybersecurity concepts safely",
+                    "Steal passwords",
+                    "Attack random systems",
+                    "Delete logs"
+                ],
+                answer: 0
+            },
+            {
+                q: "Where should security testing be performed?",
+                options: [
+                    "On systems you own or have permission to test",
+                    "On random websites",
+                    "On unknown computers",
+                    "On any public server"
+                ],
+                answer: 0
+            }
+        ]
+
+    },
+
+
+    /* =====================================================
+       COMPUTER NETWORKS
+       ===================================================== */
+
+    "Computer Networks": {
+
+        "Introduction to Computer Networks": [
+            {
+                q: "What is a computer network?",
+                options: [
+                    "Connected devices that communicate",
+                    "A single offline file",
+                    "A programming language",
+                    "A monitor"
+                ],
+                answer: 0
+            },
+            {
+                q: "Why are networks commonly used?",
+                options: [
+                    "To share data and resources",
+                    "To increase screen brightness",
+                    "To edit photos",
+                    "To change fonts"
+                ],
+                answer: 0
+            }
+        ],
+
+        "IP Address & MAC Address": [
+            {
+                q: "What is an IP address used for?",
+                options: [
+                    "Logical network addressing",
+                    "File extensions",
+                    "Passwords",
+                    "Fonts"
+                ],
+                answer: 0
+            },
+            {
+                q: "What does a MAC address identify?",
+                options: [
+                    "A network interface",
+                    "A Python function",
+                    "A password",
+                    "A webpage title"
+                ],
+                answer: 0
+            }
+        ],
+
+        "IPv4 & IPv6": [
+            {
+                q: "How many bits are in an IPv4 address?",
+                options: ["32", "64", "128", "256"],
+                answer: 0
+            },
+            {
+                q: "How many bits are in an IPv6 address?",
+                options: ["32", "64", "128", "256"],
+                answer: 2
+            }
+        ],
+
+        "Network Devices": [
+            {
+                q: "Which device connects different networks?",
+                options: ["Router", "Hub", "Monitor", "Printer"],
+                answer: 0
+            },
+            {
+                q: "Which device forwards frames using MAC addresses?",
+                options: ["Switch", "Router", "Monitor", "Keyboard"],
+                answer: 0
+            }
+        ],
+
+        "OSI Model": [
+            {
+                q: "How many layers are in the OSI model?",
+                options: ["5", "6", "7", "8"],
+                answer: 2
+            },
+            {
+                q: "Which OSI layer is associated with IP routing?",
+                options: [
+                    "Network",
+                    "Physical",
+                    "Presentation",
+                    "Session"
+                ],
+                answer: 0
+            }
+        ],
+
+        "TCP/IP Model": [
+            {
+                q: "Which protocol is connection-oriented?",
+                options: ["TCP", "UDP", "IP", "ARP"],
+                answer: 0
+            },
+            {
+                q: "Which TCP/IP layer contains IP?",
+                options: [
+                    "Internet",
+                    "Application",
+                    "Physical",
+                    "Presentation"
+                ],
+                answer: 0
+            }
+        ],
+
+        "Ports & Protocols": [
+            {
+                q: "Which port is commonly associated with HTTPS?",
+                options: ["21", "22", "443", "25"],
+                answer: 2
+            },
+            {
+                q: "Which protocol is used for resolving domain names?",
+                options: ["DNS", "FTP", "SSH", "HTML"],
+                answer: 0
+            }
+        ],
+
+        "DNS & DHCP": [
+            {
+                q: "What does DNS commonly do?",
+                options: [
+                    "Resolves domain names to IP addresses",
+                    "Encrypts disks",
+                    "Creates passwords",
+                    "Filters images"
+                ],
+                answer: 0
+            },
+            {
+                q: "What does DHCP commonly provide?",
+                options: [
+                    "Network configuration such as IP addresses",
+                    "Web colors",
+                    "File compression",
+                    "CPU drivers"
+                ],
+                answer: 0
+            }
+        ],
+
+        "ARP & RARP": [
+            {
+                q: "What does ARP help discover?",
+                options: [
+                    "MAC address associated with an IPv4 address",
+                    "A domain password",
+                    "A file extension",
+                    "A web framework"
+                ],
+                answer: 0
+            },
+            {
+                q: "ARP is mainly used on:",
+                options: [
+                    "Local networks",
+                    "Only satellite networks",
+                    "Only offline computers",
+                    "Only keyboards"
+                ],
+                answer: 0
+            }
+        ],
+
+        "Routing & Routing Algorithms": [
+            {
+                q: "What is routing?",
+                options: [
+                    "Choosing a path for network traffic",
+                    "Changing a password",
+                    "Editing an image",
+                    "Creating HTML"
+                ],
+                answer: 0
+            },
+            {
+                q: "Which device commonly performs routing?",
+                options: ["Router", "Monitor", "Keyboard", "Printer"],
+                answer: 0
+            }
+        ],
+
+        "Wi-Fi & Wireless Networks": [
+            {
+                q: "What does SSID identify?",
+                options: [
+                    "A Wi-Fi network name",
+                    "A password hash",
+                    "A MAC address only",
+                    "A web protocol"
+                ],
+                answer: 0
+            },
+            {
+                q: "Which is a Wi-Fi security standard?",
+                options: ["WPA3", "HTTP", "FTP", "HTML"],
+                answer: 0
+            }
+        ],
+
+        "Network Security Basics": [
+            {
+                q: "What is a firewall used for?",
+                options: [
+                    "Controlling network traffic",
+                    "Creating websites",
+                    "Editing videos",
+                    "Changing usernames"
+                ],
+                answer: 0
+            },
+            {
+                q: "What does confidentiality protect?",
+                options: [
+                    "Information from unauthorized disclosure",
+                    "Screen size",
+                    "Network speed",
+                    "Keyboard input"
+                ],
+                answer: 0
+            }
+        ],
+
+        "Network Troubleshooting Commands": [
+            {
+                q: "Which command is commonly used to test connectivity?",
+                options: ["ping", "mkdir", "copy", "rename"],
+                answer: 0
+            },
+            {
+                q: "Which command can query DNS information?",
+                options: ["nslookup", "mkdir", "touch", "clear"],
+                answer: 0
+            }
+        ],
+
+        "Wireshark Network Analysis": [
+            {
+                q: "What does Wireshark capture and analyze?",
+                options: [
+                    "Network packets",
+                    "HTML tags",
+                    "Python variables",
+                    "Images"
+                ],
+                answer: 0
+            },
+            {
+                q: "Which filter displays TCP traffic?",
+                options: ["tcp", "show-tcp", "network-tcp", "tcp-only"],
+                answer: 0
+            }
+        ],
+
+        "Computer Networks Mini Project": [
+            {
+                q: "Which is suitable for a beginner network project?",
+                options: [
+                    "Network information checker",
+                    "Password stealer",
+                    "Malware generator",
+                    "Unauthorized scanner"
+                ],
+                answer: 0
+            },
+            {
+                q: "What should a network project emphasize?",
+                options: [
+                    "Safe authorized testing",
+                    "Unauthorized access",
+                    "Deleting logs",
+                    "Collecting private data"
+                ],
+                answer: 0
+            }
+        ]
+
+    }
+
+};
+
+
+/* =========================================================
+   SELECT SUBJECT
+   ========================================================= */
+
+function selectSubject(subject) {
+
+    selectedSubject = subject;
+
+    selectedTopic = "";
+
+    document
+        .getElementById("subjectPanel")
+        .classList.add("hidden");
+
+    document
+        .getElementById("quizPanel")
+        .classList.add("hidden");
+
+    document
+        .getElementById("topicPanel")
+        .classList.remove("hidden");
+
+
+    document
+        .getElementById("topicTitle")
+        .textContent =
+        "2️⃣ " + subject + " — Choose a Topic";
+
+
+    const grid =
+        document.getElementById("topicGrid");
+
+
+    grid.innerHTML = "";
+
+
+    const topics =
+        Object.keys(questionBank[subject]);
+
+
+    topics.forEach(function(topic, index) {
+
+        const button =
+            document.createElement("button");
+
+
+        button.type = "button";
+
+        button.className = "topic-btn";
+
+        button.textContent =
+            (index + 1) + ". " + topic;
+
+
+        button.onclick = function() {
+
+            startQuiz(topic);
+
+        };
+
+
+        grid.appendChild(button);
+
+    });
+
+}
+
+
+/* =========================================================
+   START QUIZ
+   ========================================================= */
+
+function startQuiz(topic) {
+
+    selectedTopic = topic;
+
+
+    currentQuestions =
+        questionBank[selectedSubject][selectedTopic];
+
+
+    document
+        .getElementById("topicPanel")
+        .classList.add("hidden");
+
+
+    document
+        .getElementById("quizPanel")
+        .classList.remove("hidden");
+
+
+    document
+        .getElementById("quizTitle")
+        .textContent =
+        "📝 " +
+        selectedSubject +
+        " → " +
+        selectedTopic;
+
+
+    const form =
+        document.getElementById("quizForm");
+
+
+    form.innerHTML = "";
+
+
+    currentQuestions.forEach(function(question, index) {
+
+        const card =
+            document.createElement("div");
+
+        card.className =
+            "question-card";
+
+
+        const heading =
+            document.createElement("h3");
+
+
+        heading.textContent =
+            (index + 1) +
+            ". " +
+            question.q;
+
+
+        card.appendChild(heading);
+
+
+        question.options.forEach(
+            function(option, optionIndex) {
+
+
+                const label =
+                    document.createElement("label");
+
+
+                label.className =
+                    "option";
+
+
+                const radio =
+                    document.createElement("input");
+
+
+                radio.type = "radio";
+
+
+                radio.name =
+                    "question" + index;
+
+
+                radio.value =
+                    optionIndex;
+
+
+                label.appendChild(radio);
+
+
+                label.appendChild(
+                    document.createTextNode(
+                        " " + option
+                    )
+                );
+
+
+                card.appendChild(label);
+
+            }
+        );
+
+
+        form.appendChild(card);
+
+    });
+
+
+    document
+        .getElementById("result")
+        .textContent =
+        "Answer all " +
+        currentQuestions.length +
+        " questions and submit the quiz.";
+
+}
+
+
+/* =========================================================
+   CHECK QUIZ
+   ========================================================= */
+
+function checkQuiz() {
+
+    if (currentQuestions.length === 0) {
+
+        alert("Please choose a topic first.");
+
+        return;
+
+    }
+
+
+    let score = 0;
+
+    let answered = 0;
+
+
+    currentQuestions.forEach(
+        function(question, index) {
+
+
+            const selected =
+                document.querySelector(
+                    'input[name="question' +
+                    index +
+                    '"]:checked'
+                );
+
+
+            if (selected) {
+
+                answered++;
+
+
+                if (
+                    Number(selected.value) ===
+                    question.answer
+                ) {
+
+                    score++;
+
+                }
+
+            }
+
+        }
+    );
+
+
+    if (
+        answered <
+        currentQuestions.length
+    ) {
+
+        document
+            .getElementById("result")
+            .textContent =
+            "⚠️ Please answer all " +
+            currentQuestions.length +
+            " questions.";
+
+        return;
+
+    }
+
+
+    /* SAVE QUIZ RESULT */
+
+    localStorage.setItem(
+        "studymateQuizScore",
+        score
+    );
+
+
+    localStorage.setItem(
+        "studymateQuizTotal",
+        currentQuestions.length
+    );
+
+
+    localStorage.setItem(
+        "studymateQuizSubject",
+        selectedSubject
+    );
+
+
+    localStorage.setItem(
+        "studymateQuizTopic",
+        selectedTopic
+    );
+
+
+    const percentage =
+        Math.round(
+            (score /
+            currentQuestions.length) *
+            100
+        );
+
+
+    document
+        .getElementById("result")
+        .innerHTML =
+
+        "🎉 Your Score: " +
+        score +
+        "/" +
+        currentQuestions.length +
+
+        " (" +
+        percentage +
+        "%)" +
+
+        "<br><small>" +
+
+        selectedSubject +
+        " → " +
+        selectedTopic +
+
+        "</small>";
+
+}
+
+
+/* =========================================================
+   BACK TO SUBJECTS
+   ========================================================= */
+
+function backToSubjects() {
+
+    document
+        .getElementById("topicPanel")
+        .classList.add("hidden");
+
+
+    document
+        .getElementById("quizPanel")
+        .classList.add("hidden");
+
+
+    document
+        .getElementById("subjectPanel")
+        .classList.remove("hidden");
+
+
+    selectedSubject = "";
+
+    selectedTopic = "";
+
+    currentQuestions = [];
+
+}
+
+
+/* =========================================================
+   BACK TO TOPICS
+   ========================================================= */
+
+function backToTopics() {
+
+    document
+        .getElementById("quizPanel")
+        .classList.add("hidden");
+
+
+    document
+        .getElementById("topicPanel")
+        .classList.remove("hidden");
+
+
+    currentQuestions = [];
+
+}
+
+
+/* =========================================================
+   TEST
+   ========================================================= */
+
+console.log("StudyMate Quiz JavaScript loaded successfully.");
+
+</script>
+
+
+</body>
+</html>

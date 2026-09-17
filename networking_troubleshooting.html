@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Network Troubleshooting | StudyMate</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            StudyMate
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/learn">Learn</a>
+            <a href="/networking">Networking</a>
+        </div>
+
+    </nav>
+
+    <main class="container">
+
+        <section class="quick-section">
+
+            <h1>🔧 Network Troubleshooting Commands</h1>
+
+            <p class="description">
+                Learn basic commands used to check and
+                troubleshoot network connectivity.
+            </p>
+
+            <div class="card">
+
+                <h2>📡 1. ping</h2>
+
+                <p>
+                    The ping command checks whether a device or
+                    host is reachable over a network.
+                </p>
+
+                <pre>
+ping google.com
+                </pre>
+
+                <p>
+                    It can also show response time.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h2>💻 2. ipconfig</h2>
+
+                <p>
+                    On Windows, <b>ipconfig</b> displays network
+                    configuration information.
+                </p>
+
+                <pre>
+ipconfig
+                </pre>
+
+                <p>
+                    It can show information such as IP address,
+                    subnet mask and default gateway.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h2>🌐 3. ifconfig / ip</h2>
+
+                <p>
+                    Linux systems commonly use the <b>ip</b>
+                    command to view network configuration.
+                </p>
+
+                <pre>
+ip addr
+                </pre>
+
+            </div>
+
+            <div class="card">
+
+                <h2>🛣️ 4. tracert / traceroute</h2>
+
+                <p>
+                    These commands help show the path packets
+                    take toward a destination.
+                </p>
+
+                <p>
+                    Windows:
+                </p>
+
+                <pre>
+tracert google.com
+                </pre>
+
+                <p>
+                    Linux:
+                </p>
+
+                <pre>
+traceroute google.com
+                </pre>
+
+            </div>
+
+            <div class="card">
+
+                <h2>🔎 5. nslookup</h2>
+
+                <p>
+                    nslookup can be used to query DNS information
+                    and check how domain names resolve.
+                </p>
+
+                <pre>
+nslookup google.com
+                </pre>
+
+            </div>
+
+            <div class="card">
+
+                <h2>🧪 Basic Troubleshooting Process</h2>
+
+                <p>
+                    If Internet is not working:
+                </p>
+
+                <p>1️⃣ Check Wi-Fi or cable connection</p>
+                <p>2️⃣ Check IP configuration</p>
+                <p>3️⃣ Ping the default gateway</p>
+                <p>4️⃣ Ping a known external host</p>
+                <p>5️⃣ Check DNS using nslookup</p>
+
+            </div>
+
+            <div class="card">
+
+                <h2>📝 Key Points</h2>
+
+                <p>• ping → checks connectivity</p>
+                <p>• ipconfig → Windows network configuration</p>
+                <p>• ip addr → Linux network configuration</p>
+                <p>• tracert/traceroute → shows network path</p>
+                <p>• nslookup → checks DNS resolution</p>
+
+            </div>
+
+            <br>
+
+            <a href="/networking" class="card-button">
+                ← Back to Networking
+            </a>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Student Learning Assistant © 2026</p>
+    </footer>
+
+</body>
+
+</html>

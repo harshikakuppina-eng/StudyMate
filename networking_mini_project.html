@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Computer Networks Mini Project | StudyMate</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            StudyMate
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/learn">Learn</a>
+            <a href="/networking">Networking</a>
+        </div>
+
+    </nav>
+
+    <main class="container">
+
+        <section class="quick-section">
+
+            <h1>🧪 Computer Networks Mini Project</h1>
+
+            <p class="description">
+                Apply the networking concepts you learned
+                through a simple Network Information Checker.
+            </p>
+
+            <div class="card">
+
+                <h2>🎯 Project Objective</h2>
+
+                <p>
+                    The goal of this mini project is to understand
+                    basic network information such as IP address,
+                    hostname and browser information.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h2>💻 Network Information Checker</h2>
+
+                <p>
+                    Click the button below to display basic
+                    information available from your browser.
+                </p>
+
+                <button class="card-button" onclick="showInfo()">
+                    Check Network Information
+                </button>
+
+                <div id="result" style="margin-top:20px;"></div>
+
+            </div>
+
+            <div class="card">
+
+                <h2>📚 Concepts Used</h2>
+
+                <p>✔ IP Address</p>
+                <p>✔ Hostname</p>
+                <p>✔ Browser information</p>
+                <p>✔ Client-server communication</p>
+                <p>✔ Network basics</p>
+
+            </div>
+
+            <div class="card">
+
+                <h2>🛡️ Security Note</h2>
+
+                <p>
+                    This project is only for educational purposes.
+                    It does not perform scanning or attack any
+                    external system.
+                </p>
+
+                <p>
+                    Always perform security testing only on systems
+                    you own or have explicit permission to test.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h2>📝 What You Learned</h2>
+
+                <p>
+                    After completing this project, you should have
+                    a basic understanding of network information,
+                    IP addressing, browser-server communication
+                    and network troubleshooting concepts.
+                </p>
+
+            </div>
+
+            <br>
+
+            <a href="/networking" class="card-button">
+                ← Back to Networking
+            </a>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Student Learning Assistant © 2026</p>
+    </footer>
+
+
+    <script>
+
+        function showInfo() {
+
+            const result = document.getElementById("result");
+
+            const browser = navigator.userAgent;
+
+            const language = navigator.language;
+
+            const online = navigator.onLine;
+
+            result.innerHTML = `
+                <div class="card">
+                    <h3>📊 Network Information</h3>
+
+                    <p>
+                        <b>Online Status:</b>
+                        ${online ? "Online ✅" : "Offline ❌"}
+                    </p>
+
+                    <p>
+                        <b>Browser:</b>
+                        ${browser}
+                    </p>
+
+                    <p>
+                        <b>Language:</b>
+                        ${language}
+                    </p>
+
+                </div>
+            `;
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cybersecurity Mini Project | StudyMate</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            StudyMate
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/learn">Learn</a>
+            <a href="/cybersecurity">Cybersecurity</a>
+        </div>
+
+    </nav>
+
+
+    <main class="container">
+
+        <section class="quick-section">
+
+            <h1>🧪 Cybersecurity Mini Project</h1>
+
+            <p class="description">
+                Build a simple security checker and understand
+                how basic security checks work.
+            </p>
+
+
+            <div class="card">
+
+                <h2>🔐 Basic Security Checker</h2>
+
+                <p>
+                    Enter a website URL below. This mini project
+                    performs simple educational checks on the URL.
+                </p>
+
+                <input
+                    type="text"
+                    id="website"
+                    placeholder="Example: https://example.com"
+                    style="
+                        width: 90%;
+                        padding: 12px;
+                        margin: 15px 0;
+                        border-radius: 8px;
+                        border: 1px solid #ccc;
+                    "
+                >
+
+                <br>
+
+                <button
+                    class="card-button"
+                    onclick="checkSecurity()">
+                    Check Security
+                </button>
+
+
+                <div id="result" style="margin-top: 20px;"></div>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>📚 What This Project Teaches</h2>
+
+                <p>✔ URL validation</p>
+                <p>✔ HTTP and HTTPS</p>
+                <p>✔ Basic security concepts</p>
+                <p>✔ Risk identification</p>
+                <p>✔ Security reporting</p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>🛡️ Security Rules</h2>
+
+                <p>
+                    Always test only websites and systems that
+                    you own or have explicit permission to test.
+                </p>
+
+                <p>
+                    Never use security tools against someone else's
+                    website without authorization.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>🎯 Mini Project Example</h2>
+
+                <p>
+                    If the user enters:
+                </p>
+
+                <p>
+                    <strong>http://example.com</strong>
+                </p>
+
+                <p>
+                    The project can identify that the website is
+                    using HTTP instead of HTTPS.
+                </p>
+
+                <p>
+                    HTTPS provides encrypted communication between
+                    the browser and the website.
+                </p>
+
+            </div>
+
+
+            <br>
+
+            <a href="/cybersecurity" class="card-button">
+                ← Back to Cybersecurity
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            Student Learning Assistant © 2026
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        function checkSecurity() {
+
+            const website =
+                document.getElementById("website").value.trim();
+
+            const result =
+                document.getElementById("result");
+
+
+            if (website === "") {
+
+                result.innerHTML =
+                    "<p>Please enter a website URL.</p>";
+
+                return;
+            }
+
+
+            if (
+                !website.startsWith("http://") &&
+                !website.startsWith("https://")
+            ) {
+
+                result.innerHTML =
+                    "<p>⚠️ Please enter a valid URL starting with http:// or https://</p>";
+
+                return;
+            }
+
+
+            if (website.startsWith("https://")) {
+
+                result.innerHTML = `
+                    <div class="card">
+
+                        <h3>✅ Basic Check Completed</h3>
+
+                        <p>
+                            HTTPS detected.
+                        </p>
+
+                        <p>
+                            🔐 The connection is configured to use
+                            encrypted HTTPS communication.
+                        </p>
+
+                        <p>
+                            <strong>Result:</strong> HTTPS detected
+                        </p>
+
+                    </div>
+                `;
+
+            } else {
+
+                result.innerHTML = `
+                    <div class="card">
+
+                        <h3>⚠️ Basic Check Completed</h3>
+
+                        <p>
+                            HTTP detected.
+                        </p>
+
+                        <p>
+                            The URL does not use HTTPS.
+                        </p>
+
+                        <p>
+                            <strong>Result:</strong> HTTPS not detected
+                        </p>
+
+                    </div>
+                `;
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

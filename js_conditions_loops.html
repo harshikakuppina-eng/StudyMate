@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Conditions & Loops | StudyMate</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">StudyMate</div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/learn">Learn</a>
+        </div>
+    </nav>
+
+    <main class="container">
+
+        <section class="quick-section">
+
+            <h1>Conditions & Loops 🔄</h1>
+
+            <p class="description">
+                Learn how JavaScript makes decisions and repeats tasks.
+            </p>
+
+            <div class="card">
+
+                <h2>1. What are Conditions?</h2>
+
+                <p>
+                    Conditions are used to make decisions in a program.
+                    JavaScript commonly uses <b>if</b>, <b>else if</b>,
+                    and <b>else</b>.
+                </p>
+
+                <h2>2. if Statement</h2>
+
+                <p>
+                    The <b>if</b> statement runs code when a condition is true.
+                </p>
+
+                <pre><code>
+let age = 18;
+
+if (age >= 18) {
+    console.log("You are eligible to vote.");
+}
+                </code></pre>
+
+                <h2>3. if...else</h2>
+
+                <p>
+                    <b>else</b> runs when the if condition is false.
+                </p>
+
+                <pre><code>
+let age = 16;
+
+if (age >= 18) {
+    console.log("Eligible");
+} else {
+    console.log("Not eligible");
+}
+                </code></pre>
+
+                <h2>4. else if</h2>
+
+                <p>
+                    We use <b>else if</b> when we have multiple conditions.
+                </p>
+
+                <pre><code>
+let marks = 75;
+
+if (marks >= 90) {
+    console.log("Grade A");
+} else if (marks >= 60) {
+    console.log("Grade B");
+} else {
+    console.log("Grade C");
+}
+                </code></pre>
+
+                <h2>5. What is a Loop?</h2>
+
+                <p>
+                    A loop is used to repeat a block of code multiple times.
+                </p>
+
+                <h2>6. for Loop</h2>
+
+                <p>
+                    A <b>for loop</b> is commonly used when we know
+                    how many times we want to repeat something.
+                </p>
+
+                <pre><code>
+for (let i = 1; i <= 5; i++) {
+    console.log(i);
+}
+                </code></pre>
+
+                <p>Output:</p>
+
+                <pre><code>
+1
+2
+3
+4
+5
+                </code></pre>
+
+                <h2>7. while Loop</h2>
+
+                <p>
+                    A <b>while loop</b> continues as long as the condition
+                    is true.
+                </p>
+
+                <pre><code>
+let i = 1;
+
+while (i <= 5) {
+    console.log(i);
+    i++;
+}
+                </code></pre>
+
+                <h2>8. Real-Life Example 💡</h2>
+
+                <p>
+                    Imagine checking students' marks one by one.
+                    A condition decides their grade, while a loop
+                    can repeat the process for many students.
+                </p>
+
+                <h2>Quick Summary 🧠</h2>
+
+                <ul>
+                    <li><b>if</b> → checks a condition</li>
+                    <li><b>else</b> → runs when the condition is false</li>
+                    <li><b>else if</b> → checks another condition</li>
+                    <li><b>for</b> → repeats code a fixed number of times</li>
+                    <li><b>while</b> → repeats while a condition is true</li>
+                </ul>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Student Learning Assistant © 2026</p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Modules & Packages | StudyMate</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+
+        <div class="logo">StudyMate</div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/learn">Learn</a>
+            <a href="/python">Python</a>
+        </div>
+
+    </nav>
+
+
+    <main class="container">
+
+        <!-- Heading -->
+        <section class="quick-section">
+
+            <h1>Modules & Packages 📦</h1>
+
+            <p class="description">
+                Learn how to reuse Python code using modules and packages.
+            </p>
+
+
+            <!-- What is Module -->
+            <div class="topic-content">
+
+                <h2>1. What is a Module?</h2>
+
+                <p>
+                    A module is a Python file containing code such as
+                    functions, variables and classes.
+                </p>
+
+                <p>
+                    Modules help us reuse code instead of writing the
+                    same code again and again.
+                </p>
+
+            </div>
+
+
+            <!-- Import -->
+            <div class="topic-content">
+
+                <h2>2. import</h2>
+
+                <p>
+                    We use <b>import</b> to use a module in our Python program.
+                </p>
+
+                <pre><code>import math
+
+print(math.sqrt(25))</code></pre>
+
+                <p>
+                    Output:
+                </p>
+
+                <pre><code>5.0</code></pre>
+
+            </div>
+
+
+            <!-- From import -->
+            <div class="topic-content">
+
+                <h2>3. from ... import</h2>
+
+                <p>
+                    We can import a specific function from a module.
+                </p>
+
+                <pre><code>from math import sqrt
+
+print(sqrt(36))</code></pre>
+
+                <p>
+                    Output:
+                </p>
+
+                <pre><code>6.0</code></pre>
+
+            </div>
+
+
+            <!-- Common modules -->
+            <div class="topic-content">
+
+                <h2>4. Common Python Modules</h2>
+
+                <ul>
+                    <li><b>math</b> → Mathematical operations</li>
+                    <li><b>random</b> → Generate random values</li>
+                    <li><b>datetime</b> → Work with date and time</li>
+                    <li><b>os</b> → Work with operating-system features</li>
+                </ul>
+
+            </div>
+
+
+            <!-- Random -->
+            <div class="topic-content">
+
+                <h2>5. random Module</h2>
+
+                <p>
+                    The random module is used to generate random values.
+                </p>
+
+                <pre><code>import random
+
+number = random.randint(1, 10)
+
+print(number)</code></pre>
+
+                <p>
+                    Every time you run the program, a different number
+                    between 1 and 10 may be generated.
+                </p>
+
+            </div>
+
+
+            <!-- Package -->
+            <div class="topic-content">
+
+                <h2>6. What is a Package?</h2>
+
+                <p>
+                    A package is a collection of related Python modules
+                    stored together.
+                </p>
+
+                <p>
+                    Simple ga cheppali ante:
+                </p>
+
+                <ul>
+                    <li>Module → One Python file</li>
+                    <li>Package → Collection of modules</li>
+                </ul>
+
+            </div>
+
+
+            <!-- Cybersecurity example -->
+            <div class="topic-content">
+
+                <h2>7. Cybersecurity Example 🔐</h2>
+
+                <p>
+                    Cybersecurity programs often use Python modules for
+                    random values, hashing, networking and system tasks.
+                </p>
+
+                <pre><code>import hashlib
+
+text = "password123"
+
+hashed = hashlib.sha256(
+    text.encode()
+).hexdigest()
+
+print(hashed)</code></pre>
+
+                <p>
+                    Here, the <b>hashlib</b> module is used to create a
+                    SHA-256 hash.
+                </p>
+
+            </div>
+
+
+            <!-- Important points -->
+            <div class="topic-content">
+
+                <h2>8. Important Points ⭐</h2>
+
+                <ul>
+                    <li>Module is a Python file.</li>
+                    <li><b>import</b> is used to use a module.</li>
+                    <li><b>from ... import</b> imports specific items.</li>
+                    <li>Package contains multiple related modules.</li>
+                    <li>Modules help us reuse code.</li>
+                </ul>
+
+            </div>
+
+
+            <!-- Try yourself -->
+            <div class="topic-content">
+
+                <h2>🧪 Try it Yourself</h2>
+
+                <p>
+                    Write Python code and click <b>Run Code</b>.
+                </p>
+
+                <p id="pythonStatus">
+                    🟡 Loading Python...
+                </p>
+
+                <textarea id="codeEditor" rows="15">import math
+
+number = 49
+
+print("Square root:", math.sqrt(number))</textarea>
+
+                <br><br>
+
+                <button id="runCodeButton" class="card-button" disabled>
+                    ▶ Run Code
+                </button>
+
+                <h3>Output:</h3>
+
+                <pre id="outputBox">Loading...</pre>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>Student Learning Assistant © 2026</p>
+    </footer>
+
+
+    <!-- Python Runner -->
+    <script type="module">
+
+        import {
+            loadPyodide
+        } from "https://cdn.jsdelivr.net/pyodide/v0.28.2/full/pyodide.mjs";
+
+
+        let pyodide;
+
+        const runButton =
+            document.getElementById("runCodeButton");
+
+        const codeEditor =
+            document.getElementById("codeEditor");
+
+        const outputBox =
+            document.getElementById("outputBox");
+
+        const status =
+            document.getElementById("pythonStatus");
+
+
+        async function startPython() {
+
+            try {
+
+                status.textContent =
+                    "🟡 Loading Python...";
+
+                pyodide = await loadPyodide();
+
+                status.textContent =
+                    "🟢 Python is ready!";
+
+                outputBox.textContent =
+                    "Ready! Write Python code and click Run Code.";
+
+                runButton.disabled = false;
+
+            } catch (error) {
+
+                status.textContent =
+                    "🔴 Python failed to load.";
+
+                outputBox.textContent =
+                    error;
+
+                console.error(error);
+            }
+        }
+
+
+        runButton.addEventListener(
+            "click",
+            async function () {
+
+                const code = codeEditor.value;
+
+                if (code.trim() === "") {
+
+                    outputBox.textContent =
+                        "Please write some Python code.";
+
+                    return;
+                }
+
+
+                runButton.disabled = true;
+
+                runButton.textContent =
+                    "⏳ Running...";
+
+
+                try {
+
+                    await pyodide.runPythonAsync(`
+import sys
+from io import StringIO
+
+_output = StringIO()
+
+sys.stdout = _output
+sys.stderr = _output
+                    `);
+
+
+                    await pyodide.runPythonAsync(code);
+
+
+                    const result =
+                        await pyodide.runPythonAsync(
+                            "_output.getvalue()"
+                        );
+
+
+                    if (result.trim() === "") {
+
+                        outputBox.textContent =
+                            "Code executed successfully.";
+
+                    } else {
+
+                        outputBox.textContent =
+                            result;
+                    }
+
+
+                } catch (error) {
+
+                    outputBox.textContent =
+                        "❌ Error:\n\n" + error;
+                }
+
+
+                runButton.disabled = false;
+
+                runButton.textContent =
+                    "▶ Run Code";
+
+            }
+        );
+
+
+        startPython();
+
+    </script>
+
+</body>
+
+</html>

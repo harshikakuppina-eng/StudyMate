@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Python Mini Project | StudyMate</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">StudyMate</div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/learn">Learn</a>
+            <a href="/python">Python</a>
+        </div>
+    </nav>
+
+
+    <main class="container">
+
+        <section class="quick-section">
+
+            <h1>Python Mini Project 🚀</h1>
+
+            <p class="description">
+                Build a simple Student Grade Manager using Python.
+            </p>
+
+
+            <div class="topic-content">
+
+                <h2>🎓 Student Grade Manager</h2>
+
+                <p>
+                    In this project, we will use the Python concepts
+                    we learned in the previous topics.
+                </p>
+
+                <ul>
+                    <li>Variables</li>
+                    <li>User Input</li>
+                    <li>Lists</li>
+                    <li>Conditions</li>
+                    <li>Functions</li>
+                    <li>Loops</li>
+                    <li>Calculations</li>
+                </ul>
+
+            </div>
+
+
+            <div class="topic-content">
+
+                <h2>📌 How the Project Works</h2>
+
+                <ol>
+                    <li>Enter student's name.</li>
+                    <li>Enter marks for 3 subjects.</li>
+                    <li>Calculate total marks.</li>
+                    <li>Calculate average.</li>
+                    <li>Find the grade.</li>
+                    <li>Display Pass or Fail.</li>
+                </ol>
+
+            </div>
+
+
+            <div class="topic-content">
+
+                <h2>💡 Grade System</h2>
+
+                <ul>
+                    <li>90 and above → A</li>
+                    <li>80–89 → B</li>
+                    <li>70–79 → C</li>
+                    <li>60–69 → D</li>
+                    <li>Below 60 → F</li>
+                </ul>
+
+            </div>
+
+
+            <div class="topic-content">
+
+                <h2>🧪 Try it Yourself</h2>
+
+                <p id="pythonStatus">
+                    🟡 Loading Python...
+                </p>
+
+                <textarea id="codeEditor" rows="20">def calculate_grade(average):
+
+    if average >= 90:
+        return "A"
+    elif average >= 80:
+        return "B"
+    elif average >= 70:
+        return "C"
+    elif average >= 60:
+        return "D"
+    else:
+        return "F"
+
+
+name = "Harshika"
+
+marks = [85, 90, 80]
+
+total = sum(marks)
+
+average = total / len(marks)
+
+grade = calculate_grade(average)
+
+
+print("Student Grade Manager")
+print("---------------------")
+print("Name:", name)
+print("Marks:", marks)
+print("Total:", total)
+print("Average:", average)
+print("Grade:", grade)
+
+if average >= 40:
+    print("Result: PASS")
+else:
+    print("Result: FAIL")</textarea>
+
+                <br><br>
+
+                <button id="runCodeButton"
+                        class="card-button"
+                        disabled>
+                    ▶ Run Code
+                </button>
+
+                <h3>Output:</h3>
+
+                <pre id="outputBox">Loading...</pre>
+
+            </div>
+
+
+            <div class="topic-content">
+
+                <h2>⭐ What You Learned</h2>
+
+                <p>
+                    Congratulations! 🎉
+                    You have completed the basic Python learning section.
+                </p>
+
+                <p>
+                    You used functions, lists, conditions,
+                    variables and calculations together in one project.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>Student Learning Assistant © 2026</p>
+    </footer>
+
+
+    <script type="module">
+
+        import {
+            loadPyodide
+        } from "https://cdn.jsdelivr.net/pyodide/v0.28.2/full/pyodide.mjs";
+
+
+        let pyodide;
+
+        const runButton =
+            document.getElementById("runCodeButton");
+
+        const codeEditor =
+            document.getElementById("codeEditor");
+
+        const outputBox =
+            document.getElementById("outputBox");
+
+        const status =
+            document.getElementById("pythonStatus");
+
+
+        async function startPython() {
+
+            try {
+
+                status.textContent =
+                    "🟡 Loading Python...";
+
+                pyodide = await loadPyodide();
+
+                status.textContent =
+                    "🟢 Python is ready!";
+
+                outputBox.textContent =
+                    "Ready! Write Python code and click Run Code.";
+
+                runButton.disabled = false;
+
+            } catch (error) {
+
+                status.textContent =
+                    "🔴 Python failed to load.";
+
+                outputBox.textContent =
+                    error;
+
+                console.error(error);
+            }
+        }
+
+
+        runButton.addEventListener(
+            "click",
+            async function () {
+
+                const code = codeEditor.value;
+
+                if (code.trim() === "") {
+
+                    outputBox.textContent =
+                        "Please write some Python code.";
+
+                    return;
+                }
+
+
+                runButton.disabled = true;
+
+                runButton.textContent =
+                    "⏳ Running...";
+
+
+                try {
+
+                    await pyodide.runPythonAsync(`
+import sys
+from io import StringIO
+
+_output = StringIO()
+
+sys.stdout = _output
+sys.stderr = _output
+                    `);
+
+
+                    await pyodide.runPythonAsync(code);
+
+
+                    const result =
+                        await pyodide.runPythonAsync(
+                            "_output.getvalue()"
+                        );
+
+
+                    if (result.trim() === "") {
+
+                        outputBox.textContent =
+                            "Code executed successfully.";
+
+                    } else {
+
+                        outputBox.textContent =
+                            result;
+                    }
+
+
+                } catch (error) {
+
+                    outputBox.textContent =
+                        "❌ Error:\n\n" + error;
+                }
+
+
+                runButton.disabled = false;
+
+                runButton.textContent =
+                    "▶ Run Code";
+
+            }
+        );
+
+
+        startPython();
+
+    </script>
+
+</body>
+
+</html>

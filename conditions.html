@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Conditions | StudyMate</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <div class="logo">
+            StudyMate
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/learn">Learn</a>
+            <a href="/python">Python</a>
+            <a href="/python-basics">Basics</a>
+        </div>
+
+    </nav>
+
+
+    <main class="container">
+
+        <!-- HEADER -->
+        <section class="welcome">
+
+            <div>
+
+                <p class="small-text">
+                    PYTHON PROGRAMMING
+                </p>
+
+                <h1>
+                    Python Conditions 🤔
+                </h1>
+
+                <p class="description">
+                    Learn how Python makes decisions using
+                    if, elif and else.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- IF -->
+        <section class="quick-section">
+
+            <h2>1. if Statement</h2>
+
+            <div class="progress-card">
+
+                <h3>What is if?</h3>
+
+                <p>
+                    The <b>if</b> statement is used when we want
+                    Python to perform an action only when a
+                    condition is true.
+                </p>
+
+                <pre>
+age = 18
+
+if age >= 18:
+    print("You are an adult")
+                </pre>
+
+                <p>
+                    Here, Python checks whether age is greater
+                    than or equal to 18.
+                </p>
+
+            </div>
+
+
+            <!-- IF ELSE -->
+            <div class="progress-card">
+
+                <h2>2. if / else</h2>
+
+                <p>
+                    <b>else</b> runs when the if condition is false.
+                </p>
+
+                <pre>
+age = 16
+
+if age >= 18:
+    print("You are an adult")
+else:
+    print("You are not an adult")
+                </pre>
+
+            </div>
+
+
+            <!-- ELIF -->
+            <div class="progress-card">
+
+                <h2>3. elif</h2>
+
+                <p>
+                    <b>elif</b> means "else if".
+                    It is used when we have multiple conditions.
+                </p>
+
+                <pre>
+marks = 75
+
+if marks >= 90:
+    print("A Grade")
+elif marks >= 60:
+    print("B Grade")
+else:
+    print("C Grade")
+                </pre>
+
+            </div>
+
+
+            <!-- COMPARISON -->
+            <div class="progress-card">
+
+                <h2>4. Comparison Operators</h2>
+
+                <p>
+                    Comparison operators compare two values.
+                </p>
+
+                <ul>
+
+                    <li><b>==</b> → Equal to</li>
+                    <li><b>!=</b> → Not equal to</li>
+                    <li><b>&gt;</b> → Greater than</li>
+                    <li><b>&lt;</b> → Less than</li>
+                    <li><b>&gt;=</b> → Greater than or equal to</li>
+                    <li><b>&lt;=</b> → Less than or equal to</li>
+
+                </ul>
+
+                <pre>
+a = 10
+b = 20
+
+print(a == b)
+print(a < b)
+                </pre>
+
+            </div>
+
+
+            <!-- LOGICAL OPERATORS -->
+            <div class="progress-card">
+
+                <h2>5. Logical Operators</h2>
+
+                <p>
+                    Logical operators combine multiple conditions.
+                </p>
+
+                <ul>
+
+                    <li><b>and</b> → Both conditions must be true</li>
+                    <li><b>or</b> → At least one condition must be true</li>
+                    <li><b>not</b> → Reverses the result</li>
+
+                </ul>
+
+                <pre>
+age = 20
+student = True
+
+if age >= 18 and student:
+    print("Adult student")
+                </pre>
+
+            </div>
+
+
+            <!-- REAL LIFE EXAMPLE -->
+            <div class="progress-card">
+
+                <h2>6. Real-Life Example 🎓</h2>
+
+                <p>
+                    Conditions can be used to check whether
+                    a student passed an exam.
+                </p>
+
+                <pre>
+marks = 65
+
+if marks >= 40:
+    print("You passed!")
+else:
+    print("You failed!")
+                </pre>
+
+            </div>
+
+
+            <!-- PRACTICE -->
+            <div class="progress-card">
+
+                <h2>Try it Yourself 💻</h2>
+
+                <p>
+                    Write Python code and run it below.
+                </p>
+
+                <p id="pythonStatus">
+                    🟡 Loading Python...
+                </p>
+
+                <textarea
+                    id="codeEditor"
+                    rows="15"
+                    placeholder="Write your Python code here...">age = 18
+
+if age >= 18:
+    print("You are eligible")
+else:
+    print("You are not eligible")</textarea>
+
+                <br>
+                <br>
+
+                <button
+                    class="card-button"
+                    id="runCodeButton"
+                    disabled>
+                    ▶ Run Code
+                </button>
+
+                <h3>Output:</h3>
+
+                <pre
+                    id="outputBox"
+                    style="
+                        min-height: 100px;
+                        padding: 15px;
+                        white-space: pre-wrap;
+                        background: #f5f5f5;
+                        border-radius: 10px;
+                    ">Python is loading...</pre>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            Student Learning Assistant © 2026
+        </p>
+
+    </footer>
+
+
+    <!-- PYTHON ENGINE -->
+    <script type="module">
+
+        import {
+            loadPyodide
+        } from "https://cdn.jsdelivr.net/pyodide/v0.28.2/full/pyodide.mjs";
+
+
+        let pyodide;
+
+
+        const runButton =
+            document.getElementById("runCodeButton");
+
+        const codeEditor =
+            document.getElementById("codeEditor");
+
+        const outputBox =
+            document.getElementById("outputBox");
+
+        const status =
+            document.getElementById("pythonStatus");
+
+
+        // Load Python
+        async function startPython() {
+
+            try {
+
+                status.textContent =
+                    "🟡 Loading Python...";
+
+                pyodide =
+                    await loadPyodide();
+
+                status.textContent =
+                    "🟢 Python is ready!";
+
+                outputBox.textContent =
+                    "Ready! Write Python code and click Run Code.";
+
+                runButton.disabled = false;
+
+            } catch (error) {
+
+                status.textContent =
+                    "🔴 Python failed to load.";
+
+                outputBox.textContent =
+                    error;
+
+            }
+        }
+
+
+        // Run Python
+        runButton.addEventListener(
+            "click",
+            async function () {
+
+                const code =
+                    codeEditor.value;
+
+
+                if (code.trim() === "") {
+
+                    outputBox.textContent =
+                        "Please write some Python code.";
+
+                    return;
+
+                }
+
+
+                runButton.disabled = true;
+
+                runButton.textContent =
+                    "⏳ Running...";
+
+
+                try {
+
+                    // Capture output
+                    await pyodide.runPythonAsync(`
+
+import sys
+
+from io import StringIO
+
+_output = StringIO()
+
+sys.stdout = _output
+
+sys.stderr = _output
+
+                    `);
+
+
+                    // Run user's Python code
+                    await pyodide.runPythonAsync(code);
+
+
+                    // Get output
+                    const result =
+                        await pyodide.runPythonAsync(
+                            "_output.getvalue()"
+                        );
+
+
+                    if (result.trim() === "") {
+
+                        outputBox.textContent =
+                            "Code executed successfully.";
+
+                    } else {
+
+                        outputBox.textContent =
+                            result;
+
+                    }
+
+                } catch (error) {
+
+                    outputBox.textContent =
+                        "❌ Error:\n\n" + error;
+
+                }
+
+
+                runButton.disabled = false;
+
+                runButton.textContent =
+                    "▶ Run Code";
+
+            }
+        );
+
+
+        startPython();
+
+    </script>
+
+</body>
+
+</html>

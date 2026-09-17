@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudyMate | Student Learning Assistant</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+
+        <div class="logo">
+            StudyMate
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/learn">Learn</a>
+            <a href="/planner">Planner</a>
+            <a href="/progress">Progress</a>
+            <a href="/quiz">Quiz</a>
+        </div>
+
+    </nav>
+
+
+    <!-- Main -->
+    <main class="container">
+
+
+        <!-- Premium Hero Section -->
+        <section class="premium-hero">
+
+            <div class="hero-content">
+
+                <p class="hero-label">
+                    STUDENT LEARNING ASSISTANT
+                </p>
+
+                <h1>
+                    Learn smarter,
+                    <span>not harder.</span> 🚀
+                </h1>
+
+                <p class="hero-description">
+                    Learn programming, explore cybersecurity,
+                    improve your networking skills and track
+                    your learning journey — all in one place.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="/learn" class="premium-button">
+                        Start Learning →
+                    </a>
+
+                    <a href="#quick-access" class="secondary-button">
+                        Explore Dashboard
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Decorative Learning Card -->
+            <div class="hero-decoration">
+
+                <div class="floating-card card-one">
+                    💻
+                    <strong>Learn</strong>
+                </div>
+
+                <div class="floating-card card-two">
+                    🔐
+                    <strong>Cybersecurity</strong>
+                </div>
+
+                <div class="floating-card card-three">
+                    🌐
+                    <strong>Networking</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Quick Access -->
+        <section class="quick-section" id="quick-access">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="section-label">
+                        YOUR DASHBOARD
+                    </p>
+
+                    <h2>
+                        Quick Access
+                    </h2>
+                </div>
+
+                <p class="section-description">
+                    Everything you need to continue learning.
+                </p>
+
+            </div>
+
+
+            <div class="cards">
+
+
+                <!-- Learn -->
+                <div class="card premium-card">
+
+                    <div class="card-icon learn-icon">
+                        📚
+                    </div>
+
+                    <h3>
+                        Learn
+                    </h3>
+
+                    <p>
+                        Explore programming, web development,
+                        cybersecurity and networking lessons.
+                    </p>
+
+                    <button
+                        class="card-button"
+                        onclick="window.location.href='/learn'">
+
+                        Start Learning →
+
+                    </button>
+
+                </div>
+
+
+                <!-- Planner -->
+                <div class="card premium-card">
+
+                    <div class="card-icon planner-icon">
+                        📅
+                    </div>
+
+                    <h3>
+                        Planner
+                    </h3>
+
+                    <p>
+                        Organize your daily study tasks,
+                        goals and learning schedule.
+                    </p>
+
+                    <button onclick="window.location.href='/planner'">
+                       Planner
+                    </button>
+
+                </div>
+
+
+                <!-- Quiz -->
+                <div class="card premium-card">
+
+                    <div class="card-icon quiz-icon">
+                        🧠
+                    </div>
+
+                    <h3>
+                        Quiz
+                    </h3>
+
+                    <p>
+                        Test your knowledge with quizzes
+                        and improve your technical skills.
+                    </p>
+
+                    <button onclick="window.location.href='/quiz'">
+                       Quiz
+                    </button>
+
+                </div>
+
+
+                <!-- Progress -->
+                <div class="card premium-card">
+
+                    <div class="card-icon progress-icon">
+                        📊
+                    </div>
+
+                    <h3>
+                        Progress
+                    </h3>
+
+                    <p>
+                        Track your learning progress,
+                        activities and achievements.
+                    </p>
+
+                    <button onclick="window.location.href='/progress'">
+                        View Progress →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Today's Progress -->
+        <section class="progress-section premium-progress">
+
+            <div class="progress-header">
+
+                <div>
+
+                    <p class="section-label">
+                        KEEP GOING
+                    </p>
+
+                    <h2>
+                        Today's Progress
+                    </h2>
+
+                    <p>
+                        Complete your daily learning goal.
+                    </p>
+
+                </div>
+
+                <div class="progress-percentage">
+                    <span id="progressText">
+                        40%
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="progress-card">
+
+                <div class="progress-info">
+
+                    <div>
+                        <h3>
+                            Daily Goal 🎯
+                        </h3>
+
+                        <p>
+                            Complete 3 learning activities
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="progress-bar">
+
+                    <div
+                        class="progress-fill"
+                        id="progressFill">
+                    </div>
+
+                </div>
+
+
+                <p class="progress-message">
+                    You're making good progress! Keep going 💪
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            StudyMate © 2026
+        </p>
+
+        <p>
+            Learn • Practice • Grow 🚀
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

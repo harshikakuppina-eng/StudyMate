@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Strings | StudyMate</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            StudyMate
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/learn">Learn</a>
+            <a href="/python">Python</a>
+            <a href="/python-basics">Basics</a>
+        </div>
+
+    </nav>
+
+
+    <main class="container">
+
+        <section class="welcome">
+
+            <div>
+
+                <p class="small-text">
+                    PYTHON STRINGS
+                </p>
+
+                <h1>
+                    Python Strings 🧵
+                </h1>
+
+                <p class="description">
+                    Learn how to work with text and characters in Python.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- What is String -->
+
+        <section class="quick-section">
+
+            <h2>What is a String?</h2>
+
+            <div class="info-box">
+
+                <p>
+                    A <b>String</b> is a collection of characters or text.
+                </p>
+
+                <p>
+                    Strings are written inside quotes.
+                </p>
+
+                <pre><code>name = "Harshika"
+
+message = 'Hello World'</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- Creating Strings -->
+
+        <section class="quick-section">
+
+            <h2>1. Creating a String</h2>
+
+            <div class="info-box">
+
+                <p>
+                    We can use single quotes or double quotes.
+                </p>
+
+                <pre><code>name = "Harshika"
+
+course = 'Cybersecurity'
+
+print(name)
+print(course)</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- Indexing -->
+
+        <section class="quick-section">
+
+            <h2>2. String Indexing</h2>
+
+            <div class="info-box">
+
+                <p>
+                    Each character in a string has an index number.
+                    Index starts from <b>0</b>.
+                </p>
+
+                <pre><code>name = "Python"
+
+print(name[0])
+print(name[1])
+print(name[2])</code></pre>
+
+                <p><b>Output:</b></p>
+
+                <pre><code>P
+y
+t</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- Negative Index -->
+
+        <section class="quick-section">
+
+            <h2>3. Negative Indexing</h2>
+
+            <div class="info-box">
+
+                <p>
+                    Negative indexing starts from the end of the string.
+                </p>
+
+                <pre><code>name = "Python"
+
+print(name[-1])
+print(name[-2])</code></pre>
+
+                <p><b>Output:</b></p>
+
+                <pre><code>n
+o</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- Slicing -->
+
+        <section class="quick-section">
+
+            <h2>4. String Slicing ✂️</h2>
+
+            <div class="info-box">
+
+                <p>
+                    Slicing is used to get a part of a string.
+                </p>
+
+                <pre><code>name = "Python"
+
+print(name[0:3])</code></pre>
+
+                <p><b>Output:</b></p>
+
+                <pre><code>Pyt</code></pre>
+
+                <p>
+                    Here <b>0</b> is the starting index and
+                    <b>3</b> is the ending position.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Upper Lower -->
+
+        <section class="quick-section">
+
+            <h2>5. upper() and lower()</h2>
+
+            <div class="info-box">
+
+                <p>
+                    <b>upper()</b> converts text into uppercase.
+                </p>
+
+                <p>
+                    <b>lower()</b> converts text into lowercase.
+                </p>
+
+                <pre><code>name = "Harshika"
+
+print(name.upper())
+print(name.lower())</code></pre>
+
+                <p><b>Output:</b></p>
+
+                <pre><code>HARSHIKA
+harshika</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- Replace -->
+
+        <section class="quick-section">
+
+            <h2>6. replace()</h2>
+
+            <div class="info-box">
+
+                <p>
+                    <b>replace()</b> replaces one part of a string
+                    with another.
+                </p>
+
+                <pre><code>message = "I love Python"
+
+new_message = message.replace("Python", "Cybersecurity")
+
+print(new_message)</code></pre>
+
+                <p><b>Output:</b></p>
+
+                <pre><code>I love Cybersecurity</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- Split -->
+
+        <section class="quick-section">
+
+            <h2>7. split()</h2>
+
+            <div class="info-box">
+
+                <p>
+                    <b>split()</b> breaks a string into a list.
+                </p>
+
+                <pre><code>text = "Python Linux Networking"
+
+words = text.split()
+
+print(words)</code></pre>
+
+                <p><b>Output:</b></p>
+
+                <pre><code>['Python', 'Linux', 'Networking']</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- Length -->
+
+        <section class="quick-section">
+
+            <h2>8. len()</h2>
+
+            <div class="info-box">
+
+                <p>
+                    <b>len()</b> tells us the number of characters
+                    in a string.
+                </p>
+
+                <pre><code>name = "Harshika"
+
+print(len(name))</code></pre>
+
+                <p><b>Output:</b></p>
+
+                <pre><code>8</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- String Formatting -->
+
+        <section class="quick-section">
+
+            <h2>9. String Formatting</h2>
+
+            <div class="info-box">
+
+                <p>
+                    We can use an <b>f-string</b> to combine variables
+                    with text.
+                </p>
+
+                <pre><code>name = "Harshika"
+course = "Cybersecurity"
+
+print(f"My name is {name}")
+print(f"I am studying {course}")</code></pre>
+
+                <p><b>Output:</b></p>
+
+                <pre><code>My name is Harshika
+I am studying Cybersecurity</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- Real Life -->
+
+        <section class="quick-section">
+
+            <h2>10. Real-Life Cybersecurity Example 🔐</h2>
+
+            <div class="info-box">
+
+                <p>
+                    Strings are commonly used to store usernames,
+                    IP addresses, URLs and log messages.
+                </p>
+
+                <pre><code>username = "admin"
+ip_address = "192.168.1.10"
+
+print("Username:", username)
+print("IP Address:", ip_address)</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- Important -->
+
+        <section class="quick-section">
+
+            <h2>Important Points ⭐</h2>
+
+            <div class="info-box">
+
+                <ul>
+                    <li>Strings store text.</li>
+                    <li>Strings are written inside quotes.</li>
+                    <li>Index starts from 0.</li>
+                    <li>Negative index starts from the end.</li>
+                    <li><b>upper()</b> converts to uppercase.</li>
+                    <li><b>lower()</b> converts to lowercase.</li>
+                    <li><b>replace()</b> replaces text.</li>
+                    <li><b>split()</b> creates a list.</li>
+                    <li><b>len()</b> gives the length.</li>
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- Try Yourself -->
+
+        <section class="quick-section">
+
+            <h2>Try it Yourself 🧑‍💻</h2>
+
+            <div class="code-box">
+
+                <p id="pythonStatus">
+                    🟡 Loading Python...
+                </p>
+
+                <textarea id="codeEditor">name = "Harshika"
+course = "Cybersecurity"
+
+print("Name:", name)
+print("Course:", course)
+
+print("Uppercase:", name.upper())
+print("Name length:", len(name))</textarea>
+
+                <button
+                    id="runCodeButton"
+                    class="card-button"
+                    disabled>
+                    ▶ Run Code
+                </button>
+
+                <h3>Output:</h3>
+
+                <pre id="outputBox">Loading Python...</pre>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>Student Learning Assistant © 2026</p>
+    </footer>
+
+
+    <script type="module">
+
+        import { loadPyodide }
+        from "https://cdn.jsdelivr.net/pyodide/v0.28.2/full/pyodide.mjs";
+
+
+        let pyodide;
+
+
+        const runButton =
+            document.getElementById("runCodeButton");
+
+        const codeEditor =
+            document.getElementById("codeEditor");
+
+        const outputBox =
+            document.getElementById("outputBox");
+
+        const status =
+            document.getElementById("pythonStatus");
+
+
+        async function startPython() {
+
+            try {
+
+                status.textContent =
+                    "🟡 Loading Python...";
+
+                pyodide = await loadPyodide();
+
+                status.textContent =
+                    "🟢 Python is ready!";
+
+                outputBox.textContent =
+                    "Ready! Write Python code and click Run Code.";
+
+                runButton.disabled = false;
+
+            }
+
+            catch (error) {
+
+                status.textContent =
+                    "🔴 Python failed to load.";
+
+                outputBox.textContent =
+                    error;
+
+                console.error(error);
+
+            }
+
+        }
+
+
+        runButton.addEventListener(
+            "click",
+            async function () {
+
+                const code =
+                    codeEditor.value;
+
+
+                if (code.trim() === "") {
+
+                    outputBox.textContent =
+                        "Please write some Python code.";
+
+                    return;
+
+                }
+
+
+                runButton.disabled = true;
+
+                runButton.textContent =
+                    "⏳ Running...";
+
+
+                try {
+
+                    await pyodide.runPythonAsync(`
+import sys
+from io import StringIO
+
+_output = StringIO()
+
+sys.stdout = _output
+sys.stderr = _output
+`);
+
+
+                    await pyodide.runPythonAsync(code);
+
+
+                    const result =
+                        await pyodide.runPythonAsync(
+                            "_output.getvalue()"
+                        );
+
+
+                    if (result.trim() === "") {
+
+                        outputBox.textContent =
+                            "Code executed successfully.";
+
+                    }
+
+                    else {
+
+                        outputBox.textContent =
+                            result;
+
+                    }
+
+                }
+
+                catch (error) {
+
+                    outputBox.textContent =
+                        "❌ Error:\n\n" + error;
+
+                }
+
+
+                runButton.disabled = false;
+
+                runButton.textContent =
+                    "▶ Run Code";
+
+            }
+        );
+
+
+        startPython();
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Functions & Events | StudyMate</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">StudyMate</div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/learn">Learn</a>
+        </div>
+    </nav>
+
+    <main class="container">
+
+        <section class="quick-section">
+
+            <h1>Functions & Events ⚡</h1>
+
+            <p class="description">
+                Learn how functions organize code and how events make
+                webpages interactive.
+            </p>
+
+            <div class="card">
+
+                <h2>1. What is a Function?</h2>
+
+                <p>
+                    A function is a reusable block of code that performs
+                    a particular task.
+                </p>
+
+                <pre><code>
+function greet() {
+    console.log("Hello Harshika!");
+}
+
+greet();
+                </code></pre>
+
+                <h2>2. Function with Parameters</h2>
+
+                <p>
+                    Parameters allow us to pass information to a function.
+                </p>
+
+                <pre><code>
+function greet(name) {
+    console.log("Hello " + name);
+}
+
+greet("Harshika");
+                </code></pre>
+
+                <h2>3. Function with Return</h2>
+
+                <p>
+                    A function can return a value using the
+                    <b>return</b> keyword.
+                </p>
+
+                <pre><code>
+function add(a, b) {
+    return a + b;
+}
+
+let result = add(10, 20);
+
+console.log(result);
+                </code></pre>
+
+                <h2>4. What is an Event?</h2>
+
+                <p>
+                    An event is an action that happens on a webpage.
+                </p>
+
+                <p>Examples:</p>
+
+                <ul>
+                    <li>Clicking a button</li>
+                    <li>Typing in a textbox</li>
+                    <li>Moving the mouse</li>
+                    <li>Submitting a form</li>
+                </ul>
+
+                <h2>5. Click Event</h2>
+
+                <p>
+                    JavaScript can perform an action when a user clicks
+                    a button.
+                </p>
+
+                <pre><code>
+function showMessage() {
+    alert("Button clicked!");
+}
+                </code></pre>
+
+                <h2>6. Try It Yourself 🚀</h2>
+
+                <p>Click the button below:</p>
+
+                <button onclick="showMessage()" class="card-button">
+                    Click Me
+                </button>
+
+                <h2>Quick Summary 🧠</h2>
+
+                <ul>
+                    <li><b>Function</b> → reusable block of code</li>
+                    <li><b>Parameter</b> → information passed to a function</li>
+                    <li><b>return</b> → sends a value back</li>
+                    <li><b>Event</b> → action performed by the user/browser</li>
+                    <li><b>onclick</b> → runs code when an element is clicked</li>
+                </ul>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Student Learning Assistant © 2026</p>
+    </footer>
+
+    <script>
+        function showMessage() {
+            alert("Great! 🎉 You triggered a JavaScript event!");
+        }
+    </script>
+
+</body>
+
+</html>

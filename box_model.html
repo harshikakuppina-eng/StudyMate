@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Box Model | StudyMate</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">StudyMate</div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/learn">Learn</a>
+        </div>
+    </nav>
+
+    <main class="container">
+
+        <section class="quick-section">
+
+            <h1>8️⃣ CSS Box Model 📦</h1>
+
+            <p class="description">
+                Learn how CSS controls the space around HTML elements.
+            </p>
+
+            <div class="card">
+
+                <h2>What is Box Model?</h2>
+
+                <p>
+                    Every HTML element is treated like a box.
+                    The CSS Box Model consists of four parts:
+                </p>
+
+                <ul>
+                    <li>Content</li>
+                    <li>Padding</li>
+                    <li>Border</li>
+                    <li>Margin</li>
+                </ul>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>1. Content</h2>
+
+                <p>
+                    Content is the actual text, image or information
+                    inside an element.
+                </p>
+
+                <pre><code>
+div {
+    width: 200px;
+    height: 100px;
+}
+                </code></pre>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>2. Padding</h2>
+
+                <p>
+                    Padding is the space between the content and the border.
+                </p>
+
+                <pre><code>
+div {
+    padding: 20px;
+}
+                </code></pre>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>3. Border</h2>
+
+                <p>
+                    Border creates a boundary around the element.
+                </p>
+
+                <pre><code>
+div {
+    border: 2px solid black;
+}
+                </code></pre>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>4. Margin</h2>
+
+                <p>
+                    Margin creates space outside the element.
+                </p>
+
+                <pre><code>
+div {
+    margin: 20px;
+}
+                </code></pre>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>Box Model Example 💻</h2>
+
+                <pre><code>
+.box {
+    width: 200px;
+    padding: 20px;
+    border: 5px solid black;
+    margin: 30px;
+}
+                </code></pre>
+
+                <p>
+                    Here width = content size,
+                    padding adds inner space,
+                    border surrounds the box,
+                    and margin creates outer space.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>Important Points ⭐</h2>
+
+                <ul>
+                    <li>Content is the actual element content.</li>
+                    <li>Padding is inside the border.</li>
+                    <li>Border surrounds the element.</li>
+                    <li>Margin is outside the border.</li>
+                    <li>Box Model helps control webpage layout.</li>
+                </ul>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>Try It Yourself 🚀</h2>
+
+                <textarea id="codeEditor" rows="18" style="width:100%;">
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<style>
+
+.box {
+    width: 200px;
+    padding: 20px;
+    border: 5px solid blue;
+    margin: 30px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+    StudyMate Box Model
+</div>
+
+</body>
+
+</html>
+                </textarea>
+
+                <br><br>
+
+                <button class="card-button" onclick="runCode()">
+                    ▶ Run Code
+                </button>
+
+                <br><br>
+
+                <iframe
+                    id="previewFrame"
+                    style="width:100%; height:300px; border:1px solid #ccc;">
+                </iframe>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Student Learning Assistant © 2026</p>
+    </footer>
+
+
+    <script>
+
+        function runCode() {
+
+            const code =
+                document.getElementById("codeEditor").value;
+
+            document.getElementById("previewFrame").srcdoc = code;
+
+        }
+
+    </script>
+
+</body>
+
+</html>

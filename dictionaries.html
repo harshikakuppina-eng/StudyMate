@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dictionaries | StudyMate</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            StudyMate
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/learn">Learn</a>
+            <a href="/python">Python</a>
+            <a href="/python-basics">Basics</a>
+        </div>
+
+    </nav>
+
+
+    <main class="container">
+
+        <section class="welcome">
+
+            <div>
+
+                <p class="small-text">
+                    PYTHON PROGRAMMING
+                </p>
+
+                <h1>
+                    Python Dictionaries 📖
+                </h1>
+
+                <p class="description">
+                    Learn how to store data using key and value pairs.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- What is Dictionary -->
+
+        <section class="quick-section">
+
+            <h2>What is a Dictionary?</h2>
+
+            <div class="card">
+
+                <p>
+                    A dictionary is used to store data in
+                    <strong>key : value</strong> pairs.
+                </p>
+
+                <p>
+                    Each key is used to access its value.
+                </p>
+
+                <pre><code>student = {
+    "name": "Harshika",
+    "age": 18,
+    "course": "Cybersecurity"
+}</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- Access Values -->
+
+        <section class="quick-section">
+
+            <h2>1. Access Dictionary Values 🔑</h2>
+
+            <div class="card">
+
+                <p>
+                    We can access a value using its key.
+                </p>
+
+                <pre><code>student = {
+    "name": "Harshika",
+    "age": 18
+}
+
+print(student["name"])
+print(student["age"])</code></pre>
+
+                <p><strong>Output:</strong></p>
+
+                <pre><code>Harshika
+18</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- Add Values -->
+
+        <section class="quick-section">
+
+            <h2>2. Add a New Value ➕</h2>
+
+            <div class="card">
+
+                <p>
+                    We can add a new key and value to a dictionary.
+                </p>
+
+                <pre><code>student = {
+    "name": "Harshika",
+    "age": 18
+}
+
+student["course"] = "Cybersecurity"
+
+print(student)</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- Update -->
+
+        <section class="quick-section">
+
+            <h2>3. Update a Value ✏️</h2>
+
+            <div class="card">
+
+                <p>
+                    We can change an existing value using its key.
+                </p>
+
+                <pre><code>student = {
+    "name": "Harshika",
+    "age": 18
+}
+
+student["age"] = 19
+
+print(student)</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- Remove -->
+
+        <section class="quick-section">
+
+            <h2>4. Remove Values 🗑️</h2>
+
+            <div class="card">
+
+                <p>
+                    We can remove a value using <strong>pop()</strong>
+                    or <strong>del</strong>.
+                </p>
+
+                <pre><code>student = {
+    "name": "Harshika",
+    "age": 18,
+    "course": "Cybersecurity"
+}
+
+student.pop("age")
+
+print(student)</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- Get -->
+
+        <section class="quick-section">
+
+            <h2>5. Using get() 🔎</h2>
+
+            <div class="card">
+
+                <p>
+                    The <strong>get()</strong> method is another way
+                    to access a dictionary value.
+                </p>
+
+                <pre><code>student = {
+    "name": "Harshika",
+    "age": 18
+}
+
+print(student.get("name"))</code></pre>
+
+                <p><strong>Output:</strong></p>
+
+                <pre><code>Harshika</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- Loop -->
+
+        <section class="quick-section">
+
+            <h2>6. Loop Through Dictionary 🔄</h2>
+
+            <div class="card">
+
+                <p>
+                    We can use a <strong>for loop</strong> to
+                    display dictionary items.
+                </p>
+
+                <pre><code>student = {
+    "name": "Harshika",
+    "course": "Cybersecurity",
+    "year": 2
+}
+
+for key, value in student.items():
+    print(key, ":", value)</code></pre>
+
+                <p><strong>Output:</strong></p>
+
+                <pre><code>name : Harshika
+course : Cybersecurity
+year : 2</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- Real Life Example -->
+
+        <section class="quick-section">
+
+            <h2>Real-Life Example 🌍</h2>
+
+            <div class="card">
+
+                <h3>Student Information</h3>
+
+                <pre><code>student = {
+    "name": "Harshika",
+    "course": "BSc Cybersecurity",
+    "semester": 3,
+    "skill": "Python"
+}
+
+print(student["name"])
+print(student["course"])
+print(student["skill"])</code></pre>
+
+                <p>
+                    Real applications lo dictionaries are very useful
+                    for storing structured information like
+                    student details, user profiles and settings.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Try It Yourself -->
+
+        <section class="quick-section">
+
+            <h2>Try it Yourself 💻</h2>
+
+            <div class="card">
+
+                <p id="pythonStatus">
+                    🟡 Loading Python...
+                </p>
+
+                <textarea
+                    id="codeEditor"
+                    rows="14"
+                    style="width: 100%; box-sizing: border-box; font-family: monospace; font-size: 15px; padding: 12px;">student = {
+    "name": "Harshika",
+    "course": "Cybersecurity",
+    "semester": 3
+}
+
+print("Name:", student["name"])
+print("Course:", student["course"])
+print("Semester:", student["semester"])</textarea>
+
+                <br><br>
+
+                <button
+                    id="runCodeButton"
+                    class="card-button"
+                    disabled>
+                    ▶ Run Code
+                </button>
+
+                <h3>Output:</h3>
+
+                <pre
+                  id="outputBox"
+                  style="
+                  min-height: 100px;
+                  padding: 15px;
+                   background: #111827;
+                   color: #ffffff;
+                   border-radius: 10px;
+                   white-space: pre-wrap;
+                  ">Loading Python...</pre>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <footer>
+        <p>Student Learning Assistant © 2026</p>
+    </footer>
+
+
+    <script type="module">
+
+        import {
+            loadPyodide
+        } from "https://cdn.jsdelivr.net/pyodide/v0.28.2/full/pyodide.mjs";
+
+
+        let pyodide;
+
+
+        const runButton =
+            document.getElementById("runCodeButton");
+
+        const codeEditor =
+            document.getElementById("codeEditor");
+
+        const outputBox =
+            document.getElementById("outputBox");
+
+        const status =
+            document.getElementById("pythonStatus");
+
+
+        async function startPython() {
+
+            try {
+
+                status.textContent =
+                    "🟡 Loading Python...";
+
+                pyodide = await loadPyodide();
+
+                status.textContent =
+                    "🟢 Python is ready!";
+
+                outputBox.textContent =
+                    "Ready! Write Python code and click Run Code.";
+
+                runButton.disabled = false;
+
+            } catch (error) {
+
+                status.textContent =
+                    "🔴 Python failed to load.";
+
+                outputBox.textContent =
+                    error;
+
+                console.error(error);
+
+            }
+
+        }
+
+
+        runButton.addEventListener(
+            "click",
+            async function () {
+
+                const code =
+                    codeEditor.value;
+
+
+                if (code.trim() === "") {
+
+                    outputBox.textContent =
+                        "Please write some Python code.";
+
+                    return;
+
+                }
+
+
+                runButton.disabled = true;
+
+                runButton.textContent =
+                    "⏳ Running...";
+
+
+                try {
+
+                    await pyodide.runPythonAsync(`
+import sys
+from io import StringIO
+
+_output = StringIO()
+
+sys.stdout = _output
+sys.stderr = _output
+                    `);
+
+
+                    await pyodide.runPythonAsync(code);
+
+
+                    const result =
+                        await pyodide.runPythonAsync(
+                            "_output.getvalue()"
+                        );
+
+
+                    if (result.trim() === "") {
+
+                        outputBox.textContent =
+                            "Code executed successfully.";
+
+                    } else {
+
+                        outputBox.textContent =
+                            result;
+
+                    }
+
+
+                } catch (error) {
+
+                    outputBox.textContent =
+                        "❌ Error:\n\n" + error;
+
+                }
+
+
+                runButton.disabled = false;
+
+                runButton.textContent =
+                    "▶ Run Code";
+
+            }
+        );
+
+
+        startPython();
+
+    </script>
+
+</body>
+</html>

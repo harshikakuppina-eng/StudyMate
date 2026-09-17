@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ARP & RARP | StudyMate</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            StudyMate
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/learn">Learn</a>
+            <a href="/networking">Networking</a>
+        </div>
+
+    </nav>
+
+    <main class="container">
+
+        <section class="quick-section">
+
+            <h1>🔗 ARP & RARP</h1>
+
+            <p class="description">
+                Learn how ARP connects IP addresses with MAC addresses
+                on local networks and understand the historical role of RARP.
+            </p>
+
+
+            <div class="card">
+
+                <h2>🔗 What is ARP?</h2>
+
+                <p>
+                    ARP stands for
+                    <strong>Address Resolution Protocol</strong>.
+                </p>
+
+                <p>
+                    ARP is used on IPv4 local networks to determine
+                    the MAC address associated with a known IP address.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>🔄 How ARP Works</h2>
+
+                <p>
+                    Suppose a device knows the local IP address
+                    of another device but needs its MAC address.
+                </p>
+
+                <p>
+                    ARP can be used to discover the corresponding
+                    MAC address on the local network.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>📚 What is RARP?</h2>
+
+                <p>
+                    RARP stands for
+                    <strong>Reverse Address Resolution Protocol</strong>.
+                </p>
+
+                <p>
+                    RARP was historically used by a device to obtain
+                    an IP address based on its hardware address.
+                </p>
+
+                <p>
+                    Modern networks generally use protocols such as
+                    DHCP instead of RARP.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>⚖️ ARP vs RARP</h2>
+
+                <p>
+                    <strong>ARP:</strong>
+                    IP address → MAC address
+                </p>
+
+                <p>
+                    <strong>RARP:</strong>
+                    Hardware address → IP address
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>🏠 Simple Example</h2>
+
+                <p>
+                    Your laptop wants to send data to another
+                    device on the same local network.
+                </p>
+
+                <p>
+                    If it knows the destination IPv4 address but
+                    does not know the destination MAC address,
+                    ARP can help discover it.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>🛡️ Importance in Cybersecurity</h2>
+
+                <p>
+                    Understanding ARP is important for network
+                    monitoring and security analysis because ARP
+                    operates on local networks and can be relevant
+                    when investigating unusual network behavior.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>📝 Key Points</h2>
+
+                <p>• ARP = Address Resolution Protocol</p>
+
+                <p>• ARP maps IPv4 addresses to MAC addresses</p>
+
+                <p>• RARP = Reverse Address Resolution Protocol</p>
+
+                <p>• RARP is an older protocol</p>
+
+                <p>• DHCP replaced many historical RARP use cases</p>
+
+            </div>
+
+
+            <br>
+
+            <a href="/networking" class="card-button">
+                ← Back to Networking
+            </a>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Student Learning Assistant © 2026</p>
+    </footer>
+
+</body>
+
+</html>

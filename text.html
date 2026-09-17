@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HTML Text | StudyMate</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">StudyMate</div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/learn">Learn</a>
+            <a href="/html">HTML</a>
+        </div>
+    </nav>
+
+
+    <main class="container">
+
+        <section class="quick-section">
+
+            <h1>Headings, Paragraphs & Text ✍️</h1>
+
+            <p class="description">
+                Learn how to display and format text using HTML.
+            </p>
+
+
+            <div class="topic-content">
+
+                <h2>1. Headings</h2>
+
+                <p>
+                    HTML provides six different heading tags.
+                </p>
+
+                <pre><code>&lt;h1&gt;Main Heading&lt;/h1&gt;
+&lt;h2&gt;Second Heading&lt;/h2&gt;
+&lt;h3&gt;Third Heading&lt;/h3&gt;
+&lt;h4&gt;Fourth Heading&lt;/h4&gt;
+&lt;h5&gt;Fifth Heading&lt;/h5&gt;
+&lt;h6&gt;Sixth Heading&lt;/h6&gt;</code></pre>
+
+                <p>
+                    <b>&lt;h1&gt;</b> is the main and largest heading.
+                    <br>
+                    <b>&lt;h6&gt;</b> is the smallest heading.
+                </p>
+
+            </div>
+
+
+            <div class="topic-content">
+
+                <h2>2. Paragraphs</h2>
+
+                <p>
+                    The <b>&lt;p&gt;</b> tag is used to create
+                    paragraphs.
+                </p>
+
+                <pre><code>&lt;p&gt;
+HTML is used to create web pages.
+&lt;/p&gt;</code></pre>
+
+            </div>
+
+
+            <div class="topic-content">
+
+                <h2>3. Bold Text</h2>
+
+                <p>
+                    The <b>&lt;b&gt;</b> tag makes text bold.
+                </p>
+
+                <pre><code>&lt;b&gt;Important Text&lt;/b&gt;</code></pre>
+
+                <p>
+                    Result: <b>Important Text</b>
+                </p>
+
+            </div>
+
+
+            <div class="topic-content">
+
+                <h2>4. Italic Text</h2>
+
+                <p>
+                    The <b>&lt;i&gt;</b> tag makes text italic.
+                </p>
+
+                <pre><code>&lt;i&gt;This is italic text&lt;/i&gt;</code></pre>
+
+                <p>
+                    Result: <i>This is italic text</i>
+                </p>
+
+            </div>
+
+
+            <div class="topic-content">
+
+                <h2>5. Underlined Text</h2>
+
+                <p>
+                    The <b>&lt;u&gt;</b> tag underlines text.
+                </p>
+
+                <pre><code>&lt;u&gt;Important&lt;/u&gt;</code></pre>
+
+                <p>
+                    Result: <u>Important</u>
+                </p>
+
+            </div>
+
+
+            <div class="topic-content">
+
+                <h2>6. Strong & Emphasis</h2>
+
+                <p>
+                    <b>&lt;strong&gt;</b> represents important text.
+                </p>
+
+                <pre><code>&lt;strong&gt;Warning!&lt;/strong&gt;</code></pre>
+
+                <p>
+                    <b>&lt;em&gt;</b> is used to emphasize text.
+                </p>
+
+                <pre><code>&lt;em&gt;Be careful!&lt;/em&gt;</code></pre>
+
+            </div>
+
+
+            <div class="topic-content">
+
+                <h2>7. Line Break</h2>
+
+                <p>
+                    The <b>&lt;br&gt;</b> tag moves text to a new line.
+                </p>
+
+                <pre><code>Hello&lt;br&gt;
+World</code></pre>
+
+                <p>
+                    Result:
+                    <br>
+                    Hello
+                    <br>
+                    World
+                </p>
+
+            </div>
+
+
+            <div class="topic-content">
+
+                <h2>8. Horizontal Line</h2>
+
+                <p>
+                    The <b>&lt;hr&gt;</b> tag creates a horizontal line.
+                </p>
+
+                <pre><code>&lt;hr&gt;</code></pre>
+
+                <hr>
+
+            </div>
+
+
+            <div class="topic-content">
+
+                <h2>⭐ Important Points</h2>
+
+                <ul>
+                    <li>&lt;h1&gt; to &lt;h6&gt; → Headings</li>
+                    <li>&lt;p&gt; → Paragraph</li>
+                    <li>&lt;b&gt; → Bold text</li>
+                    <li>&lt;i&gt; → Italic text</li>
+                    <li>&lt;u&gt; → Underlined text</li>
+                    <li>&lt;br&gt; → Line break</li>
+                    <li>&lt;hr&gt; → Horizontal line</li>
+                </ul>
+
+            </div>
+
+
+            <div class="topic-content">
+
+                <h2>🧪 Try it Yourself</h2>
+
+                <p>
+                    Change the HTML code and click Preview.
+                </p>
+
+                <textarea id="htmlEditor" rows="15"><!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>My StudyMate Page</h1>
+
+    <p>
+        I am learning Web Development.
+    </p>
+
+    <b>This is bold text.</b>
+
+    <br><br>
+
+    <i>This is italic text.</i>
+
+    <br><br>
+
+    <u>This is underlined text.</u>
+
+    <hr>
+
+    <strong>HTML is fun!</strong>
+
+</body>
+
+</html></textarea>
+
+                <br><br>
+
+                <button id="previewButton"
+                        class="card-button">
+                    ▶ Preview
+                </button>
+
+                <h3>Preview:</h3>
+
+                <iframe id="previewFrame"
+                        style="width:100%;
+                               height:300px;
+                               border:1px solid #ccc;
+                               border-radius:10px;
+                               background:white;">
+                </iframe>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>Student Learning Assistant © 2026</p>
+    </footer>
+
+
+    <script>
+
+        const editor =
+            document.getElementById("htmlEditor");
+
+        const previewButton =
+            document.getElementById("previewButton");
+
+        const previewFrame =
+            document.getElementById("previewFrame");
+
+
+        previewButton.addEventListener(
+            "click",
+            function () {
+
+                previewFrame.srcdoc =
+                    editor.value;
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

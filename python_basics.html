@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Python Basics | StudyMate</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <div class="logo">
+            StudyMate
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/learn">Learn</a>
+            <a href="/python">Python</a>
+        </div>
+
+    </nav>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+
+        <!-- HEADER -->
+        <section class="welcome">
+
+            <div>
+
+                <p class="small-text">
+                    PYTHON PROGRAMMING
+                </p>
+
+                <h1>
+                    Python Basics 🐍
+                </h1>
+
+                <p class="description">
+                    Learn the basic concepts of Python step by step.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- INTRODUCTION -->
+        <section class="quick-section">
+
+            <h2>1. Introduction to Python</h2>
+
+            <div class="progress-card">
+
+                <h3>What is Python?</h3>
+
+                <p>
+                    Python is a simple and powerful programming language.
+                    It is used for web development, automation,
+                    data science, cybersecurity and many other areas.
+                </p>
+
+            </div>
+
+
+            <!-- VARIABLES -->
+            <div class="progress-card">
+
+                <h3>2. Variables</h3>
+
+                <p>
+                    A variable is used to store data in a program.
+                </p>
+
+                <pre>
+name = "Harshika"
+age = 18
+                </pre>
+
+            </div>
+
+
+            <!-- DATA TYPES -->
+            <div class="progress-card">
+
+                <h3>3. Data Types</h3>
+
+                <p>Some common Python data types are:</p>
+
+                <ul>
+
+                    <li>String → "Hello"</li>
+
+                    <li>Integer → 25</li>
+
+                    <li>Float → 10.5</li>
+
+                    <li>Boolean → True / False</li>
+
+                    <li>List → [1, 2, 3]</li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- OPERATORS -->
+            <div class="progress-card">
+
+                <h3>4. Operators</h3>
+
+                <p>
+                    Operators are used to perform calculations
+                    and comparisons.
+                </p>
+
+                <pre>
+a = 10
+b = 5
+
+print(a + b)
+print(a - b)
+print(a * b)
+print(a / b)
+print(a % b)
+                </pre>
+
+            </div>
+
+
+            <!-- CONDITIONS -->
+            <div class="progress-card">
+
+                <h3>5. Conditions</h3>
+
+                <p>
+                    Conditions are used to make decisions in Python.
+                </p>
+
+                <pre>
+age = 18
+
+if age >= 18:
+    print("You are eligible")
+else:
+    print("You are not eligible")
+                </pre>
+
+            </div>
+
+
+            <!-- LOOPS -->
+            <div class="progress-card">
+
+                <h3>6. Loops</h3>
+
+                <p>
+                    Loops are used to repeat a block of code.
+                </p>
+
+                <pre>
+for i in range(5):
+    print(i)
+                </pre>
+
+            </div>
+
+
+            <!-- FUNCTIONS -->
+            <div class="progress-card">
+
+                <h3>7. Functions</h3>
+
+                <p>
+                    Functions are reusable blocks of code.
+                </p>
+
+                <pre>
+def greet():
+    print("Hello!")
+
+greet()
+                </pre>
+
+            </div>
+
+
+            <!-- LISTS -->
+            <div class="progress-card">
+
+                <h3>8. Lists</h3>
+
+                <p>
+                    Lists are used to store multiple values.
+                </p>
+
+                <pre>
+fruits = ["Apple", "Mango", "Banana"]
+
+print(fruits)
+print(fruits[0])
+                </pre>
+
+            </div>
+
+
+            <!-- INPUT -->
+            <div class="progress-card">
+
+                <h3>9. User Input</h3>
+
+                <p>
+                    The input() function is used to get information
+                    from the user.
+                </p>
+
+                <pre>
+name = input("Enter your name: ")
+print("Hello", name)
+                </pre>
+
+            </div>
+
+
+            <!-- FIRST PROGRAM -->
+            <div class="progress-card">
+
+                <h3>Your First Python Program 🚀</h3>
+
+                <pre>
+print("Hello, World!")
+                </pre>
+
+                <p>
+                    The <b>print()</b> function is used to display
+                    something on the screen.
+                </p>
+
+            </div>
+
+
+            <!-- PYTHON PRACTICE -->
+            <div class="progress-card">
+
+                <h2>Try it Yourself 💻</h2>
+
+                <p>
+                    Write Python code below and run it.
+                </p>
+
+
+                <!-- STATUS -->
+                <p id="pythonStatus">
+                    🟡 Loading Python...
+                </p>
+
+
+                <!-- CODE EDITOR -->
+                <textarea
+                    id="codeEditor"
+                    rows="15"
+                    placeholder="Write your Python code here..."
+>name = "Harshika"
+age = 18
+
+print("Hello", name)
+
+if age >= 18:
+    print("You are eligible")</textarea>
+
+
+                <br><br>
+
+
+                <!-- RUN BUTTON -->
+                <button
+                    class="card-button"
+                    id="runCodeButton"
+                    disabled>
+
+                    ▶ Run Code
+
+                </button>
+
+
+                <!-- OUTPUT -->
+                <h3>
+                    Output:
+                </h3>
+
+                <pre
+                    id="outputBox"
+                    style="
+                    min-height: 100px;
+                    padding: 15px;
+                    white-space: pre-wrap;
+                    background: #111827;
+                    color: #ffffff;
+                    border-radius: 10px;
+                    "
+                  >Python is loading...</pre>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            Student Learning Assistant © 2026
+        </p>
+
+    </footer>
+
+
+    <!-- PYODIDE -->
+    <script type="module">
+
+        import {
+            loadPyodide
+        } from "https://cdn.jsdelivr.net/pyodide/v0.28.2/full/pyodide.mjs";
+
+
+        let pyodide;
+
+
+        const runButton =
+            document.getElementById("runCodeButton");
+
+
+        const codeEditor =
+            document.getElementById("codeEditor");
+
+
+        const outputBox =
+            document.getElementById("outputBox");
+
+
+        const status =
+            document.getElementById("pythonStatus");
+
+
+        /*
+        ========================================
+        LOAD PYTHON
+        ========================================
+        */
+
+        async function startPython() {
+
+            try {
+
+                status.textContent =
+                    "🟡 Loading Python...";
+
+                pyodide =
+                    await loadPyodide();
+
+
+                status.textContent =
+                    "🟢 Python is ready!";
+
+                outputBox.textContent =
+                    "Ready! Write Python code and click Run Code.";
+
+                runButton.disabled = false;
+
+
+            } catch (error) {
+
+                status.textContent =
+                    "🔴 Python failed to load.";
+
+                outputBox.textContent =
+                    error;
+
+                console.error(error);
+
+            }
+
+        }
+
+
+        /*
+        ========================================
+        RUN PYTHON CODE
+        ========================================
+        */
+
+        runButton.addEventListener(
+            "click",
+            async function () {
+
+                const code =
+                    codeEditor.value;
+
+
+                if (code.trim() === "") {
+
+                    outputBox.textContent =
+                        "Please write some Python code.";
+
+                    return;
+
+                }
+
+
+                runButton.disabled = true;
+
+                runButton.textContent =
+                    "⏳ Running...";
+
+
+                try {
+
+                    /*
+                    Capture print() output
+                    */
+
+                    await pyodide.runPythonAsync(`
+
+import sys
+from io import StringIO
+
+_output = StringIO()
+sys.stdout = _output
+sys.stderr = _output
+
+`);
+
+
+                    /*
+                    Run user's Python code
+                    */
+
+                    await pyodide.runPythonAsync(code);
+
+
+                    /*
+                    Get output
+                    */
+
+                    const result =
+                        await pyodide.runPythonAsync(
+                            "_output.getvalue()"
+                        );
+
+
+                    if (result.trim() === "") {
+
+                        outputBox.textContent =
+                            "Code executed successfully.";
+
+                    } else {
+
+                        outputBox.textContent =
+                            result;
+
+                    }
+
+
+                } catch (error) {
+
+                    outputBox.textContent =
+                        "❌ Error:\n\n" + error;
+
+                }
+
+
+                runButton.disabled = false;
+
+                runButton.textContent =
+                    "▶ Run Code";
+
+            }
+        );
+
+
+        /*
+        ========================================
+        START PYTHON
+        ========================================
+        */
+
+        startPython();
+
+    </script>
+
+
+</body>
+
+</html>

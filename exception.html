@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Exception Handling | StudyMate</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            StudyMate
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/learn">Learn</a>
+            <a href="/python">Python</a>
+        </div>
+
+    </nav>
+
+
+    <main class="container">
+
+        <section class="welcome">
+
+            <div>
+
+                <p class="small-text">
+                    PYTHON EXCEPTION HANDLING
+                </p>
+
+                <h1>
+                    Exception Handling 🛡️
+                </h1>
+
+                <p class="description">
+                    Learn how to handle errors in Python
+                    without stopping your program.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="quick-section">
+
+            <h2>What is an Exception?</h2>
+
+            <div class="card">
+
+                <p>
+                    An <strong>exception</strong> is an error that
+                    occurs while a Python program is running.
+                </p>
+
+                <p>
+                    Example:
+                </p>
+
+                <pre><code>number = 10
+result = number / 0</code></pre>
+
+                <p>
+                    This causes a
+                    <strong>ZeroDivisionError</strong>.
+                </p>
+
+            </div>
+
+
+            <h2>1. try</h2>
+
+            <div class="card">
+
+                <p>
+                    The <strong>try</strong> block contains code
+                    that might cause an error.
+                </p>
+
+                <pre><code>try:
+    number = 10 / 0</code></pre>
+
+            </div>
+
+
+            <h2>2. except</h2>
+
+            <div class="card">
+
+                <p>
+                    The <strong>except</strong> block handles
+                    the error.
+                </p>
+
+                <pre><code>try:
+    number = 10 / 0
+
+except:
+    print("Something went wrong")</code></pre>
+
+                <p><strong>Output:</strong></p>
+
+                <pre><code>Something went wrong</code></pre>
+
+            </div>
+
+
+            <h2>3. Specific Exception</h2>
+
+            <div class="card">
+
+                <p>
+                    We can handle a specific type of error.
+                </p>
+
+                <pre><code>try:
+    number = 10 / 0
+
+except ZeroDivisionError:
+    print("Cannot divide by zero")</code></pre>
+
+                <p><strong>Output:</strong></p>
+
+                <pre><code>Cannot divide by zero</code></pre>
+
+            </div>
+
+
+            <h2>4. else</h2>
+
+            <div class="card">
+
+                <p>
+                    The <strong>else</strong> block runs when
+                    there is no error.
+                </p>
+
+                <pre><code>try:
+    number = 10 / 2
+
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+
+else:
+    print("Calculation successful")
+    print(number)</code></pre>
+
+                <p><strong>Output:</strong></p>
+
+                <pre><code>Calculation successful
+5.0</code></pre>
+
+            </div>
+
+
+            <h2>5. finally</h2>
+
+            <div class="card">
+
+                <p>
+                    The <strong>finally</strong> block runs
+                    whether an error occurs or not.
+                </p>
+
+                <pre><code>try:
+    number = 10 / 2
+
+except:
+    print("Error")
+
+finally:
+    print("Program finished")</code></pre>
+
+                <p><strong>Output:</strong></p>
+
+                <pre><code>Program finished</code></pre>
+
+            </div>
+
+
+            <h2>6. Multiple Exceptions</h2>
+
+            <div class="card">
+
+                <p>
+                    We can handle different errors separately.
+                </p>
+
+                <pre><code>try:
+    number = int("hello")
+
+except ValueError:
+    print("Invalid number")
+
+except ZeroDivisionError:
+    print("Cannot divide by zero")</code></pre>
+
+                <p><strong>Output:</strong></p>
+
+                <pre><code>Invalid number</code></pre>
+
+            </div>
+
+
+            <h2>🔐 Cybersecurity Example</h2>
+
+            <div class="card">
+
+                <p>
+                    Exception handling can help a security
+                    application continue running when unexpected
+                    input is received.
+                </p>
+
+                <pre><code>try:
+    attempts = int("five")
+
+    print("Login attempts:", attempts)
+
+except ValueError:
+    print("Invalid input received")</code></pre>
+
+                <p><strong>Output:</strong></p>
+
+                <pre><code>Invalid input received</code></pre>
+
+            </div>
+
+
+            <h2>⭐ Important Points</h2>
+
+            <div class="card">
+
+                <p>✅ <strong>try</strong> → Code that may cause an error</p>
+
+                <p>✅ <strong>except</strong> → Handles the error</p>
+
+                <p>✅ <strong>else</strong> → Runs when there is no error</p>
+
+                <p>✅ <strong>finally</strong> → Always runs</p>
+
+                <p>✅ Exception handling prevents unexpected program crashes</p>
+
+            </div>
+
+
+            <h2>💻 Try it Yourself</h2>
+
+            <div class="card">
+
+                <p id="pythonStatus">
+                    🟡 Loading Python...
+                </p>
+
+                <textarea id="codeEditor" rows="15">try:
+    number = 10 / 0
+    print(number)
+
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+
+finally:
+    print("Program finished")</textarea>
+
+                <br><br>
+
+                <button id="runCodeButton" class="card-button" disabled>
+                    ▶ Run Code
+                </button>
+
+                <h3>Output:</h3>
+
+                <pre id="outputBox">Loading Python...</pre>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>Student Learning Assistant © 2026</p>
+    </footer>
+
+
+<script type="module">
+
+import { loadPyodide } from
+"https://cdn.jsdelivr.net/pyodide/v0.28.2/full/pyodide.mjs";
+
+let pyodide;
+
+const runButton =
+document.getElementById("runCodeButton");
+
+const codeEditor =
+document.getElementById("codeEditor");
+
+const outputBox =
+document.getElementById("outputBox");
+
+const status =
+document.getElementById("pythonStatus");
+
+
+async function startPython() {
+
+    try {
+
+        status.textContent =
+        "🟡 Loading Python...";
+
+        pyodide = await loadPyodide();
+
+        status.textContent =
+        "🟢 Python is ready!";
+
+        outputBox.textContent =
+        "Ready! Write Python code and click Run Code.";
+
+        runButton.disabled = false;
+
+    } catch (error) {
+
+        status.textContent =
+        "🔴 Python failed to load.";
+
+        outputBox.textContent = error;
+
+        console.error(error);
+    }
+}
+
+
+runButton.addEventListener("click", async function () {
+
+    const code = codeEditor.value;
+
+    if (code.trim() === "") {
+
+        outputBox.textContent =
+        "Please write some Python code.";
+
+        return;
+    }
+
+    runButton.disabled = true;
+
+    runButton.textContent =
+    "⏳ Running...";
+
+
+    try {
+
+        await pyodide.runPythonAsync(`
+import sys
+from io import StringIO
+
+_output = StringIO()
+
+sys.stdout = _output
+sys.stderr = _output
+`);
+
+        await pyodide.runPythonAsync(code);
+
+        const result =
+        await pyodide.runPythonAsync(
+            "_output.getvalue()"
+        );
+
+
+        if (result.trim() === "") {
+
+            outputBox.textContent =
+            "Code executed successfully.";
+
+        } else {
+
+            outputBox.textContent =
+            result;
+        }
+
+    } catch (error) {
+
+        outputBox.textContent =
+        "❌ Error:\n\n" + error;
+    }
+
+
+    runButton.disabled = false;
+
+    runButton.textContent =
+    "▶ Run Code";
+
+});
+
+
+startPython();
+
+</script>
+
+</body>
+</html>

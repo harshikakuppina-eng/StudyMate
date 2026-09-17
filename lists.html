@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lists | StudyMate</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">StudyMate</div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/learn">Learn</a>
+            <a href="/python">Python</a>
+            <a href="/python-basics">Basics</a>
+        </div>
+
+    </nav>
+
+
+    <main class="container">
+
+
+        <!-- HEADER -->
+
+        <section class="welcome">
+
+            <div>
+
+                <p class="small-text">
+                    PYTHON PROGRAMMING
+                </p>
+
+                <h1>
+                    Python Lists 📋
+                </h1>
+
+                <p class="description">
+                    Learn how to store and manage multiple
+                    values using Python lists.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- WHAT IS LIST -->
+
+        <section class="quick-section">
+
+            <h2>
+                What is a List?
+            </h2>
+
+            <div class="card">
+
+                <p>
+                    A <strong>list</strong> is used to store
+                    multiple values in a single variable.
+                </p>
+
+                <p>
+                    Lists are written using
+                    <strong>square brackets [ ]</strong>.
+                </p>
+
+                <pre><code>subjects = ["Python", "Linux", "Networking"]
+
+print(subjects)</code></pre>
+
+                <p>
+                    <strong>Output:</strong>
+                </p>
+
+                <pre><code>['Python', 'Linux', 'Networking']</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- ACCESS ITEMS -->
+
+        <section class="quick-section">
+
+            <h2>
+                1. Accessing List Items 🔍
+            </h2>
+
+            <div class="card">
+
+                <p>
+                    Each item in a list has an
+                    <strong>index number</strong>.
+                </p>
+
+                <p>
+                    Python starts indexing from
+                    <strong>0</strong>.
+                </p>
+
+                <pre><code>subjects = ["Python", "Linux", "Networking"]
+
+print(subjects[0])
+print(subjects[1])
+print(subjects[2])</code></pre>
+
+                <p>
+                    <strong>Output:</strong>
+                </p>
+
+                <pre><code>Python
+Linux
+Networking</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- CHANGE ITEMS -->
+
+        <section class="quick-section">
+
+            <h2>
+                2. Changing List Items ✏️
+            </h2>
+
+            <div class="card">
+
+                <p>
+                    We can change an item using its index.
+                </p>
+
+                <pre><code>subjects = ["Python", "Linux", "Networking"]
+
+subjects[1] = "Cybersecurity"
+
+print(subjects)</code></pre>
+
+                <p>
+                    <strong>Output:</strong>
+                </p>
+
+                <pre><code>['Python', 'Cybersecurity', 'Networking']</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- ADD ITEM -->
+
+        <section class="quick-section">
+
+            <h2>
+                3. Adding Items ➕
+            </h2>
+
+            <div class="card">
+
+                <p>
+                    The <strong>append()</strong> method adds
+                    a new item to the end of a list.
+                </p>
+
+                <pre><code>subjects = ["Python", "Linux"]
+
+subjects.append("Networking")
+
+print(subjects)</code></pre>
+
+                <p>
+                    <strong>Output:</strong>
+                </p>
+
+                <pre><code>['Python', 'Linux', 'Networking']</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- REMOVE ITEM -->
+
+        <section class="quick-section">
+
+            <h2>
+                4. Removing Items ❌
+            </h2>
+
+            <div class="card">
+
+                <p>
+                    The <strong>remove()</strong> method
+                    removes a specific item.
+                </p>
+
+                <pre><code>subjects = ["Python", "Linux", "Networking"]
+
+subjects.remove("Linux")
+
+print(subjects)</code></pre>
+
+                <p>
+                    <strong>Output:</strong>
+                </p>
+
+                <pre><code>['Python', 'Networking']</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- LENGTH -->
+
+        <section class="quick-section">
+
+            <h2>
+                5. Finding List Length 📏
+            </h2>
+
+            <div class="card">
+
+                <p>
+                    The <strong>len()</strong> function tells
+                    us how many items are present in a list.
+                </p>
+
+                <pre><code>subjects = ["Python", "Linux", "Networking"]
+
+print(len(subjects))</code></pre>
+
+                <p>
+                    <strong>Output:</strong>
+                </p>
+
+                <pre><code>3</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- LOOP -->
+
+        <section class="quick-section">
+
+            <h2>
+                6. Loop Through a List 🔁
+            </h2>
+
+            <div class="card">
+
+                <p>
+                    We can use a <strong>for loop</strong>
+                    to print every item in a list.
+                </p>
+
+                <pre><code>subjects = ["Python", "Linux", "Networking"]
+
+for subject in subjects:
+    print(subject)</code></pre>
+
+                <p>
+                    <strong>Output:</strong>
+                </p>
+
+                <pre><code>Python
+Linux
+Networking</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- LIST METHODS -->
+
+        <section class="quick-section">
+
+            <h2>
+                7. Useful List Methods 🛠️
+            </h2>
+
+            <div class="card">
+
+                <p><strong>append()</strong> → Adds an item</p>
+
+                <p><strong>remove()</strong> → Removes an item</p>
+
+                <p><strong>sort()</strong> → Sorts the list</p>
+
+                <p><strong>reverse()</strong> → Reverses the list</p>
+
+                <p><strong>len()</strong> → Finds the number of items</p>
+
+                <pre><code>numbers = [5, 2, 8, 1]
+
+numbers.sort()
+
+print(numbers)</code></pre>
+
+                <p>
+                    <strong>Output:</strong>
+                </p>
+
+                <pre><code>[1, 2, 5, 8]</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- REAL LIFE -->
+
+        <section class="quick-section">
+
+            <h2>
+                8. Real-Life Example 🎯
+            </h2>
+
+            <div class="card">
+
+                <p>
+                    Imagine you want to store your
+                    cybersecurity tools in one place.
+                </p>
+
+                <pre><code>tools = [
+    "Wireshark",
+    "Burp Suite",
+    "Nmap",
+    "Volatility"
+]
+
+for tool in tools:
+    print("Learning:", tool)</code></pre>
+
+                <p>
+                    <strong>Output:</strong>
+                </p>
+
+                <pre><code>Learning: Wireshark
+Learning: Burp Suite
+Learning: Nmap
+Learning: Volatility</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- TRY IT -->
+
+        <section class="quick-section">
+
+            <h2>
+                Try it Yourself 💻
+            </h2>
+
+            <div class="card">
+
+                <p>
+                    Write your own Python list code
+                    and click <strong>Run Code</strong>.
+                </p>
+
+                <textarea
+                    id="codeEditor"
+                    rows="14">subjects = ["Python", "Linux", "Networking"]
+
+subjects.append("Cybersecurity")
+
+for subject in subjects:
+    print(subject)</textarea>
+
+                <br><br>
+
+                <button
+                    id="runCodeButton"
+                    class="card-button"
+                    disabled>
+                    ▶ Run Code
+                </button>
+
+                <p id="pythonStatus">
+                    🟡 Loading Python...
+                </p>
+
+                <h3>
+                    Output:
+                </h3>
+
+                <pre id="outputBox">
+Please wait...
+                </pre>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            Student Learning Assistant © 2026
+        </p>
+
+    </footer>
+
+
+
+    <!-- PYTHON RUNTIME -->
+
+    <script type="module">
+
+        import {
+            loadPyodide
+        } from
+        "https://cdn.jsdelivr.net/pyodide/v0.28.2/full/pyodide.mjs";
+
+
+        let pyodide;
+
+
+        const runButton =
+            document.getElementById("runCodeButton");
+
+
+        const codeEditor =
+            document.getElementById("codeEditor");
+
+
+        const outputBox =
+            document.getElementById("outputBox");
+
+
+        const status =
+            document.getElementById("pythonStatus");
+
+
+        async function startPython() {
+
+            try {
+
+                status.textContent =
+                    "🟡 Loading Python...";
+
+
+                pyodide =
+                    await loadPyodide();
+
+
+                status.textContent =
+                    "🟢 Python is ready!";
+
+
+                outputBox.textContent =
+                    "Ready! Write Python code and click Run Code.";
+
+
+                runButton.disabled =
+                    false;
+
+            }
+
+            catch (error) {
+
+                status.textContent =
+                    "🔴 Python failed to load.";
+
+
+                outputBox.textContent =
+                    error;
+
+
+                console.error(error);
+
+            }
+
+        }
+
+
+        runButton.addEventListener(
+            "click",
+            async function () {
+
+                const code =
+                    codeEditor.value;
+
+
+                if (code.trim() === "") {
+
+                    outputBox.textContent =
+                        "Please write some Python code.";
+
+                    return;
+
+                }
+
+
+                runButton.disabled =
+                    true;
+
+
+                runButton.textContent =
+                    "⏳ Running...";
+
+
+                try {
+
+                    await pyodide.runPythonAsync(`
+
+import sys
+from io import StringIO
+
+_output = StringIO()
+
+sys.stdout = _output
+sys.stderr = _output
+
+                    `);
+
+
+                    await pyodide.runPythonAsync(
+                        code
+                    );
+
+
+                    const result =
+                        await pyodide.runPythonAsync(
+                            "_output.getvalue()"
+                        );
+
+
+                    if (result.trim() === "") {
+
+                        outputBox.textContent =
+                            "Code executed successfully.";
+
+                    }
+
+                    else {
+
+                        outputBox.textContent =
+                            result;
+
+                    }
+
+                }
+
+                catch (error) {
+
+                    outputBox.textContent =
+                        "❌ Error:\n\n" + error;
+
+                }
+
+
+                runButton.disabled =
+                    false;
+
+
+                runButton.textContent =
+                    "▶ Run Code";
+
+            }
+        );
+
+
+        startPython();
+
+    </script>
+
+</body>
+
+</html>

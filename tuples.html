@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tuples | StudyMate</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            StudyMate
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/learn">Learn</a>
+            <a href="/python">Python</a>
+            <a href="/python-basics">Basics</a>
+        </div>
+
+    </nav>
+
+
+    <main class="container">
+
+        <section class="welcome">
+
+            <div>
+
+                <p class="small-text">
+                    PYTHON PROGRAMMING
+                </p>
+
+                <h1>
+                    Python Tuples 📦
+                </h1>
+
+                <p class="description">
+                    Learn how to store multiple values that cannot be changed.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- What is Tuple -->
+
+        <section class="quick-section">
+
+            <h2>What is a Tuple?</h2>
+
+            <div class="card">
+
+                <p>
+                    A tuple is used to store multiple values in a single variable.
+                </p>
+
+                <p>
+                    Tuples are similar to lists, but their values
+                    <strong>cannot be changed</strong> after creation.
+                </p>
+
+                <pre><code>colors = ("red", "blue", "green")
+
+print(colors)</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- Creating Tuple -->
+
+        <section class="quick-section">
+
+            <h2>1. Creating a Tuple 📝</h2>
+
+            <div class="card">
+
+                <p>
+                    We create a tuple using round brackets
+                    <strong>()</strong>.
+                </p>
+
+                <pre><code>subjects = ("Python", "Linux", "Networking")
+
+print(subjects)</code></pre>
+
+                <p><strong>Output:</strong></p>
+
+                <pre><code>('Python', 'Linux', 'Networking')</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- Access -->
+
+        <section class="quick-section">
+
+            <h2>2. Access Tuple Items 🔢</h2>
+
+            <div class="card">
+
+                <p>
+                    Tuple items can be accessed using their index.
+                </p>
+
+                <pre><code>colors = ("red", "blue", "green")
+
+print(colors[0])
+print(colors[1])
+print(colors[2])</code></pre>
+
+                <p><strong>Output:</strong></p>
+
+                <pre><code>red
+blue
+green</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- Negative Index -->
+
+        <section class="quick-section">
+
+            <h2>3. Negative Index 🔄</h2>
+
+            <div class="card">
+
+                <p>
+                    Negative indexing starts from the end of the tuple.
+                </p>
+
+                <pre><code>colors = ("red", "blue", "green")
+
+print(colors[-1])
+print(colors[-2])</code></pre>
+
+                <p><strong>Output:</strong></p>
+
+                <pre><code>green
+blue</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- Cannot Change -->
+
+        <section class="quick-section">
+
+            <h2>4. Tuple Values Cannot Be Changed 🔒</h2>
+
+            <div class="card">
+
+                <p>
+                    Once a tuple is created, we cannot directly
+                    change its items.
+                </p>
+
+                <pre><code>colors = ("red", "blue", "green")
+
+# This will cause an error:
+# colors[0] = "yellow"</code></pre>
+
+                <p>
+                    This is called <strong>immutability</strong>.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Length -->
+
+        <section class="quick-section">
+
+            <h2>5. Find Tuple Length 📏</h2>
+
+            <div class="card">
+
+                <p>
+                    The <strong>len()</strong> function tells us
+                    how many items are present.
+                </p>
+
+                <pre><code>subjects = ("Python", "Linux", "Networking")
+
+print(len(subjects))</code></pre>
+
+                <p><strong>Output:</strong></p>
+
+                <pre><code>3</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- Loop -->
+
+        <section class="quick-section">
+
+            <h2>6. Loop Through a Tuple 🔄</h2>
+
+            <div class="card">
+
+                <p>
+                    We can use a <strong>for loop</strong>
+                    to display each item.
+                </p>
+
+                <pre><code>subjects = ("Python", "Linux", "Networking")
+
+for subject in subjects:
+    print(subject)</code></pre>
+
+                <p><strong>Output:</strong></p>
+
+                <pre><code>Python
+Linux
+Networking</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- Tuple Methods -->
+
+        <section class="quick-section">
+
+            <h2>7. Useful Tuple Methods 🛠️</h2>
+
+            <div class="card">
+
+                <p>
+                    Tuples have some useful built-in methods.
+                </p>
+
+                <pre><code>numbers = (10, 20, 10, 30)
+
+print(numbers.count(10))
+print(numbers.index(20))</code></pre>
+
+                <p><strong>Output:</strong></p>
+
+                <pre><code>2
+1</code></pre>
+
+                <p>
+                    <strong>count()</strong> → counts how many times a value appears.
+                </p>
+
+                <p>
+                    <strong>index()</strong> → finds the position of a value.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- List vs Tuple -->
+
+        <section class="quick-section">
+
+            <h2>List vs Tuple ⚖️</h2>
+
+            <div class="card">
+
+                <p><strong>List:</strong></p>
+
+                <pre><code>subjects = ["Python", "Linux"]
+
+subjects[0] = "Cybersecurity"</code></pre>
+
+                <p>
+                    List values can be changed.
+                </p>
+
+                <p><strong>Tuple:</strong></p>
+
+                <pre><code>subjects = ("Python", "Linux")
+
+# subjects[0] = "Cybersecurity"</code></pre>
+
+                <p>
+                    Tuple values cannot be changed.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Real Life Example -->
+
+        <section class="quick-section">
+
+            <h2>Real-Life Example 🌍</h2>
+
+            <div class="card">
+
+                <h3>Fixed Student Details</h3>
+
+                <pre><code>student_details = (
+    "Harshika",
+    "BSc Cybersecurity",
+    3
+)
+
+print("Name:", student_details[0])
+print("Course:", student_details[1])
+print("Semester:", student_details[2])</code></pre>
+
+                <p>
+                    Tuple is useful when data should remain fixed
+                    and should not be accidentally changed.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Try It Yourself -->
+
+        <section class="quick-section">
+
+            <h2>Try it Yourself 💻</h2>
+
+            <div class="card">
+
+                <p id="pythonStatus">
+                    🟡 Loading Python...
+                </p>
+
+                <textarea
+                    id="codeEditor"
+                    rows="14"
+                    style="width: 100%; box-sizing: border-box; font-family: monospace; font-size: 15px; padding: 12px;">subjects = ("Python", "Linux", "Networking")
+
+print("First subject:", subjects[0])
+print("Total subjects:", len(subjects))
+
+for subject in subjects:
+    print(subject)</textarea>
+
+                <br><br>
+
+                <button
+                    id="runCodeButton"
+                    class="card-button"
+                    disabled>
+                    ▶ Run Code
+                </button>
+
+                <h3>Output:</h3>
+
+                <pre
+                 id="outputBox"
+                  style="
+                  min-height: 100px;
+                  padding: 15px;
+                  background: #111827;
+                  color: #ffffff;
+                  border-radius: 10px;
+                  white-space: pre-wrap;
+                  ">Loading Python...</pre>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>Student Learning Assistant © 2026</p>
+    </footer>
+
+
+    <script type="module">
+
+        import {
+            loadPyodide
+        } from "https://cdn.jsdelivr.net/pyodide/v0.28.2/full/pyodide.mjs";
+
+
+        let pyodide;
+
+
+        const runButton =
+            document.getElementById("runCodeButton");
+
+        const codeEditor =
+            document.getElementById("codeEditor");
+
+        const outputBox =
+            document.getElementById("outputBox");
+
+        const status =
+            document.getElementById("pythonStatus");
+
+
+        async function startPython() {
+
+            try {
+
+                status.textContent =
+                    "🟡 Loading Python...";
+
+                pyodide = await loadPyodide();
+
+                status.textContent =
+                    "🟢 Python is ready!";
+
+                outputBox.textContent =
+                    "Ready! Write Python code and click Run Code.";
+
+                runButton.disabled = false;
+
+            } catch (error) {
+
+                status.textContent =
+                    "🔴 Python failed to load.";
+
+                outputBox.textContent =
+                    error;
+
+                console.error(error);
+
+            }
+
+        }
+
+
+        runButton.addEventListener(
+            "click",
+            async function () {
+
+                const code =
+                    codeEditor.value;
+
+
+                if (code.trim() === "") {
+
+                    outputBox.textContent =
+                        "Please write some Python code.";
+
+                    return;
+
+                }
+
+
+                runButton.disabled = true;
+
+                runButton.textContent =
+                    "⏳ Running...";
+
+
+                try {
+
+                    await pyodide.runPythonAsync(`
+import sys
+from io import StringIO
+
+_output = StringIO()
+
+sys.stdout = _output
+sys.stderr = _output
+                    `);
+
+
+                    await pyodide.runPythonAsync(code);
+
+
+                    const result =
+                        await pyodide.runPythonAsync(
+                            "_output.getvalue()"
+                        );
+
+
+                    if (result.trim() === "") {
+
+                        outputBox.textContent =
+                            "Code executed successfully.";
+
+                    } else {
+
+                        outputBox.textContent =
+                            result;
+
+                    }
+
+
+                } catch (error) {
+
+                    outputBox.textContent =
+                        "❌ Error:\n\n" + error;
+
+                }
+
+
+                runButton.disabled = false;
+
+                runButton.textContent =
+                    "▶ Run Code";
+
+            }
+        );
+
+
+        startPython();
+
+    </script>
+
+</body>
+</html>

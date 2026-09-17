@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DOM & Mini Project | StudyMate</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">StudyMate</div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/learn">Learn</a>
+        </div>
+    </nav>
+
+    <main class="container">
+
+        <section class="quick-section">
+
+            <h1>DOM & Mini Project 🖥️</h1>
+
+            <p class="description">
+                Learn how JavaScript interacts with HTML using the DOM.
+            </p>
+
+            <div class="card">
+
+                <h2>1. What is DOM?</h2>
+
+                <p>
+                    DOM stands for <b>Document Object Model</b>.
+                </p>
+
+                <p>
+                    The DOM represents an HTML webpage as objects.
+                    JavaScript can use these objects to change the webpage.
+                </p>
+
+                <h2>2. Selecting an Element</h2>
+
+                <p>
+                    We can select an HTML element using
+                    <b>getElementById()</b>.
+                </p>
+
+                <pre><code>
+let heading = document.getElementById("title");
+
+console.log(heading);
+                </code></pre>
+
+                <h2>3. Changing Text</h2>
+
+                <p>
+                    JavaScript can change the text of an HTML element.
+                </p>
+
+                <pre><code>
+document.getElementById("title").innerText =
+    "Welcome to StudyMate!";
+                </code></pre>
+
+                <h2>4. Mini Project 🚀</h2>
+
+                <p>
+                    Let's create a simple interactive greeting program.
+                </p>
+
+                <input
+                    type="text"
+                    id="nameInput"
+                    placeholder="Enter your name"
+                >
+
+                <br><br>
+
+                <button
+                    onclick="showGreeting()"
+                    class="card-button">
+                    Show Greeting
+                </button>
+
+                <h2 id="result"></h2>
+
+                <h2>5. How It Works</h2>
+
+                <ul>
+                    <li>User enters their name.</li>
+                    <li>JavaScript reads the input.</li>
+                    <li>The button triggers a function.</li>
+                    <li>JavaScript changes the webpage text.</li>
+                </ul>
+
+                <h2>Quick Summary 🧠</h2>
+
+                <ul>
+                    <li><b>DOM</b> → represents the webpage</li>
+                    <li><b>getElementById()</b> → selects an element</li>
+                    <li><b>innerText</b> → changes text</li>
+                    <li><b>Events</b> → respond to user actions</li>
+                    <li><b>JavaScript + DOM</b> → makes webpages interactive</li>
+                </ul>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Student Learning Assistant © 2026</p>
+    </footer>
+
+    <script>
+
+        function showGreeting() {
+
+            let name = document.getElementById("nameInput").value;
+
+            if (name === "") {
+
+                document.getElementById("result").innerText =
+                    "Please enter your name 😊";
+
+            } else {
+
+                document.getElementById("result").innerText =
+                    "Hello " + name + "! 👋 Welcome to StudyMate!";
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

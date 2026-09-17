@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Colors, Fonts & Text | StudyMate</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">StudyMate</div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/learn">Learn</a>
+        </div>
+    </nav>
+
+    <main class="container">
+
+        <section class="quick-section">
+
+            <h1>7️⃣ Colors, Fonts & Text 🎨</h1>
+
+            <p class="description">
+                Learn how to make webpages attractive using CSS colors,
+                fonts and text properties.
+            </p>
+
+            <div class="card">
+
+                <h2>1. CSS Colors</h2>
+
+                <p>
+                    CSS allows us to change the color of text and backgrounds.
+                </p>
+
+                <pre><code>
+h1 {
+    color: blue;
+}
+
+p {
+    color: green;
+}
+                </code></pre>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>2. Background Color</h2>
+
+                <p>
+                    We can change the background color of an element.
+                </p>
+
+                <pre><code>
+body {
+    background-color: lightblue;
+}
+                </code></pre>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>3. Font Size</h2>
+
+                <p>
+                    The font-size property changes the size of text.
+                </p>
+
+                <pre><code>
+p {
+    font-size: 20px;
+}
+                </code></pre>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>4. Font Family</h2>
+
+                <p>
+                    Font-family changes the type of font used.
+                </p>
+
+                <pre><code>
+body {
+    font-family: Arial, sans-serif;
+}
+                </code></pre>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>5. Text Alignment</h2>
+
+                <p>
+                    We can align text to the left, center or right.
+                </p>
+
+                <pre><code>
+h1 {
+    text-align: center;
+}
+                </code></pre>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>6. Font Weight</h2>
+
+                <p>
+                    Font-weight is used to make text normal or bold.
+                </p>
+
+                <pre><code>
+p {
+    font-weight: bold;
+}
+                </code></pre>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>Important Points ⭐</h2>
+
+                <ul>
+                    <li>color changes text color.</li>
+                    <li>background-color changes background color.</li>
+                    <li>font-size changes text size.</li>
+                    <li>font-family changes the font.</li>
+                    <li>text-align controls text position.</li>
+                    <li>font-weight controls text thickness.</li>
+                </ul>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>Try It Yourself 💻</h2>
+
+                <p>Write CSS and HTML code below:</p>
+
+                <textarea id="codeEditor" rows="15" style="width:100%;">
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+
+h1 {
+    color: blue;
+    text-align: center;
+}
+
+p {
+    color: green;
+    font-size: 20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Hello StudyMate!</h1>
+
+<p>I am learning CSS.</p>
+
+</body>
+
+</html>
+                </textarea>
+
+                <br><br>
+
+                <button class="card-button" onclick="runCode()">
+                    ▶ Run Code
+                </button>
+
+                <br><br>
+
+                <iframe
+                    id="previewFrame"
+                    style="width:100%; height:300px; border:1px solid #ccc;">
+                </iframe>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Student Learning Assistant © 2026</p>
+    </footer>
+
+
+    <script>
+
+        function runCode() {
+
+            const code = document.getElementById("codeEditor").value;
+
+            document.getElementById("previewFrame").srcdoc = code;
+
+        }
+
+    </script>
+
+</body>
+
+</html>

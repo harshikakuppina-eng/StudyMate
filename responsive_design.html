@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Responsive Design | StudyMate</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">StudyMate</div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/learn">Learn</a>
+        </div>
+
+    </nav>
+
+
+    <main class="container">
+
+        <section class="quick-section">
+
+            <h1>🔟 Responsive Design 📱💻</h1>
+
+            <p class="description">
+                Learn how to create webpages that automatically
+                adjust to different screen sizes.
+            </p>
+
+
+            <div class="card">
+
+                <h2>What is Responsive Design?</h2>
+
+                <p>
+                    Responsive Design means creating a website
+                    that works properly on different devices.
+                </p>
+
+                <ul>
+                    <li>📱 Mobile phones</li>
+                    <li>📲 Tablets</li>
+                    <li>💻 Laptops</li>
+                    <li>🖥️ Desktop computers</li>
+                </ul>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>1. Viewport</h2>
+
+                <p>
+                    The viewport meta tag helps webpages display
+                    correctly on mobile devices.
+                </p>
+
+                <pre><code>
+&lt;meta name="viewport"
+      content="width=device-width, initial-scale=1.0"&gt;
+                </code></pre>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>2. Media Queries</h2>
+
+                <p>
+                    Media queries allow us to apply different CSS
+                    rules depending on the screen size.
+                </p>
+
+                <pre><code>
+@media (max-width: 600px) {
+
+    body {
+        font-size: 16px;
+    }
+
+}
+                </code></pre>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>3. Responsive Layout</h2>
+
+                <p>
+                    We can change a row layout into a column
+                    layout when the screen becomes smaller.
+                </p>
+
+                <pre><code>
+.container {
+    display: flex;
+}
+
+@media (max-width: 600px) {
+
+    .container {
+        flex-direction: column;
+    }
+
+}
+                </code></pre>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>4. Responsive Images</h2>
+
+                <p>
+                    Images should not become wider than their
+                    container.
+                </p>
+
+                <pre><code>
+img {
+    max-width: 100%;
+    height: auto;
+}
+                </code></pre>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>Responsive Example 💻</h2>
+
+                <pre><code>
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+@media (max-width: 600px) {
+
+    .container {
+        flex-direction: column;
+    }
+
+}
+                </code></pre>
+
+                <p>
+                    On a large screen the boxes appear in a row.
+                    On a small screen they appear one below another.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>Important Points ⭐</h2>
+
+                <ul>
+                    <li>Responsive Design supports different devices.</li>
+                    <li>Viewport helps mobile browsers display pages correctly.</li>
+                    <li>Media queries apply CSS based on screen size.</li>
+                    <li>Flexbox helps create flexible layouts.</li>
+                    <li>Images can be made responsive using max-width.</li>
+                </ul>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>Try It Yourself 🚀</h2>
+
+                <textarea id="codeEditor" rows="22" style="width:100%;">
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<style>
+
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+.box {
+    padding: 30px;
+    border: 2px solid blue;
+    flex: 1;
+}
+
+@media (max-width: 600px) {
+
+    .container {
+        flex-direction: column;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="box">HTML</div>
+
+    <div class="box">CSS</div>
+    
+    <div class="box">JavaScript</div>
+
+</div>
+
+</body>
+
+</html>
+                </textarea>
+
+                <br><br>
+
+                <button class="card-button" onclick="runCode()">
+                    ▶ Run Code
+                </button>
+
+                <br><br>
+
+                <iframe
+                    id="previewFrame"
+                    style="width:100%;
+                           height:300px;
+                           border:1px solid #ccc;">
+                </iframe>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>Student Learning Assistant © 2026</p>
+    </footer>
+
+
+    <script>
+
+        function runCode() {
+
+            const code =
+                document.getElementById("codeEditor").value;
+
+            document.getElementById("previewFrame").srcdoc = code;
+
+        }
+
+    </script>
+
+</body>
+
+</html>

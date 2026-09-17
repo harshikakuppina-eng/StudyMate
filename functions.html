@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions | StudyMate</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">StudyMate</div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/learn">Learn</a>
+            <a href="/python">Python</a>
+            <a href="/python-basics">Basics</a>
+        </div>
+    </nav>
+
+    <main class="container">
+
+        <!-- HEADER -->
+        <section class="welcome">
+            <div>
+                <p class="small-text">PYTHON PROGRAMMING</p>
+
+                <h1>Python Functions 🧩</h1>
+
+                <p class="description">
+                    Learn how to create reusable blocks of code
+                    using Python functions.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- WHAT IS FUNCTION -->
+        <section class="quick-section">
+
+            <h2>What is a Function?</h2>
+
+            <div class="card">
+
+                <p>
+                    A <strong>function</strong> is a reusable block of code
+                    that performs a particular task.
+                </p>
+
+                <p>
+                    Instead of writing the same code again and again,
+                    we can put it inside a function and call it whenever
+                    we need it.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- CREATE FUNCTION -->
+        <section class="quick-section">
+
+            <h2>1. Creating a Function 🔨</h2>
+
+            <div class="card">
+
+                <p>
+                    In Python, we use the <strong>def</strong> keyword
+                    to create a function.
+                </p>
+
+                <pre><code>def greet():
+    print("Hello!")
+
+greet()</code></pre>
+
+                <p><strong>Output:</strong></p>
+
+                <pre><code>Hello!</code></pre>
+
+                <p>
+                    Here, <strong>greet()</strong> is the function call.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- PARAMETERS -->
+        <section class="quick-section">
+
+            <h2>2. Function Parameters 📦</h2>
+
+            <div class="card">
+
+                <p>
+                    Parameters allow us to pass information into a function.
+                </p>
+
+                <pre><code>def greet(name):
+    print("Hello", name)
+
+greet("Harshika")</code></pre>
+
+                <p><strong>Output:</strong></p>
+
+                <pre><code>Hello Harshika</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- MULTIPLE PARAMETERS -->
+        <section class="quick-section">
+
+            <h2>3. Multiple Parameters ➕</h2>
+
+            <div class="card">
+
+                <p>
+                    A function can have more than one parameter.
+                </p>
+
+                <pre><code>def add(a, b):
+    print(a + b)
+
+add(10, 20)</code></pre>
+
+                <p><strong>Output:</strong></p>
+
+                <pre><code>30</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- RETURN -->
+        <section class="quick-section">
+
+            <h2>4. return Statement 🔙</h2>
+
+            <div class="card">
+
+                <p>
+                    The <strong>return</strong> statement sends a result
+                    back from the function.
+                </p>
+
+                <pre><code>def add(a, b):
+    return a + b
+
+result = add(10, 20)
+
+print(result)</code></pre>
+
+                <p><strong>Output:</strong></p>
+
+                <pre><code>30</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- DEFAULT PARAMETER -->
+        <section class="quick-section">
+
+            <h2>5. Default Parameter ⚙️</h2>
+
+            <div class="card">
+
+                <p>
+                    We can give a parameter a default value.
+                </p>
+
+                <pre><code>def greet(name="Student"):
+    print("Hello", name)
+
+greet()
+greet("Harshika")</code></pre>
+
+                <p><strong>Output:</strong></p>
+
+                <pre><code>Hello Student
+Hello Harshika</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- REAL LIFE EXAMPLE -->
+        <section class="quick-section">
+
+            <h2>6. Real-Life Example 🎯</h2>
+
+            <div class="card">
+
+                <p>
+                    Imagine you frequently need to calculate the
+                    total marks of a student.
+                </p>
+
+                <p>
+                    Instead of writing the calculation every time,
+                    create a function once and reuse it.
+                </p>
+
+                <pre><code>def total_marks(m1, m2, m3):
+    return m1 + m2 + m3
+
+total = total_marks(80, 75, 90)
+
+print("Total:", total)</code></pre>
+
+                <p><strong>Output:</strong></p>
+
+                <pre><code>Total: 245</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- WHY FUNCTIONS -->
+        <section class="quick-section">
+
+            <h2>Why Use Functions? 🤔</h2>
+
+            <div class="card">
+
+                <p>Functions help us to:</p>
+
+                <ul>
+                    <li>♻️ Reuse code</li>
+                    <li>📖 Make code easier to understand</li>
+                    <li>🛠️ Reduce repeated code</li>
+                    <li>🐞 Make debugging easier</li>
+                    <li>📦 Organize programs into smaller parts</li>
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- TRY IT -->
+        <section class="quick-section">
+
+            <h2>Try it Yourself 💻</h2>
+
+            <div class="card">
+
+                <p>
+                    Write your own Python function and click
+                    <strong>Run Code</strong>.
+                </p>
+
+                <textarea id="codeEditor" rows="14">def greet(name):
+    print("Hello", name)
+
+greet("Harshika")</textarea>
+
+                <br><br>
+
+                <button id="runCodeButton" class="card-button" disabled>
+                    ▶ Run Code
+                </button>
+
+                <p id="pythonStatus">
+                    🟡 Loading Python...
+                </p>
+
+                <h3>Output:</h3>
+
+                <pre id="outputBox">Please wait...</pre>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>Student Learning Assistant © 2026</p>
+    </footer>
+
+
+    <!-- PYTHON RUNTIME -->
+
+    <script type="module">
+
+        import {
+            loadPyodide
+        } from "https://cdn.jsdelivr.net/pyodide/v0.28.2/full/pyodide.mjs";
+
+
+        let pyodide;
+
+        const runButton =
+            document.getElementById("runCodeButton");
+
+        const codeEditor =
+            document.getElementById("codeEditor");
+
+        const outputBox =
+            document.getElementById("outputBox");
+
+        const status =
+            document.getElementById("pythonStatus");
+
+
+        async function startPython() {
+
+            try {
+
+                status.textContent =
+                    "🟡 Loading Python...";
+
+                pyodide = await loadPyodide();
+
+                status.textContent =
+                    "🟢 Python is ready!";
+
+                outputBox.textContent =
+                    "Ready! Write Python code and click Run Code.";
+
+                runButton.disabled = false;
+
+            }
+
+            catch (error) {
+
+                status.textContent =
+                    "🔴 Python failed to load.";
+
+                outputBox.textContent =
+                    error;
+
+                console.error(error);
+
+            }
+
+        }
+
+
+        runButton.addEventListener(
+            "click",
+            async function () {
+
+                const code =
+                    codeEditor.value;
+
+
+                if (code.trim() === "") {
+
+                    outputBox.textContent =
+                        "Please write some Python code.";
+
+                    return;
+
+                }
+
+
+                runButton.disabled = true;
+
+                runButton.textContent =
+                    "⏳ Running...";
+
+
+                try {
+
+                    await pyodide.runPythonAsync(`
+
+import sys
+from io import StringIO
+
+_output = StringIO()
+
+sys.stdout = _output
+sys.stderr = _output
+
+                    `);
+
+
+                    await pyodide.runPythonAsync(code);
+
+
+                    const result =
+                        await pyodide.runPythonAsync(
+                            "_output.getvalue()"
+                        );
+
+
+                    if (result.trim() === "") {
+
+                        outputBox.textContent =
+                            "Code executed successfully.";
+
+                    }
+
+                    else {
+
+                        outputBox.textContent =
+                            result;
+
+                    }
+
+                }
+
+                catch (error) {
+
+                    outputBox.textContent =
+                        "❌ Error:\n\n" + error;
+
+                }
+
+
+                runButton.disabled = false;
+
+                runButton.textContent =
+                    "▶ Run Code";
+
+            }
+        );
+
+
+        startPython();
+
+    </script>
+
+</body>
+
+</html>

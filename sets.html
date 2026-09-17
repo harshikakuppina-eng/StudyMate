@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sets | StudyMate</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            StudyMate
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/learn">Learn</a>
+            <a href="/python">Python</a>
+            <a href="/python-basics">Basics</a>
+        </div>
+
+    </nav>
+
+    <main class="container">
+
+        <section class="welcome">
+
+            <div>
+
+                <p class="small-text">
+                    PYTHON SETS
+                </p>
+
+                <h1>
+                    Python Sets 🧩
+                </h1>
+
+                <p class="description">
+                    Learn how to store unique values using Python Sets.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- What is Set -->
+
+        <section class="quick-section">
+
+            <h2>What is a Set?</h2>
+
+            <div class="info-box">
+
+                <p>
+                    A <b>Set</b> is a collection of unique values in Python.
+                </p>
+
+                <p>
+                    A Set automatically removes duplicate values.
+                </p>
+
+                <pre><code>numbers = {1, 2, 3, 4}</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- Duplicate Values -->
+
+        <section class="quick-section">
+
+            <h2>1. Duplicate Values</h2>
+
+            <div class="info-box">
+
+                <p>
+                    Sets do not allow duplicate values.
+                </p>
+
+                <pre><code>numbers = {1, 2, 3, 3, 4}
+
+print(numbers)</code></pre>
+
+                <p><b>Output:</b></p>
+
+                <pre><code>{1, 2, 3, 4}</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- Add -->
+
+        <section class="quick-section">
+
+            <h2>2. Adding Values</h2>
+
+            <div class="info-box">
+
+                <p>
+                    We can use <b>add()</b> to add a new value.
+                </p>
+
+                <pre><code>subjects = {"Python", "Linux"}
+
+subjects.add("Networking")
+
+print(subjects)</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- Remove -->
+
+        <section class="quick-section">
+
+            <h2>3. Removing Values</h2>
+
+            <div class="info-box">
+
+                <p>
+                    We can use <b>remove()</b> to remove a value.
+                </p>
+
+                <pre><code>subjects = {"Python", "Linux", "Networking"}
+
+subjects.remove("Linux")
+
+print(subjects)</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- Union -->
+
+        <section class="quick-section">
+
+            <h2>4. Union</h2>
+
+            <div class="info-box">
+
+                <p>
+                    <b>union()</b> combines two Sets.
+                </p>
+
+                <pre><code>a = {1, 2, 3}
+b = {3, 4, 5}
+
+result = a.union(b)
+
+print(result)</code></pre>
+
+                <p><b>Output:</b></p>
+
+                <pre><code>{1, 2, 3, 4, 5}</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- Intersection -->
+
+        <section class="quick-section">
+
+            <h2>5. Intersection</h2>
+
+            <div class="info-box">
+
+                <p>
+                    <b>intersection()</b> finds the common values
+                    between two Sets.
+                </p>
+
+                <pre><code>a = {1, 2, 3}
+b = {2, 3, 4}
+
+result = a.intersection(b)
+
+print(result)</code></pre>
+
+                <p><b>Output:</b></p>
+
+                <pre><code>{2, 3}</code></pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- Real Life Example -->
+
+        <section class="quick-section">
+
+            <h2>6. Real-Life Example 🔐</h2>
+
+            <div class="info-box">
+
+                <p>
+                    In cybersecurity, Sets can be useful when
+                    we want to remove duplicate IP addresses.
+                </p>
+
+                <pre><code>ip_addresses = {
+    "192.168.1.10",
+    "192.168.1.20",
+    "192.168.1.10",
+    "192.168.1.30"
+}
+
+print(ip_addresses)</code></pre>
+
+                <p>
+                    The duplicate IP address will automatically
+                    be removed.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Important -->
+
+        <section class="quick-section">
+
+            <h2>Important Points ⭐</h2>
+
+            <div class="info-box">
+
+                <ul>
+                    <li>Sets store unique values.</li>
+                    <li>Duplicates are automatically removed.</li>
+                    <li>Sets use curly brackets <b>{ }</b>.</li>
+                    <li><b>add()</b> adds a value.</li>
+                    <li><b>remove()</b> removes a value.</li>
+                    <li><b>union()</b> combines Sets.</li>
+                    <li><b>intersection()</b> finds common values.</li>
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- Try It Yourself -->
+
+        <section class="quick-section">
+
+            <h2>Try it Yourself 🧑‍💻</h2>
+
+            <div class="code-box">
+
+                <p id="pythonStatus">
+                    🟡 Loading Python...
+                </p>
+
+                <textarea id="codeEditor">numbers = {1, 2, 3, 3, 4, 5}
+
+print("Set:", numbers)
+
+numbers.add(6)
+
+print("After adding 6:", numbers)</textarea>
+
+                <button
+                    id="runCodeButton"
+                    class="card-button"
+                    disabled>
+                    ▶ Run Code
+                </button>
+
+                <h3>Output:</h3>
+
+                <pre id="outputBox">Loading Python...</pre>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>Student Learning Assistant © 2026</p>
+    </footer>
+
+
+    <script type="module">
+
+        import { loadPyodide }
+        from "https://cdn.jsdelivr.net/pyodide/v0.28.2/full/pyodide.mjs";
+
+
+        let pyodide;
+
+
+        const runButton =
+            document.getElementById("runCodeButton");
+
+        const codeEditor =
+            document.getElementById("codeEditor");
+
+        const outputBox =
+            document.getElementById("outputBox");
+
+        const status =
+            document.getElementById("pythonStatus");
+
+
+        async function startPython() {
+
+            try {
+
+                status.textContent =
+                    "🟡 Loading Python...";
+
+                pyodide = await loadPyodide();
+
+                status.textContent =
+                    "🟢 Python is ready!";
+
+                outputBox.textContent =
+                    "Ready! Write Python code and click Run Code.";
+
+                runButton.disabled = false;
+
+            }
+
+            catch (error) {
+
+                status.textContent =
+                    "🔴 Python failed to load.";
+
+                outputBox.textContent =
+                    error;
+
+                console.error(error);
+
+            }
+
+        }
+
+
+        runButton.addEventListener(
+            "click",
+            async function () {
+
+                const code =
+                    codeEditor.value;
+
+
+                if (code.trim() === "") {
+
+                    outputBox.textContent =
+                        "Please write some Python code.";
+
+                    return;
+
+                }
+
+
+                runButton.disabled = true;
+
+                runButton.textContent =
+                    "⏳ Running...";
+
+
+                try {
+
+                    await pyodide.runPythonAsync(`
+import sys
+from io import StringIO
+
+_output = StringIO()
+
+sys.stdout = _output
+sys.stderr = _output
+`);
+
+
+                    await pyodide.runPythonAsync(code);
+
+
+                    const result =
+                        await pyodide.runPythonAsync(
+                            "_output.getvalue()"
+                        );
+
+
+                    if (result.trim() === "") {
+
+                        outputBox.textContent =
+                            "Code executed successfully.";
+
+                    }
+
+                    else {
+
+                        outputBox.textContent =
+                            result;
+
+                    }
+
+                }
+
+                catch (error) {
+
+                    outputBox.textContent =
+                        "❌ Error:\n\n" + error;
+
+                }
+
+
+                runButton.disabled = false;
+
+                runButton.textContent =
+                    "▶ Run Code";
+
+            }
+        );
+
+
+        startPython();
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OOP | StudyMate</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            StudyMate
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/learn">Learn</a>
+            <a href="/python">Python</a>
+        </div>
+
+    </nav>
+
+    <main class="container">
+
+        <section class="welcome">
+
+            <div>
+
+                <p class="small-text">
+                    PYTHON OOP
+                </p>
+
+                <h1>
+                    Object-Oriented Programming 🧩
+                </h1>
+
+                <p class="description">
+                    Learn Classes, Objects, Attributes and Methods
+                    step by step.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="quick-section">
+
+            <h2>What is OOP?</h2>
+
+            <div class="card">
+
+                <p>
+                    OOP stands for
+                    <strong>Object-Oriented Programming</strong>.
+                </p>
+
+                <p>
+                    In OOP, we organize our program using
+                    <strong>classes and objects</strong>.
+                </p>
+
+                <p>
+                    Real-life things like students, cars and
+                    bank accounts can be represented as objects.
+                </p>
+
+            </div>
+
+
+            <h2>1. Class</h2>
+
+            <div class="card">
+
+                <p>
+                    A <strong>class</strong> is like a blueprint
+                    for creating objects.
+                </p>
+
+                <pre><code>class Student:
+    pass</code></pre>
+
+                <p>
+                    Here, <strong>Student</strong> is a class.
+                </p>
+
+            </div>
+
+
+            <h2>2. Object</h2>
+
+            <div class="card">
+
+                <p>
+                    An <strong>object</strong> is an actual
+                    instance created from a class.
+                </p>
+
+                <pre><code>class Student:
+    pass
+
+student1 = Student()</code></pre>
+
+                <p>
+                    Here, <strong>student1</strong> is an object
+                    of the Student class.
+                </p>
+
+            </div>
+
+
+            <h2>3. __init__()</h2>
+
+            <div class="card">
+
+                <p>
+                    <strong>__init__()</strong> is a special
+                    method that runs automatically when an
+                    object is created.
+                </p>
+
+                <pre><code>class Student:
+
+    def __init__(self, name, course):
+        self.name = name
+        self.course = course
+
+student1 = Student("Harshika", "Cybersecurity")
+
+print(student1.name)
+print(student1.course)</code></pre>
+
+                <p><strong>Output:</strong></p>
+
+                <pre><code>Harshika
+Cybersecurity</code></pre>
+
+            </div>
+
+
+            <h2>4. What is self?</h2>
+
+            <div class="card">
+
+                <p>
+                    <strong>self</strong> refers to the current
+                    object.
+                </p>
+
+                <pre><code>class Student:
+
+    def __init__(self, name):
+        self.name = name</code></pre>
+
+                <p>
+                    Here, <strong>self.name</strong> stores the
+                    name for that particular object.
+                </p>
+
+            </div>
+
+
+            <h2>5. Attributes</h2>
+
+            <div class="card">
+
+                <p>
+                    Attributes are the data or properties
+                    belonging to an object.
+                </p>
+
+                <pre><code>class Student:
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+student1 = Student("Harshika", 18)
+
+print(student1.name)
+print(student1.age)</code></pre>
+
+            </div>
+
+
+            <h2>6. Methods</h2>
+
+            <div class="card">
+
+                <p>
+                    A method is a function inside a class.
+                </p>
+
+                <pre><code>class Student:
+
+    def __init__(self, name):
+        self.name = name
+
+    def study(self):
+        print(self.name, "is studying Python")
+
+student1 = Student("Harshika")
+
+student1.study()</code></pre>
+
+                <p><strong>Output:</strong></p>
+
+                <pre><code>Harshika is studying Python</code></pre>
+
+            </div>
+
+
+            <h2>7. Multiple Objects</h2>
+
+            <div class="card">
+
+                <p>
+                    One class can be used to create many objects.
+                </p>
+
+                <pre><code>class Student:
+
+    def __init__(self, name):
+        self.name = name
+
+student1 = Student("Harshika")
+student2 = Student("Rahul")
+
+print(student1.name)
+print(student2.name)</code></pre>
+
+                <p><strong>Output:</strong></p>
+
+                <pre><code>Harshika
+Rahul</code></pre>
+
+            </div>
+
+
+            <h2>🔐 Cybersecurity Example</h2>
+
+            <div class="card">
+
+                <p>
+                    We can represent a cybersecurity tool
+                    using a class.
+                </p>
+
+                <pre><code>class SecurityTool:
+
+    def __init__(self, name):
+        self.name = name
+
+    def scan(self):
+        print(self.name, "is scanning...")
+
+tool = SecurityTool("Network Scanner")
+
+tool.scan()</code></pre>
+
+                <p><strong>Output:</strong></p>
+
+                <pre><code>Network Scanner is scanning...</code></pre>
+
+            </div>
+
+
+            <h2>⭐ Important Points</h2>
+
+            <div class="card">
+
+                <p>✅ Class → Blueprint</p>
+
+                <p>✅ Object → Actual instance</p>
+
+                <p>✅ __init__() → Initializes object</p>
+
+                <p>✅ self → Current object</p>
+
+                <p>✅ Attribute → Object data</p>
+
+                <p>✅ Method → Function inside class</p>
+
+            </div>
+
+
+            <h2>💻 Try it Yourself</h2>
+
+            <div class="card">
+
+                <p id="pythonStatus">
+                    🟡 Loading Python...
+                </p>
+
+                <textarea id="codeEditor" rows="15">class Student:
+
+    def __init__(self, name, course):
+        self.name = name
+        self.course = course
+
+    def introduce(self):
+        print("My name is", self.name)
+        print("I am studying", self.course)
+
+
+student1 = Student("Harshika", "Cybersecurity")
+
+student1.introduce()</textarea>
+
+                <br><br>
+
+                <button id="runCodeButton" class="card-button" disabled>
+                    ▶ Run Code
+                </button>
+
+                <h3>Output:</h3>
+
+                <pre id="outputBox">Loading Python...</pre>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>Student Learning Assistant © 2026</p>
+    </footer>
+
+
+<script type="module">
+
+import { loadPyodide } from
+"https://cdn.jsdelivr.net/pyodide/v0.28.2/full/pyodide.mjs";
+
+let pyodide;
+
+const runButton =
+document.getElementById("runCodeButton");
+
+const codeEditor =
+document.getElementById("codeEditor");
+
+const outputBox =
+document.getElementById("outputBox");
+
+const status =
+document.getElementById("pythonStatus");
+
+
+async function startPython() {
+
+    try {
+
+        status.textContent =
+        "🟡 Loading Python...";
+
+        pyodide = await loadPyodide();
+
+        status.textContent =
+        "🟢 Python is ready!";
+
+        outputBox.textContent =
+        "Ready! Write Python code and click Run Code.";
+
+        runButton.disabled = false;
+
+    } catch (error) {
+
+        status.textContent =
+        "🔴 Python failed to load.";
+
+        outputBox.textContent = error;
+
+        console.error(error);
+    }
+}
+
+
+runButton.addEventListener("click", async function () {
+
+    const code = codeEditor.value;
+
+    if (code.trim() === "") {
+
+        outputBox.textContent =
+        "Please write some Python code.";
+
+        return;
+    }
+
+    runButton.disabled = true;
+
+    runButton.textContent =
+    "⏳ Running...";
+
+
+    try {
+
+        await pyodide.runPythonAsync(`
+import sys
+from io import StringIO
+
+_output = StringIO()
+
+sys.stdout = _output
+sys.stderr = _output
+`);
+
+        await pyodide.runPythonAsync(code);
+
+        const result =
+        await pyodide.runPythonAsync(
+            "_output.getvalue()"
+        );
+
+
+        if (result.trim() === "") {
+
+            outputBox.textContent =
+            "Code executed successfully.";
+
+        } else {
+
+            outputBox.textContent =
+            result;
+        }
+
+    } catch (error) {
+
+        outputBox.textContent =
+        "❌ Error:\n\n" + error;
+    }
+
+
+    runButton.disabled = false;
+
+    runButton.textContent =
+    "▶ Run Code";
+
+});
+
+
+startPython();
+
+</script>
+
+</body>
+</html>

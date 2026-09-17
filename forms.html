@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Forms | StudyMate</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">StudyMate</div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/learn">Learn</a>
+            <a href="/html">Web Development</a>
+        </div>
+
+    </nav>
+
+
+    <main class="container">
+
+        <section class="quick-section">
+
+            <h1>📝 HTML Forms</h1>
+
+            <p class="description">
+                Learn how to collect information from users using HTML forms.
+            </p>
+
+
+            <!-- What is Form -->
+
+            <div class="card">
+
+                <h2>1. What is an HTML Form?</h2>
+
+                <p>
+                    A form is used to collect information from the user.
+                </p>
+
+                <p>
+                    Examples: Login forms, registration forms,
+                    feedback forms and contact forms.
+                </p>
+
+            </div>
+
+
+            <!-- Form Tag -->
+
+            <div class="card">
+
+                <h2>2. Form Tag</h2>
+
+                <p>
+                    The <strong>&lt;form&gt;</strong> tag is used
+                    to create a form.
+                </p>
+
+                <pre><code>&lt;form&gt;
+
+    Form elements go here.
+
+&lt;/form&gt;</code></pre>
+
+            </div>
+
+
+            <!-- Input -->
+
+            <div class="card">
+
+                <h2>3. Input Element</h2>
+
+                <p>
+                    The <strong>&lt;input&gt;</strong> element
+                    is used to take information from the user.
+                </p>
+
+                <pre><code>&lt;input type="text"&gt;</code></pre>
+
+            </div>
+
+
+            <!-- Input Types -->
+
+            <div class="card">
+
+                <h2>4. Common Input Types</h2>
+
+                <ul>
+
+                    <li>text → Text input</li>
+
+                    <li>email → Email address</li>
+
+                    <li>password → Password</li>
+
+                    <li>number → Numbers</li>
+
+                    <li>date → Date</li>
+
+                    <li>checkbox → Multiple choices</li>
+
+                    <li>radio → One choice</li>
+
+                    <li>submit → Submit button</li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Label -->
+
+            <div class="card">
+
+                <h2>5. Label</h2>
+
+                <p>
+                    The <strong>&lt;label&gt;</strong> tag
+                    describes an input field.
+                </p>
+
+                <pre><code>&lt;label&gt;Name:&lt;/label&gt;
+
+&lt;input type="text"&gt;</code></pre>
+
+            </div>
+
+
+            <!-- Select -->
+
+            <div class="card">
+
+                <h2>6. Select & Option</h2>
+
+                <p>
+                    The <strong>&lt;select&gt;</strong> element
+                    creates a dropdown list.
+                </p>
+
+                <pre><code>&lt;select&gt;
+
+    &lt;option&gt;Python&lt;/option&gt;
+    &lt;option&gt;HTML&lt;/option&gt;
+    &lt;option&gt;CSS&lt;/option&gt;
+
+&lt;/select&gt;</code></pre>
+
+            </div>
+
+
+            <!-- Textarea -->
+
+            <div class="card">
+
+                <h2>7. Textarea</h2>
+
+                <p>
+                    Textarea is used when the user needs to
+                    enter multiple lines of text.
+                </p>
+
+                <pre><code>&lt;textarea&gt;
+Write your message here...
+&lt;/textarea&gt;</code></pre>
+
+            </div>
+
+
+            <!-- Complete Form -->
+
+            <div class="card">
+
+                <h2>8. Complete Form Example</h2>
+
+                <form>
+
+                    <label>Name:</label>
+                    <br>
+
+                    <input
+                        type="text"
+                        placeholder="Enter your name"
+                    >
+
+                    <br><br>
+
+
+                    <label>Email:</label>
+                    <br>
+
+                    <input
+                        type="email"
+                        placeholder="Enter your email"
+                    >
+
+                    <br><br>
+
+
+                    <label>Password:</label>
+                    <br>
+
+                    <input
+                        type="password"
+                        placeholder="Enter your password"
+                    >
+
+                    <br><br>
+
+
+                    <label>Course:</label>
+                    <br>
+
+                    <select>
+
+                        <option>Cybersecurity</option>
+                        <option>Computer Science</option>
+                        <option>Data Science</option>
+
+                    </select>
+
+                    <br><br>
+
+
+                    <label>Message:</label>
+                    <br>
+
+                    <textarea
+                        rows="5"
+                        placeholder="Enter your message"
+                    ></textarea>
+
+                    <br><br>
+
+
+                    <button
+                        type="submit"
+                        class="card-button"
+                    >
+                        Submit
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- Cybersecurity Example -->
+
+            <div class="card">
+
+                <h2>🔐 Cybersecurity Example</h2>
+
+                <p>
+                    Login and registration pages use HTML forms
+                    to collect username, email and password.
+                </p>
+
+                <p>
+                    Later, JavaScript and Flask can process
+                    this information.
+                </p>
+
+            </div>
+
+
+            <!-- Important Points -->
+
+            <div class="card">
+
+                <h2>⭐ Important Points</h2>
+
+                <ul>
+
+                    <li>
+                        &lt;form&gt; → Creates a form
+                    </li>
+
+                    <li>
+                        &lt;label&gt; → Describes an input
+                    </li>
+
+                    <li>
+                        &lt;input&gt; → Takes user input
+                    </li>
+
+                    <li>
+                        &lt;select&gt; → Creates dropdown
+                    </li>
+
+                    <li>
+                        &lt;textarea&gt; → Multiple-line input
+                    </li>
+
+                    <li>
+                        &lt;button&gt; → Creates a button
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Try Yourself -->
+
+            <div class="card">
+
+                <h2>🧪 Try it Yourself</h2>
+
+                <p>
+                    Create your own form below and click Preview.
+                </p>
+
+                <textarea
+                    id="htmlEditor"
+                    rows="18"
+                    style="width:100%;"
+                ><h2>Student Registration</h2>
+
+<form>
+
+<label>Name:</label><br>
+<input type="text" placeholder="Enter your name">
+
+<br><br>
+
+<label>Email:</label><br>
+<input type="email" placeholder="Enter your email">
+
+<br><br>
+
+<label>Password:</label><br>
+<input type="password" placeholder="Enter password">
+
+<br><br>
+
+<label>Course:</label><br>
+
+<select>
+    <option>Cybersecurity</option>
+    <option>Python</option>
+    <option>Web Development</option>
+</select>
+
+<br><br>
+
+<button type="submit">
+    Register
+</button>
+
+</form></textarea>
+
+                <br><br>
+
+                <button
+                    class="card-button"
+                    onclick="previewHTML()"
+                >
+                    ▶ Preview
+                </button>
+
+                <h3>Preview:</h3>
+
+                <iframe
+                    id="previewFrame"
+                    style="width:100%; height:400px; border:1px solid #ccc;"
+                ></iframe>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>Student Learning Assistant © 2026</p>
+    </footer>
+
+
+    <script>
+
+        function previewHTML() {
+
+            const code =
+                document.getElementById("htmlEditor").value;
+
+            const preview =
+                document.getElementById("previewFrame");
+
+            preview.srcdoc = code;
+
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>File Handling | StudyMate</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            StudyMate
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/learn">Learn</a>
+            <a href="/python">Python</a>
+        </div>
+
+    </nav>
+
+
+    <main class="container">
+
+        <section class="welcome">
+
+            <div>
+
+                <p class="small-text">
+                    PYTHON FILE HANDLING
+                </p>
+
+                <h1>
+                    File Handling 📁
+                </h1>
+
+                <p class="description">
+                    Learn how to read, write and manage files
+                    using Python.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="quick-section">
+
+            <h2>What is File Handling?</h2>
+
+            <div class="card">
+
+                <p>
+                    <strong>File Handling</strong> means working
+                    with files using Python.
+                </p>
+
+                <p>
+                    We can create, read, write and update files
+                    using Python.
+                </p>
+
+                <p>
+                    Common file types include
+                    <strong>.txt, .csv and .log</strong> files.
+                </p>
+
+            </div>
+
+
+            <h2>1. Opening a File</h2>
+
+            <div class="card">
+
+                <p>
+                    Python uses the <strong>open()</strong>
+                    function to open a file.
+                </p>
+
+                <pre><code>file = open("example.txt", "r")</code></pre>
+
+                <p>
+                    Here <strong>"r"</strong> means read mode.
+                </p>
+
+            </div>
+
+
+            <h2>2. Reading a File</h2>
+
+            <div class="card">
+
+                <p>
+                    We can use <strong>read()</strong> to read
+                    the contents of a file.
+                </p>
+
+                <pre><code>file = open("example.txt", "r")
+
+content = file.read()
+
+print(content)
+
+file.close()</code></pre>
+
+            </div>
+
+
+            <h2>3. Writing to a File</h2>
+
+            <div class="card">
+
+                <p>
+                    <strong>"w"</strong> mode is used to write
+                    data to a file.
+                </p>
+
+                <pre><code>file = open("example.txt", "w")
+
+file.write("Hello Python!")
+
+file.close()</code></pre>
+
+                <p>
+                    If the file does not exist, Python can create
+                    it in this mode.
+                </p>
+
+            </div>
+
+
+            <h2>4. Append Data</h2>
+
+            <div class="card">
+
+                <p>
+                    <strong>"a"</strong> mode adds new data to the
+                    end of an existing file.
+                </p>
+
+                <pre><code>file = open("example.txt", "a")
+
+file.write("\nLearning Python")
+
+file.close()</code></pre>
+
+            </div>
+
+
+            <h2>5. with open()</h2>
+
+            <div class="card">
+
+                <p>
+                    Using <strong>with open()</strong> is a better
+                    way to work with files because Python
+                    automatically handles closing the file.
+                </p>
+
+                <pre><code>with open("example.txt", "r") as file:
+
+    content = file.read()
+
+    print(content)</code></pre>
+
+            </div>
+
+
+            <h2>6. File Modes</h2>
+
+            <div class="card">
+
+                <p>📖 <strong>r</strong> → Read</p>
+
+                <p>✍️ <strong>w</strong> → Write</p>
+
+                <p>➕ <strong>a</strong> → Append</p>
+
+                <p>🆕 <strong>x</strong> → Create a new file</p>
+
+            </div>
+
+
+            <h2>🔐 Cybersecurity Example</h2>
+
+            <div class="card">
+
+                <p>
+                    Security applications often work with
+                    log files. For example, a program may read
+                    a log file and display its contents.
+                </p>
+
+                <pre><code>log_data = """
+Login successful
+Failed login attempt
+Failed login attempt
+"""
+
+with open("security.log", "w") as file:
+    file.write(log_data)
+
+print("Security log created")</code></pre>
+
+                <p><strong>Output:</strong></p>
+
+                <pre><code>Security log created</code></pre>
+
+            </div>
+
+
+            <h2>⭐ Important Points</h2>
+
+            <div class="card">
+
+                <p>✅ <strong>open()</strong> → Opens a file</p>
+
+                <p>✅ <strong>read()</strong> → Reads file content</p>
+
+                <p>✅ <strong>write()</strong> → Writes data</p>
+
+                <p>✅ <strong>append</strong> → Adds data</p>
+
+                <p>✅ <strong>close()</strong> → Closes a file</p>
+
+                <p>✅ <strong>with open()</strong> → Safely manages files</p>
+
+            </div>
+
+
+            <h2>💻 Try it Yourself</h2>
+
+            <div class="card">
+
+                <p id="pythonStatus">
+                    🟡 Loading Python...
+                </p>
+
+                <textarea id="codeEditor" rows="15"># File Handling Demo
+
+log_data = """
+Login successful
+Failed login attempt
+Failed login attempt
+"""
+
+print("Security Log:")
+print(log_data)
+
+print("Log file processing completed.")</textarea>
+
+                <br><br>
+
+                <button id="runCodeButton" class="card-button" disabled>
+                    ▶ Run Code
+                </button>
+
+                <h3>Output:</h3>
+
+                <pre id="outputBox">Loading Python...</pre>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>Student Learning Assistant © 2026</p>
+    </footer>
+
+
+<script type="module">
+
+import { loadPyodide } from
+"https://cdn.jsdelivr.net/pyodide/v0.28.2/full/pyodide.mjs";
+
+let pyodide;
+
+const runButton =
+document.getElementById("runCodeButton");
+
+const codeEditor =
+document.getElementById("codeEditor");
+
+const outputBox =
+document.getElementById("outputBox");
+
+const status =
+document.getElementById("pythonStatus");
+
+
+async function startPython() {
+
+    try {
+
+        status.textContent =
+        "🟡 Loading Python...";
+
+        pyodide = await loadPyodide();
+
+        status.textContent =
+        "🟢 Python is ready!";
+
+        outputBox.textContent =
+        "Ready! Write Python code and click Run Code.";
+
+        runButton.disabled = false;
+
+    } catch (error) {
+
+        status.textContent =
+        "🔴 Python failed to load.";
+
+        outputBox.textContent = error;
+
+        console.error(error);
+    }
+}
+
+
+runButton.addEventListener("click", async function () {
+
+    const code = codeEditor.value;
+
+    if (code.trim() === "") {
+
+        outputBox.textContent =
+        "Please write some Python code.";
+
+        return;
+    }
+
+    runButton.disabled = true;
+
+    runButton.textContent =
+    "⏳ Running...";
+
+
+    try {
+
+        await pyodide.runPythonAsync(`
+import sys
+from io import StringIO
+
+_output = StringIO()
+
+sys.stdout = _output
+sys.stderr = _output
+`);
+
+        await pyodide.runPythonAsync(code);
+
+        const result =
+        await pyodide.runPythonAsync(
+            "_output.getvalue()"
+        );
+
+
+        if (result.trim() === "") {
+
+            outputBox.textContent =
+            "Code executed successfully.";
+
+        } else {
+
+            outputBox.textContent =
+            result;
+        }
+
+    } catch (error) {
+
+        outputBox.textContent =
+        "❌ Error:\n\n" + error;
+    }
+
+
+    runButton.disabled = false;
+
+    runButton.textContent =
+    "▶ Run Code";
+
+});
+
+
+startPython();
+
+</script>
+
+</body>
+</html>

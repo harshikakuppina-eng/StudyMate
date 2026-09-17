@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Flexbox | StudyMate</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">StudyMate</div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/learn">Learn</a>
+        </div>
+    </nav>
+
+
+    <main class="container">
+
+        <section class="quick-section">
+
+            <h1>9️⃣ CSS Flexbox 📦</h1>
+
+            <p class="description">
+                Learn how to arrange, align and position elements
+                easily using CSS Flexbox.
+            </p>
+
+
+            <div class="card">
+
+                <h2>What is Flexbox?</h2>
+
+                <p>
+                    Flexbox is a CSS layout system used to arrange
+                    elements inside a container.
+                </p>
+
+                <p>
+                    It is especially useful for creating flexible
+                    and responsive layouts.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>1. display: flex</h2>
+
+                <p>
+                    To use Flexbox, first make the parent element
+                    a flex container.
+                </p>
+
+                <pre><code>
+.container {
+    display: flex;
+}
+                </code></pre>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>2. flex-direction</h2>
+
+                <p>
+                    It decides whether items are arranged in a row
+                    or column.
+                </p>
+
+                <pre><code>
+.container {
+    display: flex;
+    flex-direction: row;
+}
+                </code></pre>
+
+                <p>
+                    For vertical arrangement:
+                </p>
+
+                <pre><code>
+.container {
+    display: flex;
+    flex-direction: column;
+}
+                </code></pre>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>3. justify-content</h2>
+
+                <p>
+                    It controls the alignment of items along the
+                    main axis.
+                </p>
+
+                <pre><code>
+.container {
+    display: flex;
+    justify-content: center;
+}
+                </code></pre>
+
+                <p>Common values:</p>
+
+                <ul>
+                    <li>flex-start</li>
+                    <li>center</li>
+                    <li>flex-end</li>
+                    <li>space-between</li>
+                    <li>space-around</li>
+                </ul>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>4. align-items</h2>
+
+                <p>
+                    It controls alignment along the cross axis.
+                </p>
+
+                <pre><code>
+.container {
+    display: flex;
+    align-items: center;
+}
+                </code></pre>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>5. gap</h2>
+
+                <p>
+                    The gap property creates space between flex items.
+                </p>
+
+                <pre><code>
+.container {
+    display: flex;
+    gap: 20px;
+}
+                </code></pre>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>Flexbox Example 💻</h2>
+
+                <pre><code>
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+                </code></pre>
+
+                <p>
+                    This places the items next to each other,
+                    centers them and adds space between them.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>Important Points ⭐</h2>
+
+                <ul>
+                    <li>display: flex creates a Flexbox container.</li>
+                    <li>flex-direction controls row or column.</li>
+                    <li>justify-content controls main-axis alignment.</li>
+                    <li>align-items controls cross-axis alignment.</li>
+                    <li>gap creates space between items.</li>
+                    <li>Flexbox is useful for responsive layouts.</li>
+                </ul>
+
+            </div>
+
+
+            <div class="card">
+
+                <h2>Try It Yourself 🚀</h2>
+
+                <textarea id="codeEditor" rows="20" style="width:100%;">
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<style>
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.box {
+    padding: 30px;
+    border: 2px solid blue;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="box">HTML</div>
+
+    <div class="box">CSS</div>
+
+    <div class="box">JavaScript</div>
+
+</div>
+
+</body>
+
+</html>
+                </textarea>
+
+                <br><br>
+
+                <button class="card-button" onclick="runCode()">
+                    ▶ Run Code
+                </button>
+
+                <br><br>
+
+                <iframe
+                    id="previewFrame"
+                    style="width:100%; height:300px; border:1px solid #ccc;">
+                </iframe>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>Student Learning Assistant © 2026</p>
+    </footer>
+
+
+    <script>
+
+        function runCode() {
+
+            const code =
+                document.getElementById("codeEditor").value;
+
+            document.getElementById("previewFrame").srcdoc = code;
+
+        }
+
+    </script>
+
+</body>
+
+</html>
