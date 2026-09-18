@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, send_from_directory, session
+from flask import Flask, request, jsonify, send_from_directory, session, redirect
 import sqlite3
 import uuid
 
@@ -252,6 +252,9 @@ def register_page():
 
 @app.route("/learn")
 def learn_page():
+
+    if "user_id" not in session:
+        return redirect("/login")
 
     return send_from_directory(".", "learn.html")
 

@@ -201,7 +201,7 @@ select {
     margin: 8px 0 18px;
     border: 1px solid #99F6E4;
     border-radius: 8px;
-    outline: none;
+    line: none;
     font-size: 15px;
     color: #134E4A;
     background: white;
@@ -1673,4 +1673,33 @@ footer p {
     .progress-stats {
         grid-template-columns: 1fr;
     }
+}
+
+/* =========================================
+   PYTHON OUTPUT - DARK & CLEAR
+========================================= */
+
+#outputBox {
+    background: #111827 !important;
+    color: #FFFFFF !important;
+    border: 1px solid #334155;
+    padding: 20px;
+    border-radius: 12px;
+    min-height: 100px;
+    white-space: pre-wrap;
+    overflow-x: auto;
+    font-family: Consolas, monospace;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+#outputBox * {
+    color: #FFFFFF !important;
+}
+
+.python-output,
+.output-box,
+.output {
+    background: #111827 !important;
+    color: #FFFFFF !important;
 }
