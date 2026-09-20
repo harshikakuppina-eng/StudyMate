@@ -207,6 +207,59 @@
 
         }
 
+        /* =========================================
+   CERTIFICATES
+========================================= */
+
+.certificates-section {
+    margin-top: 30px;
+    padding: 30px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.certificates-section h2 {
+    margin-bottom: 10px;
+    color: #1e293b;
+}
+
+.certificates-section p {
+    color: #64748b;
+    margin-bottom: 25px;
+}
+
+.certificate-button {
+    display: inline-block;
+    padding: 12px 22px;
+    margin: 8px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.certificate-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.25);
+}
+
+.certificate-locked {
+    display: inline-block;
+    padding: 12px 22px;
+    margin: 8px;
+    border-radius: 12px;
+    background: #f1f5f9;
+    color: #64748b;
+    font-weight: 600;
+}
+
     </style>
 
 </head>
@@ -513,7 +566,17 @@
 
     </div>
 
+    <!-- CERTIFICATES -->
 
+<section class="certificates-section">
+
+    <h2>🎓 Course Certificates</h2>
+
+    <p>Complete all 15 topics in a course to unlock your certificate.</p>
+
+    <div id="certificateButtons"></div>
+
+</section>
 
     <!-- MOTIVATION -->
 
@@ -817,7 +880,7 @@ async function loadProgress() {
             ).length;
 
 
-        const pythonPercent =
+        const pythonPercent = 
             Math.round(
                 (pythonCompleted / 15) * 100
             );
@@ -920,6 +983,58 @@ async function loadProgress() {
             "networkFill"
         ).style.width =
             networkPercent + "%";
+
+  // =========================================
+// CERTIFICATE BUTTONS
+// =========================================
+
+const certificateButtons =
+    document.getElementById("certificateButtons");
+
+certificateButtons.innerHTML = "";
+
+const courses = [
+    {
+        name: "Python",
+        percent: pythonPercent
+    },
+    {
+        name: "Web Development",
+        percent: webPercent
+    },
+    {
+        name: "Cybersecurity",
+        percent: cyberPercent
+    },
+    {
+        name: "Networking",
+        percent: networkPercent
+    }
+];
+
+courses.forEach(course => {
+
+    if (course.percent >= 90) {
+
+        certificateButtons.innerHTML += `
+            <a
+                href="/certificate?course=${encodeURIComponent(course.name)}"
+                class="certificate-button"
+            >
+                🎓 Get ${course.name} Certificate
+            </a>
+        `;
+
+    } else {
+
+        certificateButtons.innerHTML += `
+            <span class="certificate-locked">
+                🔒 ${course.name} — Complete ${course.percent}%
+            </span>
+        `;
+    }
+
+});
 
 
         /*

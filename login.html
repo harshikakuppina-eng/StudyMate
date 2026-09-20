@@ -139,13 +139,18 @@
 
                     if (result.success) {
 
-                        alert(
-                            "Login successful! Welcome "
-                            + result.name
-                            + " ❤️"
-                        );
+    localStorage.setItem(
+        "studentName",
+        result.name
+    );
 
-                        window.location.href = "/";
+    alert(
+        "Login successful! Welcome "
+        + result.name
+        + " ❤️"
+    );
+
+    window.location.href = "/";
 
                     } else {
 

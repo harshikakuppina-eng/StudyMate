@@ -76,6 +76,24 @@ def create_database():
         )
     """)
 
+    # =====================================================
+    # USER PROGRESS TABLE
+    # =====================================================
+
+    connection.execute("""
+        CREATE TABLE IF NOT EXISTS user_progress (
+
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+            user_id INTEGER NOT NULL,
+
+            topic_id TEXT NOT NULL,
+
+            completed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+            UNIQUE(user_id, topic_id)
+        )
+    """)
 
     connection.commit()
 
@@ -184,31 +202,24 @@ def track_topic():
         return
 
 
-    # Create visitor ID for this browser session
+    # Track progress for logged-in user
+    if "user_id" not in session:
+        return
 
-    if "visitor_id" not in session:
-
-        session["visitor_id"] = str(uuid.uuid4())
-
-
-    visitor_id = session["visitor_id"]
-
+    user_id = session["user_id"]
 
     connection = get_db()
 
-
     connection.execute(
         """
-        INSERT OR IGNORE INTO progress
-        (visitor_id, topic_id)
+        INSERT OR IGNORE INTO user_progress
+        (user_id, topic_id)
         VALUES (?, ?)
         """,
-        (visitor_id, topic_id)
+        (user_id, topic_id)
     )
 
-
     connection.commit()
-
     connection.close()
 
 
@@ -657,6 +668,17 @@ def progress_page():
         "progress.html"
     )
 
+# =====================================================
+# CERTIFICATE
+# =====================================================
+
+@app.route("/certificate")
+def certificate_page():
+
+    return send_from_directory(
+        ".",
+        "certificate.html"
+    )
 
 
 # =====================================================
@@ -1001,12 +1023,15 @@ def login():
 @app.route("/api/progress")
 def get_progress():
 
-    if "visitor_id" not in session:
+    if "user_id" not in session:
 
-        session["visitor_id"] = str(uuid.uuid4())
+        return jsonify({
+            "success": False,
+            "message": "Please login first."
+        }), 401
 
 
-    visitor_id = session["visitor_id"]
+    user_id = session["user_id"]
 
 
     connection = get_db()
@@ -1017,14 +1042,14 @@ def get_progress():
         """
         SELECT topic_id
 
-        FROM progress
+FROM user_progress
 
-        WHERE visitor_id = ?
+WHERE user_id = ?
 
-        ORDER BY id
+ORDER BY id
         """,
 
-        (visitor_id,)
+        (user_id,)
 
     ).fetchall()
 
