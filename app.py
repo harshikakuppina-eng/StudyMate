@@ -1,6 +1,9 @@
 from flask import Flask, request, jsonify, send_from_directory, session, redirect
 import sqlite3
 import uuid
+import os
+
+from flask_mail import Mail, Message
 
 from werkzeug.security import (
     generate_password_hash,
@@ -9,6 +12,15 @@ from werkzeug.security import (
 
 
 app = Flask(__name__)
+
+app.config["MAIL_SERVER"] = "smtp.gmail.com"
+app.config["MAIL_PORT"] = 587
+app.config["MAIL_USE_TLS"] = True
+
+app.config["MAIL_USERNAME"] = os.environ.get("MAIL_USERNAME")
+app.config["MAIL_PASSWORD"] = os.environ.get("MAIL_PASSWORD")
+
+mail = Mail(app)
 
 # =====================================================
 # FLASK SETTINGS
@@ -667,6 +679,46 @@ def progress_page():
         ".",
         "progress.html"
     )
+
+@app.route("/contact")
+def contact_page():
+    return send_from_directory(
+        ".",
+        "contact.html"
+    )
+
+@app.route("/send-message", methods=["POST"])
+def send_message():
+
+    name = request.form.get("Name")
+    email = request.form.get("Email")
+    contact_type = request.form.get("Type")
+    message = request.form.get("Message")
+
+    email_message = Message(
+        subject=f"StudyMate - {contact_type}",
+        sender=app.config["MAIL_USERNAME"],
+        recipients=[app.config["MAIL_USERNAME"]],
+        body=f"""
+StudyMate Contact Message
+
+Name: {name}
+Email: {email}
+Type: {contact_type}
+
+Message:
+{message}
+"""
+    )
+
+    mail.send(email_message)
+
+    return """
+    <script>
+        alert("Your message has been sent successfully! ❤️");
+        window.location.href = "/contact";
+    </script>
+    """
 
 # =====================================================
 # CERTIFICATE

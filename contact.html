@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Reach Out - StudyMate</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+<body>
+
+    <div class="page-container">
+
+        <h1>📩 Reach Out to StudyMate</h1>
+
+        <p>
+            Have an issue, query, suggestion, or feedback?
+            We'd love to hear from you.
+        </p>
+
+        <div class="contact-card">
+
+            <h2>Contact Us</h2>
+
+            <p>
+                You can reach us directly through email:
+            </p>
+
+            <a href="mailto:sharshika517@gmail.com">
+                📧 sharshika517@gmail.com
+            </a>
+
+        </div>
+
+        <div class="contact-card">
+
+            <h2>Send Your Query</h2>
+
+            <form action="/send-message"
+                  method="POST">
+                  
+                <label for="name">
+                    Your Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="Name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+                <label for="email">
+                    Your Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="Email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+                <label for="type">
+                    What do you want to contact us about?
+                </label>
+
+                <select id="type" name="Type">
+
+                    <option value="Issue">
+                        Website Issue
+                    </option>
+
+                    <option value="Query">
+                        Query
+                    </option>
+
+                    <option value="Suggestion">
+                        Suggestion
+                    </option>
+
+                    <option value="Feedback">
+                        Feedback
+                    </option>
+
+                </select>
+
+                <label for="message">
+                    Message
+                </label>
+
+                <textarea
+                    id="message"
+                    name="Message"
+                    rows="6"
+                    placeholder="Describe your issue, query, or feedback..."
+                    required
+                ></textarea>
+
+                <button type="submit">
+                    📨 Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+        <button
+            onclick="window.location.href='/'">
+            ← Back to StudyMate
+        </button>
+
+    </div>
+
+</body>
+
+</html>

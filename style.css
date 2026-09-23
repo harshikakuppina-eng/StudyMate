@@ -1703,3 +1703,116 @@ footer p {
     background: #111827 !important;
     color: #FFFFFF !important;
 }
+
+/* =========================================
+   CONTACT / REACH OUT PAGE
+========================================= */
+
+.page-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px 25px;
+}
+
+.page-container h1 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.page-container > p {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 35px;
+    font-size: 17px;
+}
+
+.contact-card {
+    background: white;
+    padding: 30px;
+    margin: 25px auto;
+    max-width: 650px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.contact-card h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #1e293b;
+}
+
+.contact-card p {
+    text-align: center;
+    color: #64748b;
+}
+
+.contact-card a {
+    display: block;
+    text-align: center;
+    color: #4f46e5;
+    font-weight: 600;
+    font-size: 17px;
+    margin-top: 15px;
+}
+
+.contact-card form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-card label {
+    margin-top: 18px;
+    margin-bottom: 7px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.contact-card input,
+.contact-card select,
+.contact-card textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: inherit;
+    outline: none;
+}
+
+.contact-card input:focus,
+.contact-card select:focus,
+.contact-card textarea:focus {
+    border-color: #4f46e5;
+}
+
+.contact-card textarea {
+    resize: vertical;
+}
+
+.contact-card button {
+    margin-top: 25px;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.contact-card button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.25);
+}
+
+.page-container > button {
+    display: block;
+    margin: 25px auto;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 10px;
+    background: #1e293b;
+    color: white;
+    cursor: pointer;
+}
