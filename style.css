@@ -44,6 +44,16 @@ nav a {
     transition: 0.3s;
 }
 
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.nav-links a {
+    margin-left: 0;
+}
+
 nav a:hover {
     color: #CCFBF1;
 }
